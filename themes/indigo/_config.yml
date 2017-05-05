@@ -106,7 +106,7 @@ duoshuo: false
 # 是否开启多说评论计数（该服务不稳定）
 duoshuo_count: false
 # 使用 disqus 时关闭多说评论
-disqus_shortname: false
+disqus_shortname: blog7
 # 是否开启友言评论, 填写友言用户id
 uyan_uid: false
 # 是否开启网易云跟帖， 填写app sdk中的app key
@@ -131,8 +131,8 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 死鬼去哪里了！
+  normal: (つェ⊂)咦!又好了！
+  leave: (つェ⊂)咦!去哪里了！
 
 # 设置为 true 发布后将使用 unpkg cdn
 cdn: true
