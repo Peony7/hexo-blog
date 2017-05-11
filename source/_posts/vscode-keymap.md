@@ -31,15 +31,15 @@ tags: keymap
 
 | Key              | Command                                  | Command id                               |
 | ---------------- | ---------------------------------------- | ---------------------------------------- |
-| Ctrl+X           | Cut line (empty selection)               | `editor.action.clipboardCutAction`       |
-| Ctrl+C           | Copy line (empty selection)              | `editor.action.clipboardCopyAction`      |
-| Ctrl+Shift+K     | Delete Line                              | `editor.action.deleteLines`              |
-| Ctrl+Enter       | Insert Line Below                        | `editor.action.insertLineAfter`          |
-| Ctrl+Shift+Enter | Insert Line Above                        | `editor.action.insertLineBefore`         |
-| Alt+Down         | Move Line Down                           | `editor.action.moveLinesDownAction`      |
-| Alt+Up           | Move Line Up                             | `editor.action.moveLinesUpAction`        |
-| Shift+Alt+Down   | Copy Line Down                           | `editor.action.copyLinesDownAction`      |
-| Shift+Alt+Up     | Copy Line Up                             | `editor.action.copyLinesUpAction`        |
+| Ctrl+X           | Cut line (empty selection) 剪切一行（没有选中代码）  | `editor.action.clipboardCutAction`       |
+| Ctrl+C           | Copy line (empty selection) 复制一行（没有选中代码） | `editor.action.clipboardCopyAction`      |
+| Ctrl+Shift+K     | Delete Line 删除一行                         | `editor.action.deleteLines`              |
+| Ctrl+Enter       | Insert Line Below 在当前行后面插入一行             | `editor.action.insertLineAfter`          |
+| Ctrl+Shift+Enter | Insert Line Above 在当前行前面插入一行             | `editor.action.insertLineBefore`         |
+| Alt+Down         | Move Line Down 往下移动当前行或选中行               | `editor.action.moveLinesDownAction`      |
+| Alt+Up           | Move Line Up 往前移动当前行或选中行                 | `editor.action.moveLinesUpAction`        |
+| Shift+Alt+Down   | Copy Line Down 复制当前行或选中行到后面              | `editor.action.copyLinesDownAction`      |
+| Shift+Alt+Up     | Copy Line Up 复制当前行或选中行到前面                | `editor.action.copyLinesUpAction`        |
 | Ctrl+D           | Add Selection To Next Find Match         | `editor.action.addSelectionToNextFindMatch` |
 | Ctrl+K Ctrl+D    | Move Last Selection To Next Find Match   | `editor.action.moveSelectionToNextFindMatch` |
 | Ctrl+U           | Undo last cursor operation               | `cursorUndo`                             |
@@ -88,7 +88,7 @@ tags: keymap
 | ---------------- | --------------------------- | ---------------------------------------- |
 | Ctrl+Space       | Trigger Suggest             | `editor.action.triggerSuggest`           |
 | Ctrl+Shift+Space | Trigger Parameter Hints     | `editor.action.triggerParameterHints`    |
-| Shift+Alt+F      | Format Document             | `editor.action.formatDocument`           |
+| **Shift+Alt+F**  | Format Document             | `editor.action.formatDocument`           |
 | Ctrl+K Ctrl+F    | Format Selection            | `editor.action.formatSelection`          |
 | F12              | Go to Definition            | `editor.action.goToDeclaration`          |
 | Ctrl+K Ctrl+I    | Show Hover                  | `editor.action.showHover`                |
@@ -167,28 +167,28 @@ tags: keymap
 
 ### Display
 
-| Key                                      | Command                      | Command id                               |
-| ---------------------------------------- | ---------------------------- | ---------------------------------------- |
-| F11                                      | Toggle Full Screen           | `workbench.action.toggleFullScreen`      |
-| Ctrl+K Z                                 | Toggle Zen Mode              | `workbench.action.toggleZenMode`         |
-| Escape Escape                            | Leave Zen Mode               | `workbench.action.exitZenMode`           |
-| Ctrl+=                                   | Zoom in                      | `workbench.action.zoomIn`                |
-| Ctrl+-                                   | Zoom out                     | `workbench.action.zoomOut`               |
-| Ctrl+Numpad0                             | Reset Zoom                   | `workbench.action.zoomReset`             |
-| Ctrl+B                                   | Toggle Sidebar Visibility    | `workbench.action.toggleSidebarVisibility` |
-| Ctrl+Shift+E                             | Show Explorer / Toggle Focus | `workbench.view.explorer`                |
-| Ctrl+Shift+D                             | Show Debug                   | `workbench.view.debug`                   |
-| Ctrl+Shift+G                             | Show Source Control          | `workbench.view.scm`                     |
-| Ctrl+Shift+X                             | Show Extensions              | `workbench.view.extensions`              |
-| Ctrl+Shift+U                             | Show Output                  | `workbench.action.output.toggleOutput`   |
-| Ctrl+Q                                   | Quick Open View              | `workbench.action.quickOpenView`         |
-| Ctrl+Shift+F                             | Show Search                  | `workbench.view.search`                  |
-| Ctrl+Shift+H                             | Replace in Files             | `workbench.action.replaceInFiles`        |
-| Ctrl+Shift+J                             | Toggle Search Details        | `workbench.action.search.toggleQueryDetails` |
-| Ctrl+Shift+C                             | Open New Command Prompt      | `workbench.action.terminal.openNativeConsole` |
-| Ctrl+Shift+V                             | Toggle Markdown Preview      | `markdown.showPreview`                   |
-| Ctrl+K V                                 | Open Preview to the Side     | `markdown.showPreviewToSide`             |
-| Ctrl+`        | Toggle Integrated Terminal   | `workbench.action.terminal.toggleTerminal` |                              |                                          |
+| Key           | Command                      | Command id                               |
+| ------------- | ---------------------------- | ---------------------------------------- |
+| F11           | Toggle Full Screen           | `workbench.action.toggleFullScreen`      |
+| Ctrl+K Z      | Toggle Zen Mode              | `workbench.action.toggleZenMode`         |
+| Escape Escape | Leave Zen Mode               | `workbench.action.exitZenMode`           |
+| Ctrl+=        | Zoom in                      | `workbench.action.zoomIn`                |
+| Ctrl+-        | Zoom out                     | `workbench.action.zoomOut`               |
+| Ctrl+Numpad0  | Reset Zoom                   | `workbench.action.zoomReset`             |
+| Ctrl+B        | Toggle Sidebar Visibility    | `workbench.action.toggleSidebarVisibility` |
+| Ctrl+Shift+E  | Show Explorer / Toggle Focus | `workbench.view.explorer`                |
+| Ctrl+Shift+D  | Show Debug                   | `workbench.view.debug`                   |
+| Ctrl+Shift+G  | Show Source Control          | `workbench.view.scm`                     |
+| Ctrl+Shift+X  | Show Extensions              | `workbench.view.extensions`              |
+| Ctrl+Shift+U  | Show Output                  | `workbench.action.output.toggleOutput`   |
+| Ctrl+Q        | Quick Open View              | `workbench.action.quickOpenView`         |
+| Ctrl+Shift+F  | Show Search                  | `workbench.view.search`                  |
+| Ctrl+Shift+H  | Replace in Files             | `workbench.action.replaceInFiles`        |
+| Ctrl+Shift+J  | Toggle Search Details        | `workbench.action.search.toggleQueryDetails` |
+| Ctrl+Shift+C  | Open New Command Prompt      | `workbench.action.terminal.openNativeConsole` |
+| Ctrl+Shift+V  | Toggle Markdown Preview      | `markdown.showPreview`                   |
+| Ctrl+K V      | Open Preview to the Side     | `markdown.showPreviewToSide`             |
+| **Ctrl+`**    | Toggle Integrated Terminal   | workbench.action.terminal.toggleTerminal |
 
 ### Preferences
 

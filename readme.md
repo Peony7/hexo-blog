@@ -8,7 +8,8 @@
 
 ## bash 命令
 
-```
+```bash
+# 文章相关
 //创建文章
 $ hexo new "new-artical"
 
@@ -17,6 +18,19 @@ $ hexo new draft "new draft"
 
 //预览草稿
 $ hexo server --drafts
+
+# 项目相关
+//启动本地服务
+$ npm run start
+
+//清理文件
+$ npm run clean
+
+//生成文件
+$ npm run generate
+
+//发布网站
+$ npm run deploy
 ```
 
 ## 遇到的一些坑
