@@ -31,15 +31,15 @@ tags: keymap
 
 | Key              | Command                                  | Command id                               |
 | ---------------- | ---------------------------------------- | ---------------------------------------- |
-| Ctrl+X           | Cut line (empty selection) 剪切一行（没有选中代码）  | `editor.action.clipboardCutAction`       |
-| Ctrl+C           | Copy line (empty selection) 复制一行（没有选中代码） | `editor.action.clipboardCopyAction`      |
-| Ctrl+Shift+K     | Delete Line 删除一行                         | `editor.action.deleteLines`              |
-| Ctrl+Enter       | Insert Line Below 在当前行后面插入一行             | `editor.action.insertLineAfter`          |
-| Ctrl+Shift+Enter | Insert Line Above 在当前行前面插入一行             | `editor.action.insertLineBefore`         |
-| Alt+Down         | Move Line Down 往下移动当前行或选中行               | `editor.action.moveLinesDownAction`      |
-| Alt+Up           | Move Line Up 往前移动当前行或选中行                 | `editor.action.moveLinesUpAction`        |
-| Shift+Alt+Down   | Copy Line Down 复制当前行或选中行到后面              | `editor.action.copyLinesDownAction`      |
-| Shift+Alt+Up     | Copy Line Up 复制当前行或选中行到前面                | `editor.action.copyLinesUpAction`        |
+| Ctrl+X           | Cut line (empty selection)               | `editor.action.clipboardCutAction`       |
+| Ctrl+C           | Copy line (empty selection)              | `editor.action.clipboardCopyAction`      |
+| Ctrl+Shift+K     | Delete Line                              | `editor.action.deleteLines`              |
+| Ctrl+Enter       | Insert Line Below                        | `editor.action.insertLineAfter`          |
+| Ctrl+Shift+Enter | Insert Line Above                        | `editor.action.insertLineBefore`         |
+| Alt+Down         | Move Line Down                           | `editor.action.moveLinesDownAction`      |
+| Alt+Up           | Move Line Up                             | `editor.action.moveLinesUpAction`        |
+| Shift+Alt+Down   | Copy Line Down                           | `editor.action.copyLinesDownAction`      |
+| Shift+Alt+Up     | Copy Line Up                             | `editor.action.copyLinesUpAction`        |
 | Ctrl+D           | Add Selection To Next Find Match         | `editor.action.addSelectionToNextFindMatch` |
 | Ctrl+K Ctrl+D    | Move Last Selection To Next Find Match   | `editor.action.moveSelectionToNextFindMatch` |
 | Ctrl+U           | Undo last cursor operation               | `cursorUndo`                             |
