@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/11/linux-vi/index.html">
 <meta property="og:site_name" content="Peony7的博客乐园">
 <meta property="og:description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对Unix及Linux系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍vi的地方进一步了解它。vi也是Linux中最基本的文本编 辑器，学会它后，您将在Linux的世界里畅行无阻。 vi的基本概念基本上vi可以分为三种状态，分别是:">
-<meta property="og:updated_time" content="2017-05-11T03:33:32.178Z">
+<meta property="og:updated_time" content="2017-05-11T08:12:31.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux vi 命令详解">
 <meta name="twitter:description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对Unix及Linux系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍vi的地方进一步了解它。vi也是Linux中最基本的文本编 辑器，学会它后，您将在Linux的世界里畅行无阻。 vi的基本概念基本上vi可以分为三种状态，分别是:">
@@ -193,7 +193,7 @@
 <p>不过一般我们在使用时把vi简化成两个模式，就是将底行模式（last line mode）也算入命令行模式command mode）。</p>
 <h2 id="vi的基本操作"><a href="#vi的基本操作" class="headerlink" title="vi的基本操作"></a>vi的基本操作</h2><p><strong>进入vi</strong></p>
 <p>  在系统提示符号输入vi及文件名称后，就进入<code>vi</code>全屏幕编辑画面：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> vi myfile</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> vi myfile</div></pre></td></tr></table></figure>
 <p>不过有一点要特别注意，就是您进入vi之后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。初次使用<code>vi</code>的人都会想先用上下左右键移动光标，结果电脑一直哔哔叫，把自己气个半死，所以进入vi后，先不要乱动，转换到 「插入模式（Insert mode）」再说吧！</p>
 <p><strong>切换至插入模式（Insert mode）编辑文件</strong></p>
 <p>在「命令行模式（command mode）」下按一下字母 <code>i</code>  就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。</p>
@@ -201,7 +201,7 @@
 <p>您目前处于「插入模式（Insert mode）」，您就只能一直输入文字。回到「命令行模式（command mode）」，按一下 <code>ESC</code>  键就行啦。</p>
 <p><strong>退出vi及保存文件</strong></p>
 <p>在「命令行模式（command mode）」下，按一下 <code>:</code> 冒号键进入「底行模式（Last line mode）」，输入下面的命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将文章以指定的文件名filename保存</span></div><div class="line">: w filename </div><div class="line"><span class="meta">#</span><span class="bash"> 存盘并退出vi</span></div><div class="line">: wq </div><div class="line"><span class="meta">#</span><span class="bash"> 不存盘强制退出vi</span></div><div class="line">: q!</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 将文章以指定的文件名filename保存</div><div class="line">: w filename </div><div class="line"><span class="meta">#</span> 存盘并退出vi</div><div class="line">: wq </div><div class="line"><span class="meta">#</span> 不存盘强制退出vi</div><div class="line">: q!</div></pre></td></tr></table></figure>
 <h2 id="命令行模式（command-mode）功能键"><a href="#命令行模式（command-mode）功能键" class="headerlink" title="命令行模式（command mode）功能键"></a>命令行模式（command mode）功能键</h2><p><strong>插入模式</strong></p>
 <p>按<code>i</code> 进入插入模式后，是从光标当前位置开始输入文件；</p>
 <p>按<code>a</code>进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字；</p>
@@ -470,7 +470,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-05-11T03:33:32.178Z" itemprop="dateUpdated">2017-05-11 11:33:32</time>
+    Last updated: <time datetime="2017-05-11T08:12:31.142Z" itemprop="dateUpdated">2017-05-11 16:12:31</time>
 </span><br>
 
 
