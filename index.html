@@ -1,527 +1,1615 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-
-    
-
-    
-
-
-
-    <meta charset="utf-8">
-    
-    
-    
-    <title>Peony7的博客乐园</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="undefined">
-    <meta property="og:type" content="website">
+  <meta charset="utf-8">
+  
+  <title>Peony7的博客乐园</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Peony7的博客乐园">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Peony7的博客乐园">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Peony7的博客乐园">
-    
-        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
-    
-    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
+  
+    <link rel="alternate" href="/atom.xml" title="Peony7的博客乐园" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/hexo-blog/css/style.css">
+  
+
 </head>
 
 <body>
-    <div id="loading" class="active"></div>
-
-    <aside id="menu"  >
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
-      <div class="brand">
-        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/hexo-blog/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Peony7</h5>
-          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
-        </hgroup>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/hexo-blog/" id="logo">Peony7的博客乐园</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/hexo-blog/">Home</a>
+        
+          <a class="main-nav-link" href="/hexo-blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
     </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-linux-vi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexo-blog/2017/05/11/linux-vi/" class="article-date">
+  <time datetime="2017-05-11T02:33:03.000Z" itemprop="datePublished">2017-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <li class="waves-block waves-effect active">
-              <a href="/hexo-blog/"  >
-                <i class="icon icon-lg icon-home"></i>
-                Home
-              </a>
-            </li>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexo-blog/2017/05/11/linux-vi/">linux vi 命令详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>vi</code>编辑器是所有<code>Unix</code>及<code>Linux</code>系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对<code>Unix</code>及<code>Linux</code>系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍<code>vi</code>的地方进一步了解它。<code>vi</code>也是<code>Linux</code>中最基本的文本编 辑器，学会它后，您将在<code>Linux</code>的世界里畅行无阻。</p>
+<h2 id="vi的基本概念"><a href="#vi的基本概念" class="headerlink" title="vi的基本概念"></a>vi的基本概念</h2><p>基本上<code>vi</code>可以分为三种状态，分别是:</p>
+<ul>
+<li>命令模式（command mode）</li>
+<li>插入模式（Insert mode）</li>
+<li>底行模式（last line mode）</li>
+</ul>
+<p>各模式的功能区别如下：</p>
+<p><strong>命令行模式command mode）</strong></p>
+<p>控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入<code>Insert mode</code>下，或者到<code>last line mode</code>。</p>
+<p><strong>插入模式（Insert mode）</strong></p>
+<p>只有在<code>Insert mode</code>下，才可以做文字输入，按<code>ESC</code>键可回到命令行模式。</p>
+<p><strong>底行模式（last line mode）</strong></p>
+<p>将文件保存或退出<code>vi</code>，也可以设置编辑环境，如寻找字符串、列出行号……等。</p>
+<p>不过一般我们在使用时把vi简化成两个模式，就是将底行模式（last line mode）也算入命令行模式command mode）。</p>
+<h2 id="vi的基本操作"><a href="#vi的基本操作" class="headerlink" title="vi的基本操作"></a>vi的基本操作</h2><p><strong>进入vi</strong></p>
+<p>  在系统提示符号输入vi及文件名称后，就进入<code>vi</code>全屏幕编辑画面：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> vi myfile</span></div></pre></td></tr></table></figure>
+<p>不过有一点要特别注意，就是您进入vi之后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。初次使用<code>vi</code>的人都会想先用上下左右键移动光标，结果电脑一直哔哔叫，把自己气个半死，所以进入vi后，先不要乱动，转换到 「插入模式（Insert mode）」再说吧！</p>
+<p><strong>切换至插入模式（Insert mode）编辑文件</strong></p>
+<p>在「命令行模式（command mode）」下按一下字母 <code>i</code>  就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。</p>
+<p><strong>切换至命令行模式（command mode</strong></p>
+<p>您目前处于「插入模式（Insert mode）」，您就只能一直输入文字。回到「命令行模式（command mode）」，按一下 <code>ESC</code>  键就行啦。</p>
+<p><strong>退出vi及保存文件</strong></p>
+<p>在「命令行模式（command mode）」下，按一下 <code>:</code> 冒号键进入「底行模式（Last line mode）」，输入下面的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将文章以指定的文件名filename保存</span></div><div class="line">: w filename </div><div class="line"><span class="meta">#</span><span class="bash"> 存盘并退出vi</span></div><div class="line">: wq </div><div class="line"><span class="meta">#</span><span class="bash"> 不存盘强制退出vi</span></div><div class="line">: q!</div></pre></td></tr></table></figure>
+<h2 id="命令行模式（command-mode）功能键"><a href="#命令行模式（command-mode）功能键" class="headerlink" title="命令行模式（command mode）功能键"></a>命令行模式（command mode）功能键</h2><p><strong>插入模式</strong></p>
+<p>按<code>i</code> 进入插入模式后，是从光标当前位置开始输入文件；</p>
+<p>按<code>a</code>进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字；</p>
+<p>按<code>o</code>进入插入模式后，是插入新的一行，从行首开始输入文字。</p>
+<p><strong>从插入模式切换为命令行模式</strong></p>
+<p> 按<code>ESC</code>键</p>
+<p> <strong>移动光标</strong></p>
+<p><code>vi</code>可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母<code>h(左)</code>、<code>j(下)</code>、<code>k(上)</code>、<code>l(右)</code>，分别控制光标左、下、上、右移一格。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+B</code></td>
+<td>屏幕往”后”移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl+F</code></td>
+<td>屏幕往”前”移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl+U</code></td>
+<td>屏幕往”后”移动半页</td>
+</tr>
+<tr>
+<td><code>Ctrl+D</code></td>
+<td>屏幕往”前”移动半页</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>移到文章的开头</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>移动到文章的最后</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>移动到光标所在行的”行尾”</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>移动到光标所在行的”行首”</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>光标跳到下个字的开头</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>光标跳到下个字的字尾</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>光标回到上个字的开头</td>
+</tr>
+<tr>
+<td><code>#l</code></td>
+<td>光标移到该行的第#个位置，如：<code>5l</code>，<code>56l</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>删除文字</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>每按一次，删除光标所在位置的”后面”一个字符</td>
+</tr>
+<tr>
+<td><code>#x</code></td>
+<td>例如，<code>6x</code>表示删除光标所在位置的”后面” <code>6</code> 个字符</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>大写的 <code>X</code> ，每按一次，删除光标所在位置的”前面”一个字符</td>
+</tr>
+<tr>
+<td><code>#X</code></td>
+<td>例如，<code>20X</code>表示删除光标所在位置的”前面” <code>20</code> 个字符</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除光标所在行</td>
+</tr>
+<tr>
+<td><code>#dd</code></td>
+<td>从光标所在行开始删除#行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>复制</strong></p>
+<p>　　「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</p>
+<p>　　「#yw」：复制#个字到缓冲区</p>
+<p>　　「yy」：复制光标所在行到缓冲区。</p>
+<p>　　「#yy」：例如，「6yy」表示拷贝从光标所在的该行”往下数”6行文字。</p>
+<p>　　「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与”y”有关的复制命令都必须与”p”配合才能完成复制与粘贴功能。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>6）. 替换</p>
+<p>　　「r」：替换光标所在处的字符。</p>
+<p>　　「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>7）. 回复上一次操作</p>
+<p>　　「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次”u”可以执行多次回复。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>更改</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cw</code></td>
+<td>更改光标所在处的字到字尾处</td>
+</tr>
+<tr>
+<td><code>c#w</code></td>
+<td>例如，<code>c3w</code>表示更改3个字</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跳至指定的行</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+G</code></td>
+<td>列出光标所在行的行号</td>
+</tr>
+<tr>
+<td><code>#G</code></td>
+<td>例如，<code>15G</code>，表示移动光标至文章的第<code>15</code>行行首</td>
+</tr>
+</tbody>
+</table>
+<h2 id="底行模式（last-line-mode）下命令简介"><a href="#底行模式（last-line-mode）下命令简介" class="headerlink" title="底行模式（last line mode）下命令简介"></a>底行模式（last line mode）下命令简介</h2><p>在使用「last line mode」之前，请记住先按「ESC」键确定您已经处于「command mode」下后，再按「：」冒号即可进入「last line mode」。</p>
+<p>A) 列出行号</p>
+<p>　「set nu」：输入「set nu」后，会在文件中的每一行前面列出行号。</p>
+<p>B) 跳到文件中的某一行</p>
+<p>　「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</p>
+<p>C) 查找字符</p>
+<p>　「/关键字」：先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</p>
+<p>　「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p>
+<p>D) 保存文件</p>
+<p>　「w」：在冒号输入字母「w」就可以将文件保存起来。</p>
+<p>E) 离开vi</p>
+<p>　「q」：按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</p>
+<p>　「qw」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</p>
+<p>5、vi命令列表<br>1、下表列出命令模式下的一些键的功能：</p>
+<p>h<br>左移光标一个字符</p>
+<p>l<br>右移光标一个字符</p>
+<p>k<br>光标上移一行</p>
+<p>j<br>光标下移一行</p>
+<p>^<br>光标移动至行首</p>
+<p>0<br>数字”0”，光标移至文章的开头</p>
+<p>G<br>光标移至文章的最后</p>
+<p>$<br>光标移动至行尾</p>
+<p>Ctrl+f<br>向前翻屏</p>
+<p>Ctrl+b<br>向后翻屏</p>
+<p>Ctrl+d<br>向前翻半屏</p>
+<p>Ctrl+u<br>向后翻半屏</p>
+<p>i<br>在光标位置前插入字符</p>
+<p>a<br>在光标所在位置的后一个字符开始增加</p>
+<p>o<br>插入新的一行，从行首开始输入</p>
+<p>ESC<br>从输入状态退至命令状态</p>
+<p>x<br>删除光标后面的字符</p>
+<p>#x<br>删除光标后的＃个字符</p>
+<p>X<br>(大写X)，删除光标前面的字符</p>
+<p>#X<br>删除光标前面的#个字符</p>
+<p>dd<br>删除光标所在的行</p>
+<p>#dd<br>删除从光标所在行数的#行</p>
+<p>yw<br>复制光标所在位置的一个字</p>
+<p>#yw<br>复制光标所在位置的#个字</p>
+<p>yy<br>复制光标所在位置的一行</p>
+<p>#yy<br>复制从光标所在行数的#行</p>
+<p>p<br>粘贴</p>
+<p>u<br>取消操作</p>
+<p>cw<br>更改光标所在位置的一个字</p>
+<p>#cw<br>更改光标所在位置的#个字</p>
+<p>2、下表列出行命令模式下的一些指令<br>w filename<br>储存正在编辑的文件为filename</p>
+<p>wq filename<br>储存正在编辑的文件为filename，并退出vi</p>
+<p>q!<br>放弃所有修改，退出vi</p>
+<p>set nu<br>显示行号</p>
+<p>/或?<br>查找，在/后输入要查找的内容</p>
+<p>n<br>与/或?一起使用，如果查找的内容不是想要找的关键字，按n或向后（与/联用）或向前（与?联用）继续查找，直到找到为止。</p>
+<p>对于第一次用vi，有几点注意要提醒一下：<br>1、 用vi打开文件后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。切换方法：在「命令行模式（command mode）」下按一下字母「i」就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。<br>2、编辑好后，需从插入模式切换为命令行模式才能对文件进行保存，切换方法：按「ESC」键。<br>3、保存并退出文件：在命令模式下输入:wq即可！（别忘了wq前面的:）</p>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html" target="_blank" rel="external">http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/11/linux-vi/" data-id="cj2jywqac000ii8ekdz31trv5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-git-commend" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexo-blog/2017/05/10/git-commend/" class="article-date">
+  <time datetime="2017-05-10T09:27:06.000Z" itemprop="datePublished">2017-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <li class="waves-block waves-effect">
-              <a href="/hexo-blog/archives"  >
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexo-blog/2017/05/10/git-commend/">常用 Git 命令清单</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><img src="/hexo-blog//2017/05/10/git-commend/bg2015120901.png" alt="img"></strong></p>
+<p>几个专用名词的译名如下：</p>
+<ul>
+<li>Workspace：工作区</li>
+<li>Index / Stage：暂存区</li>
+<li>Repository：仓库区（或本地仓库）</li>
+<li>Remote：远程仓库</li>
+</ul>
+<h2 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 在当前目录新建一个Git代码库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git init</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个目录，将其初始化为Git代码库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git init [project-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 下载一个项目和它的整个代码历史</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> [url]</span></div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 显示当前的Git配置</span></div><div class="line"><span class="meta">$</span><span class="bash"> git config --list</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 编辑Git配置文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git config <span class="_">-e</span> [--global]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 设置提交代码时的用户信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.name <span class="string">"[name]"</span></span></div><div class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.email <span class="string">"[email address]"</span></span></div></pre></td></tr></table></figure>
+<h2 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 添加指定文件到暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add [file1] [file2] ...</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加指定目录到暂存区，包括子目录</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add [dir]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加当前目录的所有文件到暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add .</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加每个变化前，都会要求确认</span></div><div class="line"><span class="meta">#</span><span class="bash"> 对于同一个文件的多处变化，可以实现分次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add -p</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除工作区文件，并且将这次删除放入暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git rm [file1] [file2] ...</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 停止追踪指定文件，但该文件会保留在工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git rm --cached [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 改名文件，并且将这个改名放入暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git mv [file-original] [file-renamed]</span></div></pre></td></tr></table></figure>
+<h2 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 提交暂存区到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交暂存区的指定文件到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit [file1] [file2] ... -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交工作区自上次commit之后的变化，直接到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit <span class="_">-a</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交时显示所有diff信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -v</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 使用一次新的commit，替代上一次提交</span></div><div class="line"><span class="meta">#</span><span class="bash"> 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit --amend -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重做上一次commit，并包括指定文件的新变化</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit --amend [file1] [file2] ...</span></div></pre></td></tr></table></figure>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 列出所有远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -r</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 列出所有本地分支和远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch <span class="_">-a</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，但依然停留在当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，并切换到该分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，指向指定commit</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch [branch] [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，与指定的远程分支建立追踪关系</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch --track [branch] [remote-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 切换到指定分支，并更新工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 切换到上一个分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 建立追踪关系，在现有分支与指定的远程分支之间</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch --set-upstream [branch] [remote-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 合并指定分支到当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git merge [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 选择一个commit，合并进当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git cherry-pick [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch <span class="_">-d</span> [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push origin --delete [branch-name]</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -dr [remote/branch]</span></div></pre></td></tr></table></figure>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 列出所有tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个tag在当前commit</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个tag在指定commit</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag [tag] [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除本地tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag <span class="_">-d</span> [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除远程tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push origin :refs/tags/[tagName]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 查看tag信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交指定tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交所有tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --tags</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，指向某个tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b [branch] [tag]</span></div></pre></td></tr></table></figure>
+<h2 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示有变更的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git status</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示当前分支的版本历史</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示commit历史，以及每次commit发生变更的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --stat</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 搜索提交历史，根据关键词</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -S [keyword]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个commit之后的所有变动，每个commit占据一行</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个commit之后的所有变动，其<span class="string">"提交说明"</span>必须符合搜索条件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> [tag] HEAD --grep feature</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个文件的版本历史，包括文件改名</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --follow [file]</span></div><div class="line"><span class="meta">$</span><span class="bash"> git whatchanged [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示指定文件相关的每一次diff</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -p [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示过去5次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -5 --pretty --oneline</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示所有提交过的用户，按提交次数排序</span></div><div class="line"><span class="meta">$</span><span class="bash"> git shortlog -sn</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示指定文件是什么人在什么时间修改过</span></div><div class="line"><span class="meta">$</span><span class="bash"> git blame [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示暂存区和工作区的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示暂存区和上一个commit的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff --cached [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示工作区与当前分支最新commit之间的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff HEAD</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示两次提交之间的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff [first-branch]...[second-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示今天你写了多少行代码</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff --shortstat <span class="string">"@&#123;0 day ago&#125;"</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某次提交的元数据和内容变化</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某次提交发生变化的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show --name-only [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某次提交时，某个文件的内容</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show [commit]:[filename]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示当前分支的最近几次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reflog</span></div></pre></td></tr></table></figure>
+<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 下载远程仓库的所有变动</span></div><div class="line"><span class="meta">$</span><span class="bash"> git fetch [remote]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示所有远程仓库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个远程仓库的信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git remote show [remote]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 增加一个新的远程仓库，并命名</span></div><div class="line"><span class="meta">$</span><span class="bash"> git remote add [shortname] [url]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 取回远程仓库的变化，并与本地分支合并</span></div><div class="line"><span class="meta">$</span><span class="bash"> git pull [remote] [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 上传本地指定分支到远程仓库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 强行推送当前分支到远程仓库，即使有冲突</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --force</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 推送所有分支到远程仓库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --all</span></div></pre></td></tr></table></figure>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 恢复暂存区的指定文件到工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 恢复某个commit的指定文件到暂存区和工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [commit] [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 恢复暂存区的所有文件到工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout .</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置暂存区与工作区，与上一次commit保持一致</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset --hard</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset --hard [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset --keep [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个commit，用来撤销指定commit</span></div><div class="line"><span class="meta">#</span><span class="bash"> 后者的所有变化都将被前者抵消，并且应用到当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git revert [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 暂时将未提交的变化移除，稍后再移入</span></div><div class="line"><span class="meta">$</span><span class="bash"> git stash</span></div><div class="line"><span class="meta">$</span><span class="bash"> git stash pop</span></div></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 生成一个可供发布的压缩包</span></div><div class="line"><span class="meta">$</span><span class="bash"> git archive</span></div></pre></td></tr></table></figure>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/10/git-commend/" data-id="cj2jywq9k0005i8ekdosjhchz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-svn-commend" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexo-blog/2017/05/05/svn-commend/" class="article-date">
+  <time datetime="2017-05-05T06:23:58.000Z" itemprop="datePublished">2017-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <li class="waves-block waves-effect">
-              <a href="/hexo-blog/tags"  >
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexo-blog/2017/05/05/svn-commend/">使用svn客户端功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="使用svn客户端功能"><a href="#使用svn客户端功能" class="headerlink" title="使用svn客户端功能"></a>使用svn客户端功能</h2><p><strong>1.从本地导入代码到服务器(第一次初始化导入)</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ svn import /Users/apple/Documents/eclipse_workspace/weibo svn://localhost/mycode/weibo --username=mj --password=123 -m &quot;初始化导入&quot;</div></pre></td></tr></table></figure>
+<p>我解释下指令的意思：将<code>/Users/apple/Documents/eclipse_workspace/weibo</code>中的所有内容，上传到服务器<code>mycode</code>仓库的<code>weibo</code>目录下，后面双引号中的”初始化导入”是注释</p>
+<p><strong>2.从服务器端下载代码到客户端本地</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn checkout svn://localhost/mycode --username=mj --password=123 /Users/apple/Documents/code</div></pre></td></tr></table></figure>
+<p>我解释下指令的意思：将服务器中<code>mycode</code>仓库的内容下载到<code>/Users/apple/Documents/code</code>目录中</p>
+<p><strong>3.提交更改过的代码到服务器</strong></p>
+<p>在步骤2中已经将服务器端的代码都下载到<code>/Users/apple/Documents/code</code>目录中，现在修改下里面的一些代码，然后提交这些修改到服务器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//&lt;1&gt; 打开终端，先定位到/Users/apple/Documents/code目录</div><div class="line">$ cd/Users/apple/Documents/code</div><div class="line"></div><div class="line">//&lt;2&gt; 输入提交指令：</div><div class="line">$ svn commit -m &quot;修改了main.m文件&quot;</div></pre></td></tr></table></figure>
+<p>这个指令会将<code>/Users/apple/Documents/code</code>下的所有修改都同步到服务器端，假如这次我只修改了<code>main.m</code>文件</p>
+<p><strong>4.更新服务器端的代码到客户端</strong></p>
+<p>这个应该是最简单的指令了，在终端中定位到客户端代码目录后，比如上面的<code>/Users/apple/Documents/code</code>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  svn update</div></pre></td></tr></table></figure>
+<p><strong>5.至于svn的其他用法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ svn help</div></pre></td></tr></table></figure>
+<p><strong><img src="/hexo-blog//2017/05/05/svn-commend/svn-help.png" alt="img"></strong></p>
+<p>这里列出一大堆<code>svn</code>指令，后面括号中的内容的一般代表着指令的简称，比如我们可以用<code>svn ci</code>代替<code>svn commit</code>，用<code>svn co</code>代替<code>svn checkout</code>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/05/svn-commend/" data-id="cj2jywqa9000gi8ekxowsl6ve" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-create-sshkey" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexo-blog/2017/05/05/create-sshkey/" class="article-date">
+  <time datetime="2017-05-05T06:21:40.000Z" itemprop="datePublished">2017-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <li class="waves-block waves-effect">
-              <a href="/hexo-blog/categories"  >
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexo-blog/2017/05/05/create-sshkey/">SSH key (win)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="window系统"><a href="#window系统" class="headerlink" title="window系统"></a>window系统</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//运行git Bash客户端</div><div class="line">$ cd ~/.ssh</div><div class="line"></div><div class="line">//查看目录文件</div><div class="line">$ ls</div><div class="line"></div><div class="line">//创建一个SSH key</div><div class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div><div class="line"></div><div class="line">//拷贝 id_rsa.pub 文件的内容，你可以用编辑器打开文件复制，也可以用git命令复制该文件的内容</div><div class="line">$ clip &lt; ~/.ssh/id_rsa.pub</div><div class="line"></div><div class="line">//测试一下该SSH key</div><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/05/create-sshkey/" data-id="cj2jywq9e0001i8ektwsuj65a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vscode-keymap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/hexo-blog/2017/05/05/vscode-keymap/" class="article-date">
+  <time datetime="2017-05-05T01:59:54.000Z" itemprop="datePublished">2017-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
         
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/Peony7" target="_blank" >
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/hexo-blog/2017/05/05/vscode-keymap/">Visual Studio Code 常用快捷键(WIN)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="主命令框"><a href="#主命令框" class="headerlink" title="主命令框"></a>主命令框</h2><p><code>F1</code>或 <code>Ctrl+Shift+P</code>: 打开命令面板。在打开的输入框内，可以输入任何命令，例如：</p>
+<ul>
+<li>按一下 <code>Backspace</code>会进入到<code>Ctrl+P</code> 模式</li>
+</ul>
+<ul>
+<li>在<code>Ctrl+P</code>下输入 <code>&gt;</code>可以进入<code>Ctrl+Shift+P</code>模式</li>
+</ul>
+<p>在 <code>Ctrl+P</code> 窗口下还可以:</p>
+<ul>
+<li>直接输入文件名，跳转到文件</li>
+<li><code>?</code>列出当前可执行的动作</li>
+<li><code>!</code> 显示 Errors或 Warnings，也可以 <code>Ctrl+Shift+M</code></li>
+<li><code>:</code>跳转到行数，也可以 <code>Ctrl+G</code>直接进入</li>
+<li><code>@</code>跳转到 <code>symbol</code>（搜索变量或者函数），也可以 <code>Ctrl+Shift+O</code>直接进入</li>
+<li><code>@</code>根据分类跳转 <code>symbol</code>，查找属性或函数，也可以 <code>Ctrl+Shift+O</code> 后输入<code>:</code>进入</li>
+<li><code>#</code>根据名字查找 <code>symbol</code>，也可以 <code>Ctrl+T</code></li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><h3 id="Basic-Editing"><a href="#Basic-Editing" class="headerlink" title="Basic Editing"></a>Basic Editing</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+X</td>
+<td>Cut line (empty selection) 剪切一行（没有选中代码）</td>
+<td><code>editor.action.clipboardCutAction</code></td>
+</tr>
+<tr>
+<td>Ctrl+C</td>
+<td>Copy line (empty selection) 复制一行（没有选中代码）</td>
+<td><code>editor.action.clipboardCopyAction</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+K</td>
+<td>Delete Line 删除一行</td>
+<td><code>editor.action.deleteLines</code></td>
+</tr>
+<tr>
+<td>Ctrl+Enter</td>
+<td>Insert Line Below 在当前行后面插入一行</td>
+<td><code>editor.action.insertLineAfter</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Enter</td>
+<td>Insert Line Above 在当前行前面插入一行</td>
+<td><code>editor.action.insertLineBefore</code></td>
+</tr>
+<tr>
+<td>Alt+Down</td>
+<td>Move Line Down 往下移动当前行或选中行</td>
+<td><code>editor.action.moveLinesDownAction</code></td>
+</tr>
+<tr>
+<td>Alt+Up</td>
+<td>Move Line Up 往前移动当前行或选中行</td>
+<td><code>editor.action.moveLinesUpAction</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+Down</td>
+<td>Copy Line Down 复制当前行或选中行到后面</td>
+<td><code>editor.action.copyLinesDownAction</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+Up</td>
+<td>Copy Line Up 复制当前行或选中行到前面</td>
+<td><code>editor.action.copyLinesUpAction</code></td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>Add Selection To Next Find Match</td>
+<td><code>editor.action.addSelectionToNextFindMatch</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+D</td>
+<td>Move Last Selection To Next Find Match</td>
+<td><code>editor.action.moveSelectionToNextFindMatch</code></td>
+</tr>
+<tr>
+<td>Ctrl+U</td>
+<td>Undo last cursor operation</td>
+<td><code>cursorUndo</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+I</td>
+<td>Insert cursor at end of each line selected</td>
+<td><code>editor.action.insertCursorAtEndOfEachLineSelected</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+L</td>
+<td>Select all occurrences of current selection</td>
+<td><code>editor.action.selectHighlights</code></td>
+</tr>
+<tr>
+<td>Ctrl+F2</td>
+<td>Select all occurrences of current word</td>
+<td><code>editor.action.changeAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+I</td>
+<td>Select current line</td>
+<td><code>expandLineSelection</code></td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Down</td>
+<td>Insert Cursor Below</td>
+<td><code>editor.action.insertCursorBelow</code></td>
+</tr>
+<tr>
+<td>Ctrl+Alt+Up</td>
+<td>Insert Cursor Above</td>
+<td><code>editor.action.insertCursorAbove</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+\</td>
+<td>Jump to matching bracket</td>
+<td><code>editor.action.jumpToBracket</code></td>
+</tr>
+<tr>
+<td>Ctrl+]</td>
+<td>Indent Line</td>
+<td><code>editor.action.indentLines</code></td>
+</tr>
+<tr>
+<td>Ctrl+[</td>
+<td>Outdent Line</td>
+<td><code>editor.action.outdentLines</code></td>
+</tr>
+<tr>
+<td>Home</td>
+<td>Go to Beginning of Line</td>
+<td><code>cursorHome</code></td>
+</tr>
+<tr>
+<td>End</td>
+<td>Go to End of Line</td>
+<td><code>cursorEnd</code></td>
+</tr>
+<tr>
+<td>Ctrl+End</td>
+<td>Go to End of File</td>
+<td><code>cursorBottom</code></td>
+</tr>
+<tr>
+<td>Ctrl+Home</td>
+<td>Go to Beginning of File</td>
+<td><code>cursorTop</code></td>
+</tr>
+<tr>
+<td>Ctrl+Down</td>
+<td>Scroll Line Down</td>
+<td><code>scrollLineDown</code></td>
+</tr>
+<tr>
+<td>Ctrl+Up</td>
+<td>Scroll Line Up</td>
+<td><code>scrollLineUp</code></td>
+</tr>
+<tr>
+<td>Alt+PageDown</td>
+<td>Scroll Page Down</td>
+<td><code>scrollPageDown</code></td>
+</tr>
+<tr>
+<td>Alt+PageUp</td>
+<td>Scroll Page Up</td>
+<td><code>scrollPageUp</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+[</td>
+<td>Fold (collapse) region</td>
+<td><code>editor.fold</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+]</td>
+<td>Unfold (uncollapse) region</td>
+<td><code>editor.unfold</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+[</td>
+<td>Fold (collapse) all subregions</td>
+<td><code>editor.foldRecursively</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+]</td>
+<td>Unfold (uncollapse) all subregions</td>
+<td><code>editor.unfoldRecursively</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+0</td>
+<td>Fold (collapse) all regions</td>
+<td><code>editor.foldAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+J</td>
+<td>Unfold (uncollapse) all regions</td>
+<td><code>editor.unfoldAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+C</td>
+<td>Add Line Comment</td>
+<td><code>editor.action.addCommentLine</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+U</td>
+<td>Remove Line Comment</td>
+<td><code>editor.action.removeCommentLine</code></td>
+</tr>
+<tr>
+<td>Ctrl+/</td>
+<td>Toggle Line Comment</td>
+<td><code>editor.action.commentLine</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+A</td>
+<td>Toggle Block Comment</td>
+<td><code>editor.action.blockComment</code></td>
+</tr>
+<tr>
+<td>Ctrl+F</td>
+<td>Find</td>
+<td><code>actions.find</code></td>
+</tr>
+<tr>
+<td>Ctrl+H</td>
+<td>Replace</td>
+<td><code>editor.action.startFindReplaceAction</code></td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Find Next</td>
+<td><code>editor.action.nextMatchFindAction</code></td>
+</tr>
+<tr>
+<td>Shift+F3</td>
+<td>Find Previous</td>
+<td><code>editor.action.previousMatchFindAction</code></td>
+</tr>
+<tr>
+<td>Alt+Enter</td>
+<td>Select All Occurrences of Find Match</td>
+<td><code>editor.action.selectAllMatches</code></td>
+</tr>
+<tr>
+<td>Alt+C</td>
+<td>Toggle Find Case Sensitive</td>
+<td><code>toggleFindCaseSensitive</code></td>
+</tr>
+<tr>
+<td>Alt+R</td>
+<td>Toggle Find Regex</td>
+<td><code>toggleFindRegex</code></td>
+</tr>
+<tr>
+<td>Alt+W</td>
+<td>Toggle Find Whole Word</td>
+<td><code>toggleFindWholeWord</code></td>
+</tr>
+<tr>
+<td>Ctrl+M</td>
+<td>Toggle Use of Tab Key for Setting Focus</td>
+<td><code>editor.action.toggleTabFocusMode</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Toggle Render Whitespace</td>
+<td><code>toggleRenderWhitespace</code></td>
+</tr>
+<tr>
+<td>Alt+Z</td>
+<td>Toggle Word Wrap</td>
+<td><code>editor.action.toggleWordWrap</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Rich-Languages-Editing"><a href="#Rich-Languages-Editing" class="headerlink" title="Rich Languages Editing"></a>Rich Languages Editing</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Space</td>
+<td>Trigger Suggest</td>
+<td><code>editor.action.triggerSuggest</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Space</td>
+<td>Trigger Parameter Hints</td>
+<td><code>editor.action.triggerParameterHints</code></td>
+</tr>
+<tr>
+<td><strong>Shift+Alt+F</strong></td>
+<td>Format Document</td>
+<td><code>editor.action.formatDocument</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+F</td>
+<td>Format Selection</td>
+<td><code>editor.action.formatSelection</code></td>
+</tr>
+<tr>
+<td>F12</td>
+<td>Go to Definition</td>
+<td><code>editor.action.goToDeclaration</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+I</td>
+<td>Show Hover</td>
+<td><code>editor.action.showHover</code></td>
+</tr>
+<tr>
+<td>Alt+F12</td>
+<td>Peek Definition</td>
+<td><code>editor.action.previewDeclaration</code></td>
+</tr>
+<tr>
+<td>Ctrl+K F12</td>
+<td>Open Definition to the Side</td>
+<td><code>editor.action.openDeclarationToTheSide</code></td>
+</tr>
+<tr>
+<td>Ctrl+.</td>
+<td>Quick Fix</td>
+<td><code>editor.action.quickFix</code></td>
+</tr>
+<tr>
+<td>Shift+F12</td>
+<td>Show References</td>
+<td><code>editor.action.referenceSearch.trigger</code></td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Rename Symbol</td>
+<td><code>editor.action.rename</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+.</td>
+<td>Replace with Next Value</td>
+<td><code>editor.action.inPlaceReplace.down</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+,</td>
+<td>Replace with Previous Value</td>
+<td><code>editor.action.inPlaceReplace.up</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+Right</td>
+<td>Expand AST Select</td>
+<td><code>editor.action.smartSelect.grow</code></td>
+</tr>
+<tr>
+<td>Shift+Alt+Left</td>
+<td>Shrink AST Select</td>
+<td><code>editor.action.smartSelect.shrink</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+X</td>
+<td>Trim Trailing Whitespace</td>
+<td><code>editor.action.trimTrailingWhitespace</code></td>
+</tr>
+<tr>
+<td>Ctrl+K M</td>
+<td>Change Language Mode</td>
+<td><code>workbench.action.editor.changeLanguageMode</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Navigation"><a href="#Navigation" class="headerlink" title="Navigation"></a>Navigation</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+T</td>
+<td>Show All Symbols</td>
+<td><code>workbench.action.showAllSymbols</code></td>
+</tr>
+<tr>
+<td>Ctrl+G</td>
+<td>Go to Line…</td>
+<td><code>workbench.action.gotoLine</code></td>
+</tr>
+<tr>
+<td>Ctrl+P</td>
+<td>Go to File…, Quick Open</td>
+<td><code>workbench.action.quickOpen</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+O</td>
+<td>Go to Symbol…</td>
+<td><code>workbench.action.gotoSymbol</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+M</td>
+<td>Show Problems</td>
+<td><code>workbench.actions.view.problems</code></td>
+</tr>
+<tr>
+<td>F8</td>
+<td>Go to Next Error or Warning</td>
+<td><code>editor.action.marker.next</code></td>
+</tr>
+<tr>
+<td>Shift+F8</td>
+<td>Go to Previous Error or Warning</td>
+<td><code>editor.action.marker.prev</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+P</td>
+<td>Show All Commands</td>
+<td><code>workbench.action.showCommands</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Tab</td>
+<td>Navigate Editor Group History</td>
+<td><code>workbench.action.openPreviousRecentlyUsedEditorInGroup</code></td>
+</tr>
+<tr>
+<td>Alt+Left</td>
+<td>Go Back</td>
+<td><code>workbench.action.navigateBack</code></td>
+</tr>
+<tr>
+<td>Alt+Right</td>
+<td>Go Forward</td>
+<td><code>workbench.action.navigateForward</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Editor-Window-Management"><a href="#Editor-Window-Management" class="headerlink" title="Editor/Window Management"></a>Editor/Window Management</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Shift+N</td>
+<td>New Window</td>
+<td><code>workbench.action.newWindow</code></td>
+</tr>
+<tr>
+<td>Ctrl+W</td>
+<td>Close Window</td>
+<td><code>workbench.action.closeWindow</code></td>
+</tr>
+<tr>
+<td>Ctrl+F4</td>
+<td>Close Editor</td>
+<td><code>workbench.action.closeActiveEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+K F</td>
+<td>Close Folder</td>
+<td><code>workbench.action.closeFolder</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Cycle Between Editor Groups</td>
+<td><code>workbench.action.navigateEditorGroups</code></td>
+</tr>
+<tr>
+<td>Ctrl+\</td>
+<td>Split Editor</td>
+<td><code>workbench.action.splitEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+1</td>
+<td>Focus into First Editor Group</td>
+<td><code>workbench.action.focusFirstEditorGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+2</td>
+<td>Focus into Second Editor Group</td>
+<td><code>workbench.action.focusSecondEditorGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+3</td>
+<td>Focus into Third Editor Group</td>
+<td><code>workbench.action.focusThirdEditorGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+Left</td>
+<td>Focus into Editor Group on the Left</td>
+<td><code>workbench.action.focusPreviousGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+Right</td>
+<td>Focus into Editor Group on the Right</td>
+<td><code>workbench.action.focusNextGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+PageUp</td>
+<td>Move Editor Left</td>
+<td><code>workbench.action.moveEditorLeftInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+PageDown</td>
+<td>Move Editor Right</td>
+<td><code>workbench.action.moveEditorRightInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Left</td>
+<td>Move Active Editor Group Left</td>
+<td><code>workbench.action.moveActiveEditorGroupLeft</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Right</td>
+<td>Move Active Editor Group Right</td>
+<td><code>workbench.action.moveActiveEditorGroupRight</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="File-Management"><a href="#File-Management" class="headerlink" title="File Management"></a>File Management</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+N</td>
+<td>New File</td>
+<td><code>workbench.action.files.newUntitledFile</code></td>
+</tr>
+<tr>
+<td>Ctrl+O</td>
+<td>Open File…</td>
+<td><code>workbench.action.files.openFile</code></td>
+</tr>
+<tr>
+<td>Ctrl+S</td>
+<td>Save</td>
+<td><code>workbench.action.files.save</code></td>
+</tr>
+<tr>
+<td>Ctrl+K S</td>
+<td>Save All</td>
+<td><code>workbench.action.files.saveAll</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+S</td>
+<td>Save As…</td>
+<td><code>workbench.action.files.saveAs</code></td>
+</tr>
+<tr>
+<td>Ctrl+F4</td>
+<td>Close</td>
+<td><code>workbench.action.closeActiveEditor</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Others</td>
+<td><code>workbench.action.closeOtherEditors</code></td>
+</tr>
+<tr>
+<td>Ctrl+K W</td>
+<td>Close Group</td>
+<td><code>workbench.action.closeEditorsInGroup</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Other Groups</td>
+<td><code>workbench.action.closeEditorsInOtherGroups</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Group to Left</td>
+<td><code>workbench.action.closeEditorsToTheLeft</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Close Group to Right</td>
+<td><code>workbench.action.closeEditorsToTheRight</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+W</td>
+<td>Close All</td>
+<td><code>workbench.action.closeAllEditors</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+T</td>
+<td>Reopen Closed Editor</td>
+<td><code>workbench.action.reopenClosedEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Enter</td>
+<td>Keep Open</td>
+<td><code>workbench.action.keepEditor</code></td>
+</tr>
+<tr>
+<td>Ctrl+Tab</td>
+<td>Open Next</td>
+<td><code>workbench.action.openNextRecentlyUsedEditorInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+Tab</td>
+<td>Open Previous</td>
+<td><code>workbench.action.openPreviousRecentlyUsedEditorInGroup</code></td>
+</tr>
+<tr>
+<td>Ctrl+K P</td>
+<td>Copy Path of Active File</td>
+<td><code>workbench.action.files.copyPathOfActiveFile</code></td>
+</tr>
+<tr>
+<td>Ctrl+K R</td>
+<td>Reveal Active File in Windows</td>
+<td><code>workbench.action.files.revealActiveFileInWindows</code></td>
+</tr>
+<tr>
+<td>Ctrl+K O</td>
+<td>Show Opened File in New Window</td>
+<td><code>workbench.action.files.showOpenedFileInNewWindow</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Compare Opened File With</td>
+<td><code>workbench.files.action.compareFileWith</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Display"><a href="#Display" class="headerlink" title="Display"></a>Display</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F11</td>
+<td>Toggle Full Screen</td>
+<td><code>workbench.action.toggleFullScreen</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Z</td>
+<td>Toggle Zen Mode</td>
+<td><code>workbench.action.toggleZenMode</code></td>
+</tr>
+<tr>
+<td>Escape Escape</td>
+<td>Leave Zen Mode</td>
+<td><code>workbench.action.exitZenMode</code></td>
+</tr>
+<tr>
+<td>Ctrl+=</td>
+<td>Zoom in</td>
+<td><code>workbench.action.zoomIn</code></td>
+</tr>
+<tr>
+<td>Ctrl+-</td>
+<td>Zoom out</td>
+<td><code>workbench.action.zoomOut</code></td>
+</tr>
+<tr>
+<td>Ctrl+Numpad0</td>
+<td>Reset Zoom</td>
+<td><code>workbench.action.zoomReset</code></td>
+</tr>
+<tr>
+<td>Ctrl+B</td>
+<td>Toggle Sidebar Visibility</td>
+<td><code>workbench.action.toggleSidebarVisibility</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+E</td>
+<td>Show Explorer / Toggle Focus</td>
+<td><code>workbench.view.explorer</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+D</td>
+<td>Show Debug</td>
+<td><code>workbench.view.debug</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+G</td>
+<td>Show Source Control</td>
+<td><code>workbench.view.scm</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+X</td>
+<td>Show Extensions</td>
+<td><code>workbench.view.extensions</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+U</td>
+<td>Show Output</td>
+<td><code>workbench.action.output.toggleOutput</code></td>
+</tr>
+<tr>
+<td>Ctrl+Q</td>
+<td>Quick Open View</td>
+<td><code>workbench.action.quickOpenView</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+F</td>
+<td>Show Search</td>
+<td><code>workbench.view.search</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+H</td>
+<td>Replace in Files</td>
+<td><code>workbench.action.replaceInFiles</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+J</td>
+<td>Toggle Search Details</td>
+<td><code>workbench.action.search.toggleQueryDetails</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+C</td>
+<td>Open New Command Prompt</td>
+<td><code>workbench.action.terminal.openNativeConsole</code></td>
+</tr>
+<tr>
+<td>Ctrl+Shift+V</td>
+<td>Toggle Markdown Preview</td>
+<td><code>markdown.showPreview</code></td>
+</tr>
+<tr>
+<td>Ctrl+K V</td>
+<td>Open Preview to the Side</td>
+<td><code>markdown.showPreviewToSide</code></td>
+</tr>
+<tr>
+<td><strong>Ctrl+`</strong></td>
+<td>Toggle Integrated Terminal</td>
+<td>workbench.action.terminal.toggleTerminal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Preferences"><a href="#Preferences" class="headerlink" title="Preferences"></a>Preferences</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+,</td>
+<td>Open User Settings</td>
+<td><code>workbench.action.openGlobalSettings</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Open Workspace Settings</td>
+<td><code>workbench.action.openWorkspaceSettings</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+S</td>
+<td>Open Keyboard Shortcuts</td>
+<td><code>workbench.action.openGlobalKeybindings</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Open User Snippets</td>
+<td><code>workbench.action.openSnippets</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+T</td>
+<td>Select Color Theme</td>
+<td><code>workbench.action.selectTheme</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Configure Display Language</td>
+<td><code>workbench.action.configureLocale</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F9</td>
+<td>Toggle Breakpoint</td>
+<td><code>editor.debug.action.toggleBreakpoint</code></td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Start</td>
+<td><code>workbench.action.debug.start</code></td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Continue</td>
+<td><code>workbench.action.debug.continue</code></td>
+</tr>
+<tr>
+<td>Ctrl+F5</td>
+<td>Start (without debugging)</td>
+<td><code>workbench.action.debug.run</code></td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Pause</td>
+<td><code>workbench.action.debug.pause</code></td>
+</tr>
+<tr>
+<td>F11</td>
+<td>Step Into</td>
+<td><code>workbench.action.debug.stepInto</code></td>
+</tr>
+<tr>
+<td>Shift+F11</td>
+<td>Step Out</td>
+<td><code>workbench.action.debug.stepOut</code></td>
+</tr>
+<tr>
+<td>F10</td>
+<td>Step Over</td>
+<td><code>workbench.action.debug.stepOver</code></td>
+</tr>
+<tr>
+<td>Shift+F5</td>
+<td>Stop</td>
+<td><code>workbench.action.debug.stop</code></td>
+</tr>
+<tr>
+<td>Ctrl+K Ctrl+I</td>
+<td>Show Hover</td>
+<td><code>editor.debug.action.showDebugHover</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Tasks"><a href="#Tasks" class="headerlink" title="Tasks"></a>Tasks</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl+Shift+B</td>
+<td>Run Build Task</td>
+<td><code>workbench.action.tasks.build</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Run Test Task</td>
+<td><code>workbench.action.tasks.test</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h3><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+<th>Command id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unassigned</td>
+<td>Install Extension</td>
+<td><code>workbench.extensions.action.installExtension</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Installed Extensions</td>
+<td><code>workbench.extensions.action.showInstalledExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Outdated Extensions</td>
+<td><code>workbench.extensions.action.listOutdatedExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Recommended Extensions</td>
+<td><code>workbench.extensions.action.showRecommendedExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Show Popular Extensions</td>
+<td><code>workbench.extensions.action.showPopularExtensions</code></td>
+</tr>
+<tr>
+<td>unassigned</td>
+<td>Update All Extensions</td>
+<td><code>workbench.extensions.action.updateAllExtensions</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="修改默认快捷键"><a href="#修改默认快捷键" class="headerlink" title="修改默认快捷键"></a>修改默认快捷键</h2><p>打开默认键盘快捷方式设置：<br><code>File -&gt; Preferences -&gt; Keyboard Shortcuts</code></p>
+<p>修改<code>keybindings.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  // ctrl+space 被切换输入法快捷键占用</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"key"</span>: <span class="string">"ctrl+alt+space"</span>,</div><div class="line">  <span class="attr">"command"</span>: <span class="string">"editor.action.triggerSuggest"</span>,</div><div class="line">  <span class="attr">"when"</span>: <span class="string">"editorTextFocus"</span></div><div class="line">  &#125;,</div><div class="line">  // ctrl+d 删除一行</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"key"</span>: <span class="string">"ctrl+d"</span>,</div><div class="line">  <span class="attr">"command"</span>: <span class="string">"editor.action.deleteLines"</span>,</div><div class="line">  <span class="attr">"when"</span>: <span class="string">"editorTextFocus"</span></div><div class="line">  &#125;,</div><div class="line">  // 与删除一行的快捷键互换</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"key"</span>: <span class="string">"ctrl+shift+k"</span>,</div><div class="line">  <span class="attr">"command"</span>: <span class="string">"editor.action.addSelectionToNextFindMatch"</span>,</div><div class="line">  <span class="attr">"when"</span>: <span class="string">"editorFocus"</span></div><div class="line">  &#125;,</div><div class="line">  // ctrl+shift+/多行注释</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"key"</span>:<span class="string">"ctrl+shift+/"</span>,</div><div class="line">  <span class="attr">"command"</span>: <span class="string">"editor.action.blockComment"</span>,</div><div class="line">  <span class="attr">"when"</span>: <span class="string">"editorTextFocus"</span></div><div class="line">  &#125;,</div><div class="line">  // 定制与 sublime 相同的大小写转换快捷键，需安装 TextTransform 插件</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"key"</span>: <span class="string">"ctrl+k ctrl+u"</span>,</div><div class="line">  <span class="attr">"command"</span>: <span class="string">"uppercase"</span>,</div><div class="line">  <span class="attr">"when"</span>: <span class="string">"editorTextFocus"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">  <span class="attr">"key"</span>: <span class="string">"ctrl+k ctrl+l"</span>,</div><div class="line">  <span class="attr">"command"</span>: <span class="string">"lowercase"</span>,</div><div class="line">  <span class="attr">"when"</span>: <span class="string">"editorTextFocus"</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<h2 id="前端开发必备插件"><a href="#前端开发必备插件" class="headerlink" title="前端开发必备插件"></a>前端开发必备插件</h2><ul>
+<li>PostCSS Sorting</li>
+<li>stylelint</li>
+<li>stylefmt</li>
+<li>ESLint</li>
+<li>javascript standard format</li>
+<li>beautify</li>
+<li>Babel ES6/ES7</li>
+<li>Debugger for Chrome</li>
+<li>Add jsdoc comments</li>
+<li>javascript(ES6) code snippets</li>
+<li>vue</li>
+<li>weex</li>
+<li>Reactjs code snippets</li>
+<li>React Native Tools</li>
+<li>Npm Intellisense</li>
+<li>Instant Markdown</li>
+<li>Markdown Shortcuts</li>
+<li>TextTransform</li>
+</ul>
+<h2 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h2><p><a href="https://code.visualstudio.com/docs/customization/keybindings" target="_blank" rel="external">官方快捷键</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/05/vscode-keymap/" data-id="cj2jywqah000ki8ekd0dbdko1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/keymap/">keymap</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/hexo-blog/tags/keymap/">keymap</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/hexo-blog/tags/keymap/" style="font-size: 10px;">keymap</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/hexo-blog/archives/2017/05/">May 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/hexo-blog/2017/05/11/linux-vi/">linux vi 命令详解</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-blog/2017/05/10/git-commend/">常用 Git 命令清单</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-blog/2017/05/05/svn-commend/">使用svn客户端功能</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-blog/2017/05/05/create-sshkey/">SSH key (win)</a>
+          </li>
+        
+          <li>
+            <a href="/hexo-blog/2017/05/05/vscode-keymap/">Visual Studio Code 常用快捷键(WIN)</a>
+          </li>
         
       </ul>
     </div>
   </div>
+
+  
 </aside>
-
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">Peony7的博客乐园</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header index-header">
-
-    <div class="container fade-scale">
-        <h1 class="title">Peony7的博客乐园</h1>
-        <h5 class="subtitle">
-            
-                
-            
-        </h5>
-    </div>
-
-    
-
-
-</header>
-
-<div class="container body-wrap">
-
-    <ul class="post-list">
-    
-        <li class="post-list-item fade">
-            <article id="post-linux-vi"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-05-11 10:33:03" datetime="2017-05-11T02:33:03.000Z"  itemprop="datePublished">2017-05-11</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
+      </div>
+      <footer id="footer">
   
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/hexo-blog/2017/05/11/linux-vi/">linux vi 命令详解</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对Unix及Linux系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍vi的地方进一步了解它。vi也是Linux中最基本的文本编 辑器，学会它后，您将在Linux的世界里畅行无阻。
-vi的基本概念基本上vi可以分为三种状态，分别是...
-    
-
-        <a href="/hexo-blog/2017/05/11/linux-vi/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Peony7<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-git-commend"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-05-10 17:27:06" datetime="2017-05-10T09:27:06.000Z"  itemprop="datePublished">2017-05-10</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/hexo-blog/2017/05/10/git-commend/">常用 Git 命令清单</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        
-                
-                    
-                    
-                
-                img
-            
-几个专用名词的译名如下：
-
-Workspace：工作区
-Index / Stage：暂存区
-Repository：仓库区（或本地仓库）
-Remote：远程仓库
-
-新建代码库1...
-    
-
-        <a href="/hexo-blog/2017/05/10/git-commend/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-svn-commend"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-05-05 14:23:58" datetime="2017-05-05T06:23:58.000Z"  itemprop="datePublished">2017-05-05</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/hexo-blog/2017/05/05/svn-commend/">使用svn客户端功能</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        使用svn客户端功能1.从本地导入代码到服务器(第一次初始化导入)
-1$ svn import /Users/apple/Documents/eclipse_workspace/weibo svn://localhost/mycode/weibo --username=mj --password=123 -m &quot;初始化导入&quot;
-我解释下指令的意思：将/Users/apple...
-    
-
-        <a href="/hexo-blog/2017/05/05/svn-commend/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-create-sshkey"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-05-05 14:21:40" datetime="2017-05-05T06:21:40.000Z"  itemprop="datePublished">2017-05-05</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/hexo-blog/2017/05/05/create-sshkey/">SSH key (win)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        window系统1234567891011121314//运行git Bash客户端$ cd ~/.ssh//查看目录文件$ ls//创建一个SSH key$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;//拷贝 id_rsa.pub 文件的内容，你可以用编辑器打开文件复制，也可以用git命令复制该文件的内容$ clip &l...
-    
-
-        <a href="/hexo-blog/2017/05/05/create-sshkey/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-vscode-keymap"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017-05-05 09:59:54" datetime="2017-05-05T01:59:54.000Z"  itemprop="datePublished">2017-05-05</time>
-
-        
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/hexo-blog/2017/05/05/vscode-keymap/">Visual Studio Code 常用快捷键(WIN)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        主命令框F1或 Ctrl+Shift+P: 打开命令面板。在打开的输入框内，可以输入任何命令，例如：
-
-按一下 Backspace会进入到Ctrl+P 模式
-
-
-在Ctrl+P下输入 &gt;可以进入Ctrl+Shift+P模式
-
-在 Ctrl+P 窗口下还可以:
-
-直接输入文件名，跳转到文件
-?列出当前可执行的动作
-! 显示 Errors或 Warnings，也可以 Ctrl+Shift+...
-    
-
-        <a href="/hexo-blog/2017/05/05/vscode-keymap/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/keymap/">keymap</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-    </ul>
-
-    
-
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style='display:none'>
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style='display:none'>
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            
-                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
-    </div>
-    <div class="bottom">
-        <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>Peony7 &copy; 2017</span>
-        </p>
-    </div>
+  </div>
 </footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/hexo-blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/hexo-blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
-
-
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/&title=Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/&title=Peony7的博客乐园&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Peony7的博客乐园&url=http://yoursite.com/&via=http://yoursite.com" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABW0lEQVR42u3aQQ7DIAxE0dz/0qnUVaUUMjNOF7W/VxVKw8sCMIbjkON8x6r9M/T/PhCwYDVindu4PqO0XNv1vmDBmszaD2y9S/33jQEWLFjC6/QFGBYsWL9muV3CggVrz1KSZmWy0JPvx3J5WLBasCrLbSVRfri+BQvW37JOM9xlOwtYsKax9CLRfhRXtrhGBgELVlPWSpptSvVk+qYvWLBgRUWiynWEL++BBQuW0KUy1BXWsgUWrGEsN2nOQNJRij67wILVlKUUZCvLuVJsks5gYcFqyqqUbt0jE2PqgQVrMMu9fJAdcCqTCCxY01jZQUi2uS2d/MCC1ZpVuXCQlWul1BwWrGGsLOXdd6kv5PVEHBasTqxsUtDTZXcqgQVrMisr/WTbVOkZWLBgyYPcPcMxMgVYsGA9tL1Uik3Lz4AFayQrS5rd1NmYE2DBGsbKrgtkxFI1CxasnqwXXY7FbVPN83MAAAAASUVORK5CYII=" alt="微信分享二维码">
-</div>
+  <link rel="stylesheet" href="/hexo-blog/fancybox/jquery.fancybox.css">
+  <script src="/hexo-blog/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/hexo-blog/js/script.js"></script>
 
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-<script>
-var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: false };
-
-
-
-</script>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</template>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
-
-
-
-
-
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = 'Peony7的博客乐园';
-            clearTimeout(titleTime);
-        } else {
-            document.title = 'Peony7的博客乐园';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
-
-
-
+  </div>
 </body>
 </html>
