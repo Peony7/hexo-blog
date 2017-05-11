@@ -9,27 +9,25 @@
 ## bash 命令
 
 ```bash
-# 文章相关
-//创建文章
+# 创建文章
 $ hexo new "new-artical"
 
-//创建草稿(私密文章)
+# 创建草稿(私密文章)
 $ hexo new draft "new draft"
 
-//预览草稿
+# 预览草稿
 $ hexo server --drafts
 
-# 项目相关
-//启动本地服务
+# 启动本地服务
 $ npm run start
 
-//清理文件
+# 清理文件
 $ npm run clean
 
-//生成文件
+# 生成文件
 $ npm run generate
 
-//发布网站
+# 发布网站
 $ npm run deploy
 ```
 
