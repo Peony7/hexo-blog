@@ -327,7 +327,13 @@
     <published>2017-05-10T09:27:06.000Z</published>
     <updated>2017-05-11T05:09:00.725Z</updated>
     
-    <content type="html"><![CDATA[<p><strong><img src="/hexo-blog//2017/05/10/git-commend/bg2015120901.png" alt="img"></strong></p>
+    <content type="html"><![CDATA[<p><strong><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/hexo-blog//2017/05/10/git-commend/bg2015120901.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure></strong></p>
 <p>几个专用名词的译名如下：</p>
 <ul>
 <li>Workspace：工作区</li>
@@ -351,10 +357,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;&lt;img src=&quot;/hexo-blog//2017/05/10/git-commend/bg2015120901.png&quot; alt=&quot;img&quot;&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;几个专用名词的译名如下：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Workspace：工作区
+      &lt;p&gt;&lt;strong&gt;&lt;figure class=&quot;image-bubble&quot;&gt;
+                &lt;div class=&quot;img-lightbox&quot;&gt;
+                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+        
     
     </summary>
     
@@ -383,7 +389,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  svn update</div></pre></td></tr></table></figure>
 <p><strong>5.至于svn的其他用法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ svn help</div></pre></td></tr></table></figure>
-<p><strong><img src="/hexo-blog//2017/05/05/svn-commend/svn-help.png" alt="img"></strong></p>
+<p><strong><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/hexo-blog//2017/05/05/svn-commend/svn-help.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure></strong></p>
 <p>这里列出一大堆<code>svn</code>指令，后面括号中的内容的一般代表着指令的简称，比如我们可以用<code>svn ci</code>代替<code>svn commit</code>，用<code>svn co</code>代替<code>svn checkout</code>。</p>
 ]]></content>
     
