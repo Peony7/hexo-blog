@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>linux vi 命令详解 | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对Unix及Linux系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍vi的地方进一步了解它。vi也是Linux中最基本的文本编 辑器，学会它后，您将在Linux的世界里畅行无阻。 vi的基本概念基本上vi可以分为三种状态，分别是:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux vi 命令详解">
+<meta property="og:url" content="http://yoursite.com/2017/05/11/linux-vi/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对Unix及Linux系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍vi的地方进一步了解它。vi也是Linux中最基本的文本编 辑器，学会它后，您将在Linux的世界里畅行无阻。 vi的基本概念基本上vi可以分为三种状态，分别是:">
+<meta property="og:updated_time" content="2017-05-11T03:33:32.178Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux vi 命令详解">
+<meta name="twitter:description" content="vi编辑器是所有Unix及Linux系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对Unix及Linux系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍vi的地方进一步了解它。vi也是Linux中最基本的文本编 辑器，学会它后，您将在Linux的世界里畅行无阻。 vi的基本概念基本上vi可以分为三种状态，分别是:">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">linux vi 命令详解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">linux vi 命令详解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-11T02:33:03.000Z" itemprop="datePublished" class="page-time">
+  2017-05-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vi的基本概念"><span class="post-toc-number">1.</span> <span class="post-toc-text">vi的基本概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vi的基本操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">vi的基本操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#命令行模式（command-mode）功能键"><span class="post-toc-number">3.</span> <span class="post-toc-text">命令行模式（command mode）功能键</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#底行模式（last-line-mode）下命令简介"><span class="post-toc-number">4.</span> <span class="post-toc-text">底行模式（last line mode）下命令简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考地址"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考地址</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-linux-vi"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">linux vi 命令详解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-11 10:33:03" datetime="2017-05-11T02:33:03.000Z"  itemprop="datePublished">2017-05-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><code>vi</code>编辑器是所有<code>Unix</code>及<code>Linux</code>系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对<code>Unix</code>及<code>Linux</code>系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍<code>vi</code>的地方进一步了解它。<code>vi</code>也是<code>Linux</code>中最基本的文本编 辑器，学会它后，您将在<code>Linux</code>的世界里畅行无阻。</p>
+<h2 id="vi的基本概念"><a href="#vi的基本概念" class="headerlink" title="vi的基本概念"></a>vi的基本概念</h2><p>基本上<code>vi</code>可以分为三种状态，分别是:</p>
+<ul>
+<li>命令模式（command mode）</li>
+<li>插入模式（Insert mode）</li>
+<li>底行模式（last line mode）</li>
+</ul>
+<p>各模式的功能区别如下：</p>
+<p><strong>命令行模式command mode）</strong></p>
+<p>控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入<code>Insert mode</code>下，或者到<code>last line mode</code>。</p>
+<p><strong>插入模式（Insert mode）</strong></p>
+<p>只有在<code>Insert mode</code>下，才可以做文字输入，按<code>ESC</code>键可回到命令行模式。</p>
+<p><strong>底行模式（last line mode）</strong></p>
+<p>将文件保存或退出<code>vi</code>，也可以设置编辑环境，如寻找字符串、列出行号……等。</p>
+<p>不过一般我们在使用时把vi简化成两个模式，就是将底行模式（last line mode）也算入命令行模式command mode）。</p>
+<h2 id="vi的基本操作"><a href="#vi的基本操作" class="headerlink" title="vi的基本操作"></a>vi的基本操作</h2><p><strong>进入vi</strong></p>
+<p>  在系统提示符号输入vi及文件名称后，就进入<code>vi</code>全屏幕编辑画面：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> vi myfile</span></div></pre></td></tr></table></figure>
+<p>不过有一点要特别注意，就是您进入vi之后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。初次使用<code>vi</code>的人都会想先用上下左右键移动光标，结果电脑一直哔哔叫，把自己气个半死，所以进入vi后，先不要乱动，转换到 「插入模式（Insert mode）」再说吧！</p>
+<p><strong>切换至插入模式（Insert mode）编辑文件</strong></p>
+<p>在「命令行模式（command mode）」下按一下字母 <code>i</code>  就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。</p>
+<p><strong>切换至命令行模式（command mode</strong></p>
+<p>您目前处于「插入模式（Insert mode）」，您就只能一直输入文字。回到「命令行模式（command mode）」，按一下 <code>ESC</code>  键就行啦。</p>
+<p><strong>退出vi及保存文件</strong></p>
+<p>在「命令行模式（command mode）」下，按一下 <code>:</code> 冒号键进入「底行模式（Last line mode）」，输入下面的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将文章以指定的文件名filename保存</span></div><div class="line">: w filename </div><div class="line"><span class="meta">#</span><span class="bash"> 存盘并退出vi</span></div><div class="line">: wq </div><div class="line"><span class="meta">#</span><span class="bash"> 不存盘强制退出vi</span></div><div class="line">: q!</div></pre></td></tr></table></figure>
+<h2 id="命令行模式（command-mode）功能键"><a href="#命令行模式（command-mode）功能键" class="headerlink" title="命令行模式（command mode）功能键"></a>命令行模式（command mode）功能键</h2><p><strong>插入模式</strong></p>
+<p>按<code>i</code> 进入插入模式后，是从光标当前位置开始输入文件；</p>
+<p>按<code>a</code>进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字；</p>
+<p>按<code>o</code>进入插入模式后，是插入新的一行，从行首开始输入文字。</p>
+<p><strong>从插入模式切换为命令行模式</strong></p>
+<p> 按<code>ESC</code>键</p>
+<p> <strong>移动光标</strong></p>
+<p><code>vi</code>可以直接用键盘上的光标来上下左右移动，但正规的vi是用小写英文字母<code>h(左)</code>、<code>j(下)</code>、<code>k(上)</code>、<code>l(右)</code>，分别控制光标左、下、上、右移一格。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+B</code></td>
+<td>屏幕往”后”移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl+F</code></td>
+<td>屏幕往”前”移动一页</td>
+</tr>
+<tr>
+<td><code>Ctrl+U</code></td>
+<td>屏幕往”后”移动半页</td>
+</tr>
+<tr>
+<td><code>Ctrl+D</code></td>
+<td>屏幕往”前”移动半页</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>移到文章的开头</td>
+</tr>
+<tr>
+<td><code>g</code></td>
+<td>移动到文章的最后</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>移动到光标所在行的”行尾”</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>移动到光标所在行的”行首”</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>光标跳到下个字的开头</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>光标跳到下个字的字尾</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>光标回到上个字的开头</td>
+</tr>
+<tr>
+<td><code>#l</code></td>
+<td>光标移到该行的第#个位置，如：<code>5l</code>，<code>56l</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>删除文字</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>每按一次，删除光标所在位置的”后面”一个字符</td>
+</tr>
+<tr>
+<td><code>#x</code></td>
+<td>例如，<code>6x</code>表示删除光标所在位置的”后面” <code>6</code> 个字符</td>
+</tr>
+<tr>
+<td><code>X</code></td>
+<td>大写的 <code>X</code> ，每按一次，删除光标所在位置的”前面”一个字符</td>
+</tr>
+<tr>
+<td><code>#X</code></td>
+<td>例如，<code>20X</code>表示删除光标所在位置的”前面” <code>20</code> 个字符</td>
+</tr>
+<tr>
+<td><code>dd</code></td>
+<td>删除光标所在行</td>
+</tr>
+<tr>
+<td><code>#dd</code></td>
+<td>从光标所在行开始删除#行</td>
+</tr>
+</tbody>
+</table>
+<p><strong>复制</strong></p>
+<p>　　「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</p>
+<p>　　「#yw」：复制#个字到缓冲区</p>
+<p>　　「yy」：复制光标所在行到缓冲区。</p>
+<p>　　「#yy」：例如，「6yy」表示拷贝从光标所在的该行”往下数”6行文字。</p>
+<p>　　「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与”y”有关的复制命令都必须与”p”配合才能完成复制与粘贴功能。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>6）. 替换</p>
+<p>　　「r」：替换光标所在处的字符。</p>
+<p>　　「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>7）. 回复上一次操作</p>
+<p>　　「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次”u”可以执行多次回复。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>更改</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cw</code></td>
+<td>更改光标所在处的字到字尾处</td>
+</tr>
+<tr>
+<td><code>c#w</code></td>
+<td>例如，<code>c3w</code>表示更改3个字</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跳至指定的行</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl+G</code></td>
+<td>列出光标所在行的行号</td>
+</tr>
+<tr>
+<td><code>#G</code></td>
+<td>例如，<code>15G</code>，表示移动光标至文章的第<code>15</code>行行首</td>
+</tr>
+</tbody>
+</table>
+<h2 id="底行模式（last-line-mode）下命令简介"><a href="#底行模式（last-line-mode）下命令简介" class="headerlink" title="底行模式（last line mode）下命令简介"></a>底行模式（last line mode）下命令简介</h2><p>在使用「last line mode」之前，请记住先按「ESC」键确定您已经处于「command mode」下后，再按「：」冒号即可进入「last line mode」。</p>
+<p>A) 列出行号</p>
+<p>　「set nu」：输入「set nu」后，会在文件中的每一行前面列出行号。</p>
+<p>B) 跳到文件中的某一行</p>
+<p>　「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</p>
+<p>C) 查找字符</p>
+<p>　「/关键字」：先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</p>
+<p>　「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p>
+<p>D) 保存文件</p>
+<p>　「w」：在冒号输入字母「w」就可以将文件保存起来。</p>
+<p>E) 离开vi</p>
+<p>　「q」：按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</p>
+<p>　「qw」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</p>
+<p>5、vi命令列表<br>1、下表列出命令模式下的一些键的功能：</p>
+<p>h<br>左移光标一个字符</p>
+<p>l<br>右移光标一个字符</p>
+<p>k<br>光标上移一行</p>
+<p>j<br>光标下移一行</p>
+<p>^<br>光标移动至行首</p>
+<p>0<br>数字”0”，光标移至文章的开头</p>
+<p>G<br>光标移至文章的最后</p>
+<p>$<br>光标移动至行尾</p>
+<p>Ctrl+f<br>向前翻屏</p>
+<p>Ctrl+b<br>向后翻屏</p>
+<p>Ctrl+d<br>向前翻半屏</p>
+<p>Ctrl+u<br>向后翻半屏</p>
+<p>i<br>在光标位置前插入字符</p>
+<p>a<br>在光标所在位置的后一个字符开始增加</p>
+<p>o<br>插入新的一行，从行首开始输入</p>
+<p>ESC<br>从输入状态退至命令状态</p>
+<p>x<br>删除光标后面的字符</p>
+<p>#x<br>删除光标后的＃个字符</p>
+<p>X<br>(大写X)，删除光标前面的字符</p>
+<p>#X<br>删除光标前面的#个字符</p>
+<p>dd<br>删除光标所在的行</p>
+<p>#dd<br>删除从光标所在行数的#行</p>
+<p>yw<br>复制光标所在位置的一个字</p>
+<p>#yw<br>复制光标所在位置的#个字</p>
+<p>yy<br>复制光标所在位置的一行</p>
+<p>#yy<br>复制从光标所在行数的#行</p>
+<p>p<br>粘贴</p>
+<p>u<br>取消操作</p>
+<p>cw<br>更改光标所在位置的一个字</p>
+<p>#cw<br>更改光标所在位置的#个字</p>
+<p>2、下表列出行命令模式下的一些指令<br>w filename<br>储存正在编辑的文件为filename</p>
+<p>wq filename<br>储存正在编辑的文件为filename，并退出vi</p>
+<p>q!<br>放弃所有修改，退出vi</p>
+<p>set nu<br>显示行号</p>
+<p>/或?<br>查找，在/后输入要查找的内容</p>
+<p>n<br>与/或?一起使用，如果查找的内容不是想要找的关键字，按n或向后（与/联用）或向前（与?联用）继续查找，直到找到为止。</p>
+<p>对于第一次用vi，有几点注意要提醒一下：<br>1、 用vi打开文件后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。切换方法：在「命令行模式（command mode）」下按一下字母「i」就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。<br>2、编辑好后，需从插入模式切换为命令行模式才能对文件进行保存，切换方法：按「ESC」键。<br>3、保存并退出文件：在命令模式下输入:wq即可！（别忘了wq前面的:）</p>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html" target="_blank" rel="external">http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2017-05-11T03:33:32.178Z" itemprop="dateUpdated">2017-05-11 11:33:32</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/05/11/linux-vi/" target="_blank" rel="external">http://yoursite.com/2017/05/11/linux-vi/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/11/linux-vi/&title=《linux vi 命令详解》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/11/linux-vi/&title=《linux vi 命令详解》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/11/linux-vi/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux vi 命令详解》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/11/linux-vi/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/11/linux-vi/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/05/10/git-commend/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">常用 Git 命令清单</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/11/linux-vi/&title=《linux vi 命令详解》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/11/linux-vi/&title=《linux vi 命令详解》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/11/linux-vi/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《linux vi 命令详解》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/11/linux-vi/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/11/linux-vi/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABzklEQVR42u3awa6DIBQE0P7/T/uSt7W2MyDEJoeVsbY9srjhDrxe8Tj+x/nOeSTPXz1z28DFxZ3mHh/H+afP11d3zp9eTUFiwMXF3c9Nfu5zVUkqT1vUcHFxn89tXyxZGOHi4v46t12gJO0TLi7uk7lJ85O3KEc8FvZquLi4E9w2MF1xvTDfxcXFLbnH0Ehikc9FauzfcXFx93Dz0DOvLUlbNbX5iouLu5Gbv8ZU3FkWwTd3cHFxF3PHNkvaQjYWo7xR4eLibuG2j+Z/MxOC1PkuLi7uAm7bDrUvll8PbqXg4uLeyp0PQ9vXa8vZ4HoKFxd3gltkJ3HM0b5GOzW4uLirue1WRxt/tBuuX1omXFzcjdw2Nh1rZvKJiE6L4OLiLuO2xeu2klQ2Rbi4uM/h5psiednKC2Kd7+Li4i7gtsudtpwlTxabOri4uFu4M9se+aJk7DdxcXF3cueDifxgVruU+ZLi4OLiLuOOFaY8+Mg3UHFxcZ/GzePRmeMa7fxFXRouLu5ibl687vpuHoVEZ0ZwcXEfwB3biB07wnXDDOHi4i7jzixi5r+Fi4u7nztWkvIYpT3IdTmVuLi4W7hjgWl7hCJveNqpwcXFvZX7B82dLuWcEDf5AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
