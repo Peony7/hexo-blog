@@ -60,11 +60,11 @@ $ git add -p
 # 删除工作区文件，并且将这次删除放入暂存区
 $ git rm [file1] [file2] ...
 
-# 停止追踪指定文件，但该文件会保留在工作区
-$ git rm --cached [file]
-
 # 改名文件，并且将这个改名放入暂存区
 $ git mv [file-original] [file-renamed]
+
+# 停止追踪指定文件(删除的文件追踪不了)，但该文件会保留在工作区
+$ git rm --cached [file]
 ```
 
 ## 代码提交
