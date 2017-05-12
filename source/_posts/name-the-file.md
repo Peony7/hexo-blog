@@ -46,7 +46,7 @@ Linux 系统是大小写敏感的，而 Windows 系统和 Mac 系统正好相反
 
 有人习惯使用[驼峰命名法](http://www.ruanyifeng.com/blog/2007/06/camelcase.html)，单词的第一个字母大写，其他字母小写。这种方法的问题是，如果遇到全部是大写的缩略词，就会不适用。
 
-![img](name-the-file/bg2017021002.jpg)
+**![img](name-the-file/bg2017021002.jpg)**
 
 比如，一个姓李的纽约特警，无论写成`NYPoliceSWATLee`还是`NyPoliceSwatlee`，都怪怪的，还是写成`ny-police-swat-lee`比较容易接受。
 
@@ -54,7 +54,7 @@ Linux 系统是大小写敏感的，而 Windows 系统和 Mac 系统正好相反
 
 某些系统会生成一些预置的用户目录，采用首字母大写的目录名。比如，Ubuntu 在用户主目录会默认生成`Downloads`、 `Pictures`、`Documents`等目录。
 
-![img](name-the-file/bg2017021003.png)
+**![img](name-the-file/bg2017021003.png)**
 
 Mac 系统更过分，一部分系统目录也是大写的，比如`/Library/Audio/Apple Loops/`。
 
@@ -64,7 +64,7 @@ Mac 系统更过分，一部分系统目录也是大写的，比如`/Library/Aud
 
 如果你打破砂锅问到底，为什么操作系统会采用这样的大写文件名？原因也很简单，因为早期 Unix 系统上，`ls`命令先列出大写字母，再列出小写字母，大写的路径会排在前面。因此，如果目录名或文件名是大写的，就比较容易被用户首先看到。
 
-![img](name-the-file/bg2017021001.png)
+**![img](name-the-file/bg2017021001.png)**
 
 ## 四、便捷性
 
@@ -80,7 +80,7 @@ Mac 系统更过分，一部分系统目录也是大写的，比如`/Library/Aud
 > $ locate -i "*.HtmL"
 > ```
 
-![img](name-the-file/bg2017021004.png)
+**![img](name-the-file/bg2017021004.png)**
 
 另外，大写字母需要按下 Shift 键，多多少少有些麻烦。如果文件名小写，就不用碰这个键了，不仅省事，还可以提高打字速度。
 
