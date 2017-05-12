@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>为什么文件名要小写？ | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="文件名,小写">
+    <meta name="description" content="为什么文件名要小写？ “文件名建议只使用小写字母，不使用大写字母。” “为了醒目，某些说明文件的文件名，可以使用大写字母，比如README、LICENSE。”  网友看见了，就提问为什么文件名要小写？ 说实话，虽然这是 Linux 传统，我却从没认真想过原因。赶紧查资料，结果发现四个很有说服力的理由，支持这样做。 下面就是这四个理由。另外，文后我还会发布一条前端培训的消息。 一、可移植性Linux">
+<meta name="keywords" content="文件名,小写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么文件名要小写？">
+<meta property="og:url" content="http://yoursite.com/2017/05/12/name-the-file/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="为什么文件名要小写？ “文件名建议只使用小写字母，不使用大写字母。” “为了醒目，某些说明文件的文件名，可以使用大写字母，比如README、LICENSE。”  网友看见了，就提问为什么文件名要小写？ 说实话，虽然这是 Linux 传统，我却从没认真想过原因。赶紧查资料，结果发现四个很有说服力的理由，支持这样做。 下面就是这四个理由。另外，文后我还会发布一条前端培训的消息。 一、可移植性Linux">
+<meta property="og:image" content="http://yoursite.com/2017/05/12/name-the-file/bg2017021001.png">
+<meta property="og:image" content="http://yoursite.com/2017/05/12/name-the-file/bg2017021004.png">
+<meta property="og:updated_time" content="2017-05-12T01:43:50.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为什么文件名要小写？">
+<meta name="twitter:description" content="为什么文件名要小写？ “文件名建议只使用小写字母，不使用大写字母。” “为了醒目，某些说明文件的文件名，可以使用大写字母，比如README、LICENSE。”  网友看见了，就提问为什么文件名要小写？ 说实话，虽然这是 Linux 传统，我却从没认真想过原因。赶紧查资料，结果发现四个很有说服力的理由，支持这样做。 下面就是这四个理由。另外，文后我还会发布一条前端培训的消息。 一、可移植性Linux">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/12/name-the-file/bg2017021001.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="/hexo-blog/css/style.css?v=1.6.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">为什么文件名要小写？</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">为什么文件名要小写？</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-12T01:26:21.000Z" itemprop="datePublished" class="page-time">
+  2017-05-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为什么文件名要小写？"><span class="post-toc-number">1.</span> <span class="post-toc-text">为什么文件名要小写？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、可移植性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、可移植性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、易读性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">二、易读性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、易用性"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">三、易用性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、便捷性"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">四、便捷性</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-name-the-file"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">为什么文件名要小写？</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-12 09:26:21" datetime="2017-05-12T01:26:21.000Z"  itemprop="datePublished">2017-05-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="为什么文件名要小写？"><a href="#为什么文件名要小写？" class="headerlink" title="为什么文件名要小写？"></a>为什么文件名要小写？</h1><blockquote>
+<p>“文件名建议只使用小写字母，不使用大写字母。”</p>
+<p>“为了醒目，某些说明文件的文件名，可以使用大写字母，比如<code>README</code>、<code>LICENSE</code>。”</p>
+</blockquote>
+<p>网友看见了，就<a href="https://github.com/ruanyf/document-style-guide/commit/22db946f22cdce12cde4e264344e8223abfafcd5#commitcomment-20691431" target="_blank" rel="external">提问</a>为什么文件名要小写？</p>
+<p>说实话，虽然这是 Linux 传统，我却从没认真想过原因。赶紧查资料，结果发现四个很有说服力的理由，支持这样做。</p>
+<p>下面就是这四个理由。另外，文后我还会发布一条前端培训的消息。</p>
+<h2 id="一、可移植性"><a href="#一、可移植性" class="headerlink" title="一、可移植性"></a>一、可移植性</h2><p>Linux 系统是大小写敏感的，而 Windows 系统和 Mac 系统正好相反，大小写不敏感。一般来说，这不是大问题。</p>
+<p>但是，如果两个文件名只有大小写不同，其他都相同，跨平台就会出问题。</p>
+<blockquote>
+<ul>
+<li><code>foobar</code></li>
+<li><code>Foobar</code></li>
+<li><code>FOOBAR</code></li>
+<li><code>fOObAr</code></li>
+</ul>
+</blockquote>
+<p>上面四个文件名，Windows 系统会把它们都当作<code>foobar</code>。如果它们同时存在，你可能没办法打开后面三个文件。</p>
+<p>另一方面，在 Mac 系统上开发时，有时会疏忽，写错大小写。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="comment">// 正确文件名是 MyModule.js</span></div><div class="line">&gt; <span class="keyword">const</span> <span class="built_in">module</span> = <span class="built_in">require</span>(<span class="string">'./myModule'</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面的代码在 Mac 上面可以运行，因为 Mac 认为<code>MyModule.js</code>和<code>myModule.js</code>是同一个文件。但是，一旦代码到服务器运行就会报错，因为 Linux 系统找不到<code>myModule.js</code>。</p>
+<p>如果所有的文件名都采用小写，就不会出现上面的问题，可以保证项目有良好的可移植性。</p>
+<h2 id="二、易读性"><a href="#二、易读性" class="headerlink" title="二、易读性"></a>二、易读性</h2><p>小写文件名通常比大写文件名更易读，比如<code>accessibility.txt</code>就比<code>ACCESSIBILITY.TXT</code>易读。</p>
+<p>有人习惯使用<a href="http://www.ruanyifeng.com/blog/2007/06/camelcase.html" target="_blank" rel="external">驼峰命名法</a>，单词的第一个字母大写，其他字母小写。这种方法的问题是，如果遇到全部是大写的缩略词，就会不适用。</p>
+{% image name-the-file/bg2017021002.jpg 'img' '' %}
+<p>比如，一个姓李的纽约特警，无论写成<code>NYPoliceSWATLee</code>还是<code>NyPoliceSwatlee</code>，都怪怪的，还是写成<code>ny-police-swat-lee</code>比较容易接受。</p>
+<h2 id="三、易用性"><a href="#三、易用性" class="headerlink" title="三、易用性"></a>三、易用性</h2><p>某些系统会生成一些预置的用户目录，采用首字母大写的目录名。比如，Ubuntu 在用户主目录会默认生成<code>Downloads</code>、 <code>Pictures</code>、<code>Documents</code>等目录。</p>
+{% image name-the-file/bg2017021003.png 'img' '' %}
+<p>Mac 系统更过分，一部分系统目录也是大写的，比如<code>/Library/Audio/Apple Loops/</code>。</p>
+<p>另外，某些常见的配置文件或说明文件，也采用大写的文件名，比如<code>Makefile</code>、<code>INSTALL</code>、<code>CHANGELOG</code>、<code>.Xclients</code>和<code>.Xauthority</code>等等。</p>
+<p>所以，用户的文件都采用小写文件名，就很方便与上面这些目录或文件相区分。</p>
+<p>如果你打破砂锅问到底，为什么操作系统会采用这样的大写文件名？原因也很简单，因为早期 Unix 系统上，<code>ls</code>命令先列出大写字母，再列出小写字母，大写的路径会排在前面。因此，如果目录名或文件名是大写的，就比较容易被用户首先看到。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2017/05/12/name-the-file/bg2017021001.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h2 id="四、便捷性"><a href="#四、便捷性" class="headerlink" title="四、便捷性"></a>四、便捷性</h2><p>文件名全部小写，还有利于命令行操作。比如，某些命令可以不使用<code>-i</code>参数了。</p>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> <span class="comment"># 大小写敏感的搜索</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ find . -name abc</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ locate <span class="string">"*.htmL"</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> <span class="comment"># 大小写不敏感的搜索</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ find . -iname abc</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ locate -i <span class="string">"*.HtmL"</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"></span></div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2017/05/12/name-the-file/bg2017021004.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>另外，大写字母需要按下 Shift 键，多多少少有些麻烦。如果文件名小写，就不用碰这个键了，不仅省事，还可以提高打字速度。</p>
+<p>程序员长时间使用键盘，每分钟少按几次 Shift，一天下来就可以省掉很多手指动作。长年累月，也是对自己身体的一种保护。</p>
+<p>综上所述，文件名全部使用小写字母和连词线（all-lowercase-with-dashes），是一种值得推广的正确做法。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-12T01:43:50.949Z" itemprop="dateUpdated">2017-05-12 09:43:50</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/05/12/name-the-file/" target="_blank" rel="external">http://yoursite.com/2017/05/12/name-the-file/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/小写/">小写</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/文件名/">文件名</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/12/name-the-file/&title=《为什么文件名要小写？》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/12/name-the-file/&title=《为什么文件名要小写？》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/12/name-the-file/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《为什么文件名要小写？》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/12/name-the-file/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/12/name-the-file/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/05/12/css-variable/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS 变量</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/12/name-the-file/&title=《为什么文件名要小写？》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/12/name-the-file/&title=《为什么文件名要小写？》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/12/name-the-file/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《为什么文件名要小写？》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/12/name-the-file/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/12/name-the-file/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACG0lEQVR42u3aUY6DMAwFwN7/0uwBKthnGyqRTL4qFoqnK1lx7M8nXke8ru///uvZWz5PLAwMjNcyqmEl3/N9/exd1eunkWBgYGzAOAurGsr1D3R95/Xnf2LGwMDAiO/pXZm8FwMDA2OScK/vx8DAwKgykiI2L1l7of+oFsfAwHghIz91//3nR/obGBgYr2IcxVVNtUlYx3hhYGCszcgTXE7Kt26ThIuBgbEPo3mwNRibmDRBT6PCwMDYmNEb8Moz/W3NTgwMjA0YvZSXj1wUdqm992JgYCzN6G0K83T5xA9RPm7DwMBYlDFJwZMNX2+DiIGBsQOjGnp1GKJ6qJeU06fXMTAwlmPkw6a9VmU+fjoZ0cDAwMDIW4l5ayFvcxbKVwwMjEUZSWOyNzDRCzcarcj3thgYGMsxqsdekwO4e5/FwMBYm1FNjr1NW++oLudhYGDswKiOWeQFcF763tbTwMDAWI6RPNAbmMi/p1qHNv8nGBgYizKqgxR50L0iublBxMDAWJQxKUqfOKqL0i4GBsZmjKTROCmDq0dv0VMYGBiLMo7i6p1xVcMqD41hYGAszeglu3sL116ib2IwMDBey+iNnPYGue5KuIWeKgYGxkKMakB5czHfJvZaERgYGBjzVmXSNrihPMbAwMCIh1Dz1+ftgSiJY2BgbMBIithq6zFvM1RLVgwMjN0Y1dIxofYaDDlg1N/AwMB4E+MPvgAsukpOvUEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/hexo-blog/js/main.min.js?v=1.6.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/hexo-blog/js/search.min.js?v=1.6.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

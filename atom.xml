@@ -5,7 +5,7 @@
   <link href="/hexo-blog/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-11T08:12:31.142Z</updated>
+  <updated>2017-05-12T01:43:50.949Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,228 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>为什么文件名要小写？</title>
+    <link href="http://yoursite.com/2017/05/12/name-the-file/"/>
+    <id>http://yoursite.com/2017/05/12/name-the-file/</id>
+    <published>2017-05-12T01:26:21.000Z</published>
+    <updated>2017-05-12T01:43:50.949Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="为什么文件名要小写？"><a href="#为什么文件名要小写？" class="headerlink" title="为什么文件名要小写？"></a>为什么文件名要小写？</h1><blockquote>
+<p>“文件名建议只使用小写字母，不使用大写字母。”</p>
+<p>“为了醒目，某些说明文件的文件名，可以使用大写字母，比如<code>README</code>、<code>LICENSE</code>。”</p>
+</blockquote>
+<p>网友看见了，就<a href="https://github.com/ruanyf/document-style-guide/commit/22db946f22cdce12cde4e264344e8223abfafcd5#commitcomment-20691431" target="_blank" rel="external">提问</a>为什么文件名要小写？</p>
+<p>说实话，虽然这是 Linux 传统，我却从没认真想过原因。赶紧查资料，结果发现四个很有说服力的理由，支持这样做。</p>
+<p>下面就是这四个理由。另外，文后我还会发布一条前端培训的消息。</p>
+<h2 id="一、可移植性"><a href="#一、可移植性" class="headerlink" title="一、可移植性"></a>一、可移植性</h2><p>Linux 系统是大小写敏感的，而 Windows 系统和 Mac 系统正好相反，大小写不敏感。一般来说，这不是大问题。</p>
+<p>但是，如果两个文件名只有大小写不同，其他都相同，跨平台就会出问题。</p>
+<blockquote>
+<ul>
+<li><code>foobar</code></li>
+<li><code>Foobar</code></li>
+<li><code>FOOBAR</code></li>
+<li><code>fOObAr</code></li>
+</ul>
+</blockquote>
+<p>上面四个文件名，Windows 系统会把它们都当作<code>foobar</code>。如果它们同时存在，你可能没办法打开后面三个文件。</p>
+<p>另一方面，在 Mac 系统上开发时，有时会疏忽，写错大小写。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="comment">// 正确文件名是 MyModule.js</span></div><div class="line">&gt; <span class="keyword">const</span> <span class="built_in">module</span> = <span class="built_in">require</span>(<span class="string">'./myModule'</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面的代码在 Mac 上面可以运行，因为 Mac 认为<code>MyModule.js</code>和<code>myModule.js</code>是同一个文件。但是，一旦代码到服务器运行就会报错，因为 Linux 系统找不到<code>myModule.js</code>。</p>
+<p>如果所有的文件名都采用小写，就不会出现上面的问题，可以保证项目有良好的可移植性。</p>
+<h2 id="二、易读性"><a href="#二、易读性" class="headerlink" title="二、易读性"></a>二、易读性</h2><p>小写文件名通常比大写文件名更易读，比如<code>accessibility.txt</code>就比<code>ACCESSIBILITY.TXT</code>易读。</p>
+<p>有人习惯使用<a href="http://www.ruanyifeng.com/blog/2007/06/camelcase.html" target="_blank" rel="external">驼峰命名法</a>，单词的第一个字母大写，其他字母小写。这种方法的问题是，如果遇到全部是大写的缩略词，就会不适用。</p>
+{% image name-the-file/bg2017021002.jpg 'img' '' %}
+<p>比如，一个姓李的纽约特警，无论写成<code>NYPoliceSWATLee</code>还是<code>NyPoliceSwatlee</code>，都怪怪的，还是写成<code>ny-police-swat-lee</code>比较容易接受。</p>
+<h2 id="三、易用性"><a href="#三、易用性" class="headerlink" title="三、易用性"></a>三、易用性</h2><p>某些系统会生成一些预置的用户目录，采用首字母大写的目录名。比如，Ubuntu 在用户主目录会默认生成<code>Downloads</code>、 <code>Pictures</code>、<code>Documents</code>等目录。</p>
+{% image name-the-file/bg2017021003.png 'img' '' %}
+<p>Mac 系统更过分，一部分系统目录也是大写的，比如<code>/Library/Audio/Apple Loops/</code>。</p>
+<p>另外，某些常见的配置文件或说明文件，也采用大写的文件名，比如<code>Makefile</code>、<code>INSTALL</code>、<code>CHANGELOG</code>、<code>.Xclients</code>和<code>.Xauthority</code>等等。</p>
+<p>所以，用户的文件都采用小写文件名，就很方便与上面这些目录或文件相区分。</p>
+<p>如果你打破砂锅问到底，为什么操作系统会采用这样的大写文件名？原因也很简单，因为早期 Unix 系统上，<code>ls</code>命令先列出大写字母，再列出小写字母，大写的路径会排在前面。因此，如果目录名或文件名是大写的，就比较容易被用户首先看到。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2017/05/12/name-the-file/bg2017021001.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h2 id="四、便捷性"><a href="#四、便捷性" class="headerlink" title="四、便捷性"></a>四、便捷性</h2><p>文件名全部小写，还有利于命令行操作。比如，某些命令可以不使用<code>-i</code>参数了。</p>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span><span class="bash"> <span class="comment"># 大小写敏感的搜索</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ find . -name abc</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ locate <span class="string">"*.htmL"</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> <span class="comment"># 大小写不敏感的搜索</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ find . -iname abc</span></div><div class="line"><span class="meta">&gt;</span><span class="bash"> $ locate -i <span class="string">"*.HtmL"</span></span></div><div class="line"><span class="meta">&gt;</span><span class="bash"></span></div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2017/05/12/name-the-file/bg2017021004.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<p>另外，大写字母需要按下 Shift 键，多多少少有些麻烦。如果文件名小写，就不用碰这个键了，不仅省事，还可以提高打字速度。</p>
+<p>程序员长时间使用键盘，每分钟少按几次 Shift，一天下来就可以省掉很多手指动作。长年累月，也是对自己身体的一种保护。</p>
+<p>综上所述，文件名全部使用小写字母和连词线（all-lowercase-with-dashes），是一种值得推广的正确做法。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;为什么文件名要小写？&quot;&gt;&lt;a href=&quot;#为什么文件名要小写？&quot; class=&quot;headerlink&quot; title=&quot;为什么文件名要小写？&quot;&gt;&lt;/a&gt;为什么文件名要小写？&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;“文件名建议只使用小写字母，不使用大写字母。”&lt;/
+    
+    </summary>
+    
+    
+      <category term="文件名" scheme="http://yoursite.com/tags/%E6%96%87%E4%BB%B6%E5%90%8D/"/>
+    
+      <category term="小写" scheme="http://yoursite.com/tags/%E5%B0%8F%E5%86%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS 变量</title>
+    <link href="http://yoursite.com/2017/05/12/css-variable/"/>
+    <id>http://yoursite.com/2017/05/12/css-variable/</id>
+    <published>2017-05-12T01:25:09.000Z</published>
+    <updated>2017-05-12T01:44:17.932Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CSS-变量"><a href="#CSS-变量" class="headerlink" title="CSS 变量"></a>CSS 变量</h1><p>今年三月，微软<a href="https://www.neowin.net/news/css-custom-properties-are-coming-to-microsoft-edge-in-the-windows-10-creators-update" target="_blank" rel="external">宣布</a> Edge 浏览器将支持 CSS 变量。</p>
+<p>这个重要的 CSS 新功能，所有主要浏览器已经都支持了。本文全面介绍如何使用它，你会发现原生 CSS 从此变得异常强大。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/2017/05/12/css-variable/bg2017050901.jpg" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure>
+<h2 id="一、变量的声明"><a href="#一、变量的声明" class="headerlink" title="一、变量的声明"></a>一、变量的声明</h2><p>声明变量的时候，变量名前面要加两根连词线（<code>--</code>）。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; body &#123;</div><div class="line">&gt;   --foo: #7F583F;</div><div class="line">&gt;   --bar: #F7EFD2;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>body</code>选择器里面声明了两个变量：<code>--foo</code>和<code>--bar</code>。</p>
+<p>它们与<code>color</code>、<code>font-size</code>等正式属性没有什么不同，只是没有默认含义。所以 CSS 变量（CSS variable）又叫做<strong>“CSS 自定义属性”</strong>（CSS custom properties）。因为变量与自定义的 CSS 属性其实是一回事。</p>
+<p>你可能会问，为什么选择两根连词线（<code>--</code>）表示变量？因为<code>$foo</code>被 Sass 用掉了，<code>@foo</code>被 Less 用掉了。为了不产生冲突，官方的 CSS 变量就改用两根连词线了。</p>
+<p>各种值都可以放入 CSS 变量。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt; :root&#123;</div><div class="line">&gt;   --main-color: #4d4e53;</div><div class="line">&gt;   --main-bg: rgb(255, 255, 255);</div><div class="line">&gt;   --logo-border-color: rebeccapurple;</div><div class="line">&gt;</div><div class="line">&gt;   --header-height: 68px;</div><div class="line">&gt;   --content-padding: 10px 20px;</div><div class="line">&gt;</div><div class="line">&gt;   --base-line-height: 1.428571429;</div><div class="line">&gt;   --transition-duration: .35s;</div><div class="line">&gt;   --external-link: &quot;external link&quot;;</div><div class="line">&gt;   --margin-top: calc(2vh + 20px);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>变量名大小写敏感，<code>--header-color</code>和<code>--Header-Color</code>是两个不同变量。</p>
+<h2 id="二、var-函数"><a href="#二、var-函数" class="headerlink" title="二、var() 函数"></a>二、var() 函数</h2><p><code>var()</code>函数用于读取变量。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; a &#123;</div><div class="line">&gt;   color: var(--foo);</div><div class="line">&gt;   text-decoration-color: var(--bar);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p><code>var()</code>函数还可以使用第二个参数，表示变量的默认值。如果该变量不存在，就会使用这个默认值。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="selector-tag">color</span>: <span class="selector-tag">var</span>(<span class="selector-tag">--foo</span>, <span class="selector-id">#7F583F</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>第二个参数不处理内部的逗号或空格，都视作参数的一部分。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="selector-tag">var</span>(<span class="selector-tag">--font-stack</span>, "<span class="selector-tag">Roboto</span>", "<span class="selector-tag">Helvetica</span>");</div><div class="line">&gt; <span class="selector-tag">var</span>(<span class="selector-tag">--pad</span>, 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p><code>var()</code>函数还可以用在变量的声明。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; :root &#123;</div><div class="line">&gt;   --primary-color: red;</div><div class="line">&gt;   --logo-text: var(--primary-color);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>注意，变量值只能用作属性值，不能用作属性名。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; .foo &#123;</div><div class="line">&gt;   --side: margin-top;</div><div class="line">&gt;   /* 无效 */</div><div class="line">&gt;   var(--side): 20px;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，变量<code>--side</code>用作属性名，这是无效的。</p>
+<h2 id="三、变量值的类型"><a href="#三、变量值的类型" class="headerlink" title="三、变量值的类型"></a>三、变量值的类型</h2><p>如果变量值是一个字符串，可以与其他字符串拼接。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; --bar: 'hello';</div><div class="line">&gt; --foo: var(--bar)' world';</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>利用这一点，可以 debug（<a href="https://codepen.io/malyw/pen/oBWMOY" target="_blank" rel="external">例子</a>）。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; body:after &#123;</div><div class="line">&gt;   content: '--screen-category : 'var(--screen-category);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>如果变量值是数值，不能与数值单位直接连用。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; .foo &#123;</div><div class="line">&gt;   --gap: 20;</div><div class="line">&gt;   /* 无效 */</div><div class="line">&gt;   margin-top: var(--gap)px;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，数值与单位直接写在一起，这是无效的。必须使用<code>calc()</code>函数，将它们连接。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; .foo &#123;</div><div class="line">&gt;   --gap: 20;</div><div class="line">&gt;   margin-top: calc(var(--gap) * 1px);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>如果变量值带有单位，就不能写成字符串。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt; /* 无效 */</div><div class="line">&gt; .foo &#123;</div><div class="line">&gt;   --foo: '20px';</div><div class="line">&gt;   font-size: var(--foo);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div><div class="line">&gt; /* 有效 */</div><div class="line">&gt; .foo &#123;</div><div class="line">&gt;   --foo: 20px;</div><div class="line">&gt;   font-size: var(--foo);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="四、作用域"><a href="#四、作用域" class="headerlink" title="四、作用域"></a>四、作用域</h2><p>同一个 CSS 变量，可以在多个选择器内声明。读取的时候，优先级最高的声明生效。这与 CSS 的”层叠”（cascade）规则是一致的。</p>
+<p>下面是一个<a href="http://jsbin.com/buwahixoqo/edit?html,css,output" target="_blank" rel="external">例子</a>。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;style&gt;</div><div class="line">&gt;   :root &#123; --color: blue; &#125;</div><div class="line">&gt;   div &#123; --color: green; &#125;</div><div class="line">&gt;   #alert &#123; --color: red; &#125;</div><div class="line">&gt;   * &#123; color: var(--color); &#125;</div><div class="line">&gt; &lt;/style&gt;</div><div class="line">&gt;</div><div class="line">&gt; &lt;p&gt;蓝色&lt;/p&gt;</div><div class="line">&gt; &lt;div&gt;绿色&lt;/div&gt;</div><div class="line">&gt; &lt;div id="alert"&gt;红色&lt;/div&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，三个选择器都声明了<code>--color</code>变量。不同元素读取这个变量的时候，会采用优先级最高的规则，因此三段文字的颜色是不一样的。</p>
+<p>这就是说，变量的作用域就是它所在的选择器的有效范围。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; body &#123;</div><div class="line">&gt;   --foo: #7F583F;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div><div class="line">&gt; .content &#123;</div><div class="line">&gt;   --bar: #F7EFD2;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，变量<code>--foo</code>的作用域是<code>body</code>选择器的生效范围，<code>--bar</code>的作用域是<code>.content</code>选择器的生效范围。</p>
+<p>由于这个原因，全局的变量通常放在根元素<code>:root</code>里面，确保任何选择器都可以读取它们。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; :root &#123;</div><div class="line">&gt;   --main-color: #06c;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="五、响应式布局"><a href="#五、响应式布局" class="headerlink" title="五、响应式布局"></a>五、响应式布局</h2><p>CSS 是动态的，页面的任何变化，都会导致采用的规则变化。</p>
+<p>利用这个特点，可以在响应式布局的<code>media</code>命令里面声明变量，使得不同的屏幕宽度有不同的变量值。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&gt; body &#123;</div><div class="line">&gt;   --primary: #7F583F;</div><div class="line">&gt;   --secondary: #F7EFD2;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div><div class="line">&gt; a &#123;</div><div class="line">&gt;   color: var(--primary);</div><div class="line">&gt;   text-decoration-color: var(--secondary);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div><div class="line">&gt; @media screen and (min-width: 768px) &#123;</div><div class="line">&gt;   body &#123;</div><div class="line">&gt;     --primary:  #F7EFD2;</div><div class="line">&gt;     --secondary: #7F583F;</div><div class="line">&gt;   &#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="六、兼容性处理"><a href="#六、兼容性处理" class="headerlink" title="六、兼容性处理"></a>六、兼容性处理</h2><p>对于不支持 CSS 变量的浏览器，可以采用下面的写法。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; a &#123;</div><div class="line">&gt;   color: #7F583F;</div><div class="line">&gt;   color: var(--primary);</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>也可以使用<code>@support</code>命令进行检测。</p>
+<blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; @<span class="keyword">supports</span> ( (--a: <span class="number">0</span>)) &#123;</div><div class="line">&gt;   <span class="comment">/* supported */</span></div><div class="line">&gt; &#125;</div><div class="line">&gt;</div><div class="line">&gt; @<span class="keyword">supports</span> ( not (--a: <span class="number">0</span>)) &#123;</div><div class="line">&gt;   <span class="comment">/* not supported */</span></div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="七、JavaScript-操作"><a href="#七、JavaScript-操作" class="headerlink" title="七、JavaScript 操作"></a>七、JavaScript 操作</h2><p>JavaScript 也可以检测浏览器是否支持 CSS 变量。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&gt; const isSupported =</div><div class="line">&gt;   window.CSS &amp;&amp;</div><div class="line">&gt;   window.CSS.supports &amp;&amp;</div><div class="line">&gt;   window.CSS.supports('--a', 0);</div><div class="line">&gt;</div><div class="line">&gt; if (isSupported) &#123;</div><div class="line">&gt;   /* supported */</div><div class="line">&gt; &#125; else &#123;</div><div class="line">&gt;   /* not supported */</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>JavaScript 操作 CSS 变量的写法如下。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; // 设置变量</div><div class="line">&gt; document.body.style.setProperty('--primary', '#7F583F');</div><div class="line">&gt;</div><div class="line">&gt; // 读取变量</div><div class="line">&gt; document.body.style.getPropertyValue('--primary').trim();</div><div class="line">&gt; // '#7F583F'</div><div class="line">&gt;</div><div class="line">&gt; // 删除变量</div><div class="line">&gt; document.body.style.removeProperty('--primary');</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>这意味着，JavaScript 可以将任意值存入样式表。下面是一个监听事件的例子，事件信息被存入 CSS 变量。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt; const docStyle = document.documentElement.style;</div><div class="line">&gt;</div><div class="line">&gt; document.addEventListener('mousemove', (e) =&gt; &#123;</div><div class="line">&gt;   docStyle.setProperty('--mouse-x', e.clientX);</div><div class="line">&gt;   docStyle.setProperty('--mouse-y', e.clientY);</div><div class="line">&gt; &#125;);</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>那些对 CSS 无用的信息，也可以放入 CSS 变量。</p>
+<blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; --foo: if(x &gt; 5) this.width = 10;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，<code>--foo</code>的值在 CSS 里面是无效语句，但是可以被 JavaScript 读取。这意味着，可以把样式设置写在 CSS 变量中，让 JavaScript 读取。</p>
+<p>所以，CSS 变量提供了 JavaScript 与 CSS 通信的一种途径。</p>
+<h2 id="八、参考链接"><a href="#八、参考链接" class="headerlink" title="八、参考链接"></a>八、参考链接</h2><ul>
+<li><a href="https://vgpena.github.io/winning-with-css-variables/" target="_blank" rel="external">Winning with CSS Variables</a></li>
+<li><a href="https://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank" rel="external">CSS Variables: Why Should You Care?</a></li>
+<li><a href="https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/" target="_blank" rel="external">It’s Time To Start Using CSS Custom Properties</a></li>
+<li><a href="https://philipwalton.com/articles/why-im-excited-about-native-css-variables/" target="_blank" rel="external">Why I’m Excited About Native CSS Variables</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/05/css-variables.html" target="_blank" rel="external">CSS变量教程</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CSS-变量&quot;&gt;&lt;a href=&quot;#CSS-变量&quot; class=&quot;headerlink&quot; title=&quot;CSS 变量&quot;&gt;&lt;/a&gt;CSS 变量&lt;/h1&gt;&lt;p&gt;今年三月，微软&lt;a href=&quot;https://www.neowin.net/news/css-custom
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="变量" scheme="http://yoursite.com/tags/%E5%8F%98%E9%87%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>linux vi 命令详解</title>
     <link href="http://yoursite.com/2017/05/11/linux-vi/"/>
     <id>http://yoursite.com/2017/05/11/linux-vi/</id>
     <published>2017-05-11T02:33:03.000Z</published>
-    <updated>2017-05-11T08:12:31.142Z</updated>
+    <updated>2017-05-11T09:02:10.978Z</updated>
     
     <content type="html"><![CDATA[<p><code>vi</code>编辑器是所有<code>Unix</code>及<code>Linux</code>系统下标准的编辑器，它的强大不逊色于任何最新的文本编辑器，这里只是简单地介绍一下它的用法和一小部分指 令。由于 对<code>Unix</code>及<code>Linux</code>系统的任何版本，vi编辑器是完全相同的，因此您可以在其他任何介绍<code>vi</code>的地方进一步了解它。<code>vi</code>也是<code>Linux</code>中最基本的文本编 辑器，学会它后，您将在<code>Linux</code>的世界里畅行无阻。</p>
 <h2 id="vi的基本概念"><a href="#vi的基本概念" class="headerlink" title="vi的基本概念"></a>vi的基本概念</h2><p>基本上<code>vi</code>可以分为三种状态，分别是:</p>
@@ -31,23 +248,23 @@
 </ul>
 <p>各模式的功能区别如下：</p>
 <p><strong>命令行模式command mode）</strong></p>
-<p>控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入<code>Insert mode</code>下，或者到<code>last line mode</code>。</p>
+<p>控制屏幕光标的移动，字符、字或行的删除，移动复制某区段及进入插入模式下，或者到底行模式。</p>
 <p><strong>插入模式（Insert mode）</strong></p>
-<p>只有在<code>Insert mode</code>下，才可以做文字输入，按<code>ESC</code>键可回到命令行模式。</p>
+<p>只有在插入模式下，才可以做文字输入，按<code>ESC</code>键可回到命令行模式。</p>
 <p><strong>底行模式（last line mode）</strong></p>
 <p>将文件保存或退出<code>vi</code>，也可以设置编辑环境，如寻找字符串、列出行号……等。</p>
-<p>不过一般我们在使用时把vi简化成两个模式，就是将底行模式（last line mode）也算入命令行模式command mode）。</p>
+<p>不过一般我们在使用时把vi简化成两个模式，就是将底行模式也算入命令行模式。</p>
 <h2 id="vi的基本操作"><a href="#vi的基本操作" class="headerlink" title="vi的基本操作"></a>vi的基本操作</h2><p><strong>进入vi</strong></p>
 <p>  在系统提示符号输入vi及文件名称后，就进入<code>vi</code>全屏幕编辑画面：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> vi myfile</div></pre></td></tr></table></figure>
-<p>不过有一点要特别注意，就是您进入vi之后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。初次使用<code>vi</code>的人都会想先用上下左右键移动光标，结果电脑一直哔哔叫，把自己气个半死，所以进入vi后，先不要乱动，转换到 「插入模式（Insert mode）」再说吧！</p>
-<p><strong>切换至插入模式（Insert mode）编辑文件</strong></p>
-<p>在「命令行模式（command mode）」下按一下字母 <code>i</code>  就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。</p>
-<p><strong>切换至命令行模式（command mode</strong></p>
-<p>您目前处于「插入模式（Insert mode）」，您就只能一直输入文字。回到「命令行模式（command mode）」，按一下 <code>ESC</code>  键就行啦。</p>
-<p><strong>退出vi及保存文件</strong></p>
-<p>在「命令行模式（command mode）」下，按一下 <code>:</code> 冒号键进入「底行模式（Last line mode）」，输入下面的命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 将文章以指定的文件名filename保存</div><div class="line">: w filename </div><div class="line"><span class="meta">#</span> 存盘并退出vi</div><div class="line">: wq </div><div class="line"><span class="meta">#</span> 不存盘强制退出vi</div><div class="line">: q!</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> vi myfile</span></div></pre></td></tr></table></figure>
+<p>不过有一点要特别注意，就是您进入vi之后，是处于「命令行模式」，您要切换到「插入模式」才能够输入文字。初次使用<code>vi</code>的人都会想先用上下左右键移动光标，结果电脑一直哔哔叫，把自己气个半死，所以进入vi后，先不要乱动，转换到 「插入模式」再说吧！</p>
+<p><strong>切换至插入模式   编辑文件</strong></p>
+<p>在「命令行模式」下按一下字母 <code>i</code>  就可以进入「插入模式」，这时候你就可以开始输入文字了。</p>
+<p><strong>切换至命令行模式</strong></p>
+<p>您目前处于「插入模式」，您就只能一直输入文字。回到「命令行模式」，按一下 <code>ESC</code>  键就行啦。</p>
+<p><strong>切换至底行模式    退出vi及保存文件</strong></p>
+<p>在「命令行模式」下，按一下 <code>:</code> 冒号键进入「底行模式」，输入下面的命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 将文章以指定的文件名filename保存</span></div><div class="line">: w filename </div><div class="line"><span class="meta">#</span><span class="bash"> 存盘并退出vi</span></div><div class="line">: wq </div><div class="line"><span class="meta">#</span><span class="bash"> 不存盘强制退出vi</span></div><div class="line">: q!</div></pre></td></tr></table></figure>
 <h2 id="命令行模式（command-mode）功能键"><a href="#命令行模式（command-mode）功能键" class="headerlink" title="命令行模式（command mode）功能键"></a>命令行模式（command mode）功能键</h2><p><strong>插入模式</strong></p>
 <p>按<code>i</code> 进入插入模式后，是从光标当前位置开始输入文件；</p>
 <p>按<code>a</code>进入插入模式后，是从目前光标所在位置的下一个位置开始输入文字；</p>
@@ -150,11 +367,6 @@
 </tbody>
 </table>
 <p><strong>复制</strong></p>
-<p>　　「yw」：将光标所在之处到字尾的字符复制到缓冲区中。</p>
-<p>　　「#yw」：复制#个字到缓冲区</p>
-<p>　　「yy」：复制光标所在行到缓冲区。</p>
-<p>　　「#yy」：例如，「6yy」表示拷贝从光标所在的该行”往下数”6行文字。</p>
-<p>　　「p」：将缓冲区内的字符贴到光标所在位置。注意：所有与”y”有关的复制命令都必须与”p”配合才能完成复制与粘贴功能。</p>
 <table>
 <thead>
 <tr>
@@ -164,29 +376,28 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>yw</code></td>
+<td>将光标所在之处到字尾的字符复制到缓冲区中</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td><code>#yw</code></td>
+<td>复制<code>#</code>个字到缓冲区</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td><code>yy</code></td>
+<td>复制光标所在行到缓冲区</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td><code>#yy</code></td>
+<td>例如，<code>6yy</code>表示拷贝从光标所在的该行”往下数”6行文字</td>
 </tr>
 <tr>
-<td></td>
+<td><code>p</code></td>
+<td>将缓冲区内的字符贴到光标所在位置。注意：所有与”y”有关的复制命令都必须与”p”配合才能完成复制与粘贴功能</td>
 </tr>
 </tbody>
 </table>
-<p>6）. 替换</p>
-<p>　　「r」：替换光标所在处的字符。</p>
-<p>　　「R」：替换光标所到之处的字符，直到按下「ESC」键为止。</p>
+<p> <strong>替换</strong></p>
 <table>
 <thead>
 <tr>
@@ -196,16 +407,16 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td></td>
+<td><code>r</code></td>
+<td>替换光标所在处的字符</td>
 </tr>
 <tr>
-<td></td>
+<td><code>R</code></td>
+<td>替换光标所到之处的字符，直到按下<code>ESC</code>键为止</td>
 </tr>
 </tbody>
 </table>
-<p>7）. 回复上一次操作</p>
-<p>　　「u」：如果您误执行一个命令，可以马上按下「u」，回到上一个操作。按多次”u”可以执行多次回复。</p>
+<p><strong>回复上一次操作</strong> </p>
 <table>
 <thead>
 <tr>
@@ -215,7 +426,8 @@
 </thead>
 <tbody>
 <tr>
-<td></td>
+<td><code>u</code></td>
+<td>如果您误执行一个命令，可以马上按下<code>u</code>，回到上一个操作。按多次”u”可以执行多次回复</td>
 </tr>
 </tbody>
 </table>
@@ -257,57 +469,90 @@
 </tr>
 </tbody>
 </table>
-<h2 id="底行模式（last-line-mode）下命令简介"><a href="#底行模式（last-line-mode）下命令简介" class="headerlink" title="底行模式（last line mode）下命令简介"></a>底行模式（last line mode）下命令简介</h2><p>在使用「last line mode」之前，请记住先按「ESC」键确定您已经处于「command mode」下后，再按「：」冒号即可进入「last line mode」。</p>
-<p>A) 列出行号</p>
-<p>　「set nu」：输入「set nu」后，会在文件中的每一行前面列出行号。</p>
-<p>B) 跳到文件中的某一行</p>
-<p>　「#」：「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</p>
-<p>C) 查找字符</p>
-<p>　「/关键字」：先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</p>
-<p>　「?关键字」：先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</p>
-<p>D) 保存文件</p>
-<p>　「w」：在冒号输入字母「w」就可以将文件保存起来。</p>
-<p>E) 离开vi</p>
-<p>　「q」：按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</p>
-<p>　「qw」：一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</p>
-<p>5、vi命令列表<br>1、下表列出命令模式下的一些键的功能：</p>
-<p>h<br>左移光标一个字符</p>
-<p>l<br>右移光标一个字符</p>
-<p>k<br>光标上移一行</p>
-<p>j<br>光标下移一行</p>
-<p>^<br>光标移动至行首</p>
-<p>0<br>数字”0”，光标移至文章的开头</p>
-<p>G<br>光标移至文章的最后</p>
-<p>$<br>光标移动至行尾</p>
-<p>Ctrl+f<br>向前翻屏</p>
-<p>Ctrl+b<br>向后翻屏</p>
-<p>Ctrl+d<br>向前翻半屏</p>
-<p>Ctrl+u<br>向后翻半屏</p>
-<p>i<br>在光标位置前插入字符</p>
-<p>a<br>在光标所在位置的后一个字符开始增加</p>
-<p>o<br>插入新的一行，从行首开始输入</p>
-<p>ESC<br>从输入状态退至命令状态</p>
-<p>x<br>删除光标后面的字符</p>
-<p>#x<br>删除光标后的＃个字符</p>
-<p>X<br>(大写X)，删除光标前面的字符</p>
-<p>#X<br>删除光标前面的#个字符</p>
-<p>dd<br>删除光标所在的行</p>
-<p>#dd<br>删除从光标所在行数的#行</p>
-<p>yw<br>复制光标所在位置的一个字</p>
-<p>#yw<br>复制光标所在位置的#个字</p>
-<p>yy<br>复制光标所在位置的一行</p>
-<p>#yy<br>复制从光标所在行数的#行</p>
-<p>p<br>粘贴</p>
-<p>u<br>取消操作</p>
-<p>cw<br>更改光标所在位置的一个字</p>
-<p>#cw<br>更改光标所在位置的#个字</p>
-<p>2、下表列出行命令模式下的一些指令<br>w filename<br>储存正在编辑的文件为filename</p>
-<p>wq filename<br>储存正在编辑的文件为filename，并退出vi</p>
-<p>q!<br>放弃所有修改，退出vi</p>
-<p>set nu<br>显示行号</p>
-<p>/或?<br>查找，在/后输入要查找的内容</p>
-<p>n<br>与/或?一起使用，如果查找的内容不是想要找的关键字，按n或向后（与/联用）或向前（与?联用）继续查找，直到找到为止。</p>
-<p>对于第一次用vi，有几点注意要提醒一下：<br>1、 用vi打开文件后，是处于「命令行模式（command mode）」，您要切换到「插入模式（Insert mode）」才能够输入文字。切换方法：在「命令行模式（command mode）」下按一下字母「i」就可以进入「插入模式（Insert mode）」，这时候你就可以开始输入文字了。<br>2、编辑好后，需从插入模式切换为命令行模式才能对文件进行保存，切换方法：按「ESC」键。<br>3、保存并退出文件：在命令模式下输入:wq即可！（别忘了wq前面的:）</p>
+<h2 id="底行模式（last-line-mode）下命令简介"><a href="#底行模式（last-line-mode）下命令简介" class="headerlink" title="底行模式（last line mode）下命令简介"></a>底行模式（last line mode）下命令简介</h2><p>在使用「底行模式」之前，请记住先按<code>ESC</code>键确定您已经处于「命令行模式」下后，再按<code>:</code>冒号即可进入「底行模式」。</p>
+<p><strong>列出行号</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set nu</code></td>
+<td>输入「set nu」后，会在文件中的每一行前面列出行号。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>跳到文件中的某一行</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#</code></td>
+<td>「#」号表示一个数字，在冒号后输入一个数字，再按回车键就会跳到该行了，如输入数字15，再回车，就会跳到文章的第15行。</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>查找字符</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/关键字</code></td>
+<td>先按「/」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往后寻找到您要的关键字为止。</td>
+</tr>
+<tr>
+<td><code>?关键字</code></td>
+<td>先按「?」键，再输入您想寻找的字符，如果第一次找的关键字不是您想要的，可以一直按「n」会往前寻找到您要的关键字为止。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>保存文件</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>w</code></td>
+<td>在冒号输入字母「w」就可以将文件保存起来。</td>
+</tr>
+</tbody>
+</table>
+<p> <strong>离开vi</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>按「q」就是退出，如果无法离开vi，可以在「q」后跟一个「!」强制离开vi。</td>
+</tr>
+<tr>
+<td><code>qw</code></td>
+<td>一般建议离开时，搭配「w」一起使用，这样在退出的时候还可以保存文件。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html" target="_blank" rel="external">http://www.cnblogs.com/mahang/archive/2011/09/01/2161672.html</a></p>
 ]]></content>
     
@@ -325,7 +570,7 @@
     <link href="http://yoursite.com/2017/05/10/git-commend/"/>
     <id>http://yoursite.com/2017/05/10/git-commend/</id>
     <published>2017-05-10T09:27:06.000Z</published>
-    <updated>2017-05-11T05:09:00.725Z</updated>
+    <updated>2017-05-11T09:42:15.755Z</updated>
     
     <content type="html"><![CDATA[<p><strong><figure class="image-bubble">
                 <div class="img-lightbox">
@@ -341,17 +586,17 @@
 <li>Repository：仓库区（或本地仓库）</li>
 <li>Remote：远程仓库</li>
 </ul>
-<h2 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 在当前目录新建一个Git代码库</div><div class="line"><span class="meta">$</span> git init</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个目录，将其初始化为Git代码库</div><div class="line"><span class="meta">$</span> git init [project-name]</div><div class="line"><span class="meta"></span></div><div class="line"># 下载一个项目和它的整个代码历史</div><div class="line"><span class="meta">$</span> git clone [url]</div></pre></td></tr></table></figure>
+<h2 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 在当前目录新建一个Git代码库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git init</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个目录，将其初始化为Git代码库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git init [project-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 下载一个项目和它的整个代码历史</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> [url]</span></div></pre></td></tr></table></figure>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 显示当前的Git配置</div><div class="line"><span class="meta">$</span> git config --list</div><div class="line"><span class="meta"></span></div><div class="line"># 编辑Git配置文件</div><div class="line"><span class="meta">$</span> git config -e [--global]</div><div class="line"><span class="meta"></span></div><div class="line"># 设置提交代码时的用户信息</div><div class="line"><span class="meta">$</span> git config [--global] user.name "[name]"</div><div class="line"><span class="meta">$</span> git config [--global] user.email "[email address]"</div></pre></td></tr></table></figure>
-<h2 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 添加指定文件到暂存区</div><div class="line"><span class="meta">$</span> git add [file1] [file2] ...</div><div class="line"><span class="meta"></span></div><div class="line"># 添加指定目录到暂存区，包括子目录</div><div class="line"><span class="meta">$</span> git add [dir]</div><div class="line"><span class="meta"></span></div><div class="line"># 添加当前目录的所有文件到暂存区</div><div class="line"><span class="meta">$</span> git add .</div><div class="line"><span class="meta"></span></div><div class="line"># 添加每个变化前，都会要求确认</div><div class="line"><span class="meta">#</span> 对于同一个文件的多处变化，可以实现分次提交</div><div class="line"><span class="meta">$</span> git add -p</div><div class="line"><span class="meta"></span></div><div class="line"># 删除工作区文件，并且将这次删除放入暂存区</div><div class="line"><span class="meta">$</span> git rm [file1] [file2] ...</div><div class="line"><span class="meta"></span></div><div class="line"># 停止追踪指定文件，但该文件会保留在工作区</div><div class="line"><span class="meta">$</span> git rm --cached [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 改名文件，并且将这个改名放入暂存区</div><div class="line"><span class="meta">$</span> git mv [file-original] [file-renamed]</div></pre></td></tr></table></figure>
-<h2 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 提交暂存区到仓库区</div><div class="line"><span class="meta">$</span> git commit -m [message]</div><div class="line"><span class="meta"></span></div><div class="line"># 提交暂存区的指定文件到仓库区</div><div class="line"><span class="meta">$</span> git commit [file1] [file2] ... -m [message]</div><div class="line"><span class="meta"></span></div><div class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</div><div class="line"><span class="meta">$</span> git commit -a</div><div class="line"><span class="meta"></span></div><div class="line"># 提交时显示所有diff信息</div><div class="line"><span class="meta">$</span> git commit -v</div><div class="line"><span class="meta"></span></div><div class="line"># 使用一次新的commit，替代上一次提交</div><div class="line"><span class="meta">#</span> 如果代码没有任何新变化，则用来改写上一次commit的提交信息</div><div class="line"><span class="meta">$</span> git commit --amend -m [message]</div><div class="line"><span class="meta"></span></div><div class="line"># 重做上一次commit，并包括指定文件的新变化</div><div class="line"><span class="meta">$</span> git commit --amend [file1] [file2] ...</div></pre></td></tr></table></figure>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 列出所有本地分支</div><div class="line"><span class="meta">$</span> git branch</div><div class="line"><span class="meta"></span></div><div class="line"># 列出所有远程分支</div><div class="line"><span class="meta">$</span> git branch -r</div><div class="line"><span class="meta"></span></div><div class="line"># 列出所有本地分支和远程分支</div><div class="line"><span class="meta">$</span> git branch -a</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个分支，但依然停留在当前分支</div><div class="line"><span class="meta">$</span> git branch [branch-name]</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个分支，并切换到该分支</div><div class="line"><span class="meta">$</span> git checkout -b [branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个分支，指向指定commit</div><div class="line"><span class="meta">$</span> git branch [branch] [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个分支，与指定的远程分支建立追踪关系</div><div class="line"><span class="meta">$</span> git branch --track [branch] [remote-branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 切换到指定分支，并更新工作区</div><div class="line"><span class="meta">$</span> git checkout [branch-name]</div><div class="line"><span class="meta"></span></div><div class="line"># 切换到上一个分支</div><div class="line"><span class="meta">$</span> git checkout -</div><div class="line"><span class="meta"></span></div><div class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</div><div class="line"><span class="meta">$</span> git branch --set-upstream [branch] [remote-branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 合并指定分支到当前分支</div><div class="line"><span class="meta">$</span> git merge [branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 选择一个commit，合并进当前分支</div><div class="line"><span class="meta">$</span> git cherry-pick [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 删除分支</div><div class="line"><span class="meta">$</span> git branch -d [branch-name]</div><div class="line"><span class="meta"></span></div><div class="line"># 删除远程分支</div><div class="line"><span class="meta">$</span> git push origin --delete [branch-name]</div><div class="line"><span class="meta">$</span> git branch -dr [remote/branch]</div></pre></td></tr></table></figure>
-<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 列出所有tag</div><div class="line"><span class="meta">$</span> git tag</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个tag在当前commit</div><div class="line"><span class="meta">$</span> git tag [tag]</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个tag在指定commit</div><div class="line"><span class="meta">$</span> git tag [tag] [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 删除本地tag</div><div class="line"><span class="meta">$</span> git tag -d [tag]</div><div class="line"><span class="meta"></span></div><div class="line"># 删除远程tag</div><div class="line"><span class="meta">$</span> git push origin :refs/tags/[tagName]</div><div class="line"><span class="meta"></span></div><div class="line"># 查看tag信息</div><div class="line"><span class="meta">$</span> git show [tag]</div><div class="line"><span class="meta"></span></div><div class="line"># 提交指定tag</div><div class="line"><span class="meta">$</span> git push [remote] [tag]</div><div class="line"><span class="meta"></span></div><div class="line"># 提交所有tag</div><div class="line"><span class="meta">$</span> git push [remote] --tags</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个分支，指向某个tag</div><div class="line"><span class="meta">$</span> git checkout -b [branch] [tag]</div></pre></td></tr></table></figure>
-<h2 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line"># 显示有变更的文件</div><div class="line"><span class="meta">$</span> git status</div><div class="line"><span class="meta"></span></div><div class="line"># 显示当前分支的版本历史</div><div class="line"><span class="meta">$</span> git log</div><div class="line"><span class="meta"></span></div><div class="line"># 显示commit历史，以及每次commit发生变更的文件</div><div class="line"><span class="meta">$</span> git log --stat</div><div class="line"><span class="meta"></span></div><div class="line"># 搜索提交历史，根据关键词</div><div class="line"><span class="meta">$</span> git log -S [keyword]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某个commit之后的所有变动，每个commit占据一行</div><div class="line"><span class="meta">$</span> git log [tag] HEAD --pretty=format:%s</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件</div><div class="line"><span class="meta">$</span> git log [tag] HEAD --grep feature</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某个文件的版本历史，包括文件改名</div><div class="line"><span class="meta">$</span> git log --follow [file]</div><div class="line"><span class="meta">$</span> git whatchanged [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示指定文件相关的每一次diff</div><div class="line"><span class="meta">$</span> git log -p [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示过去5次提交</div><div class="line"><span class="meta">$</span> git log -5 --pretty --oneline</div><div class="line"><span class="meta"></span></div><div class="line"># 显示所有提交过的用户，按提交次数排序</div><div class="line"><span class="meta">$</span> git shortlog -sn</div><div class="line"><span class="meta"></span></div><div class="line"># 显示指定文件是什么人在什么时间修改过</div><div class="line"><span class="meta">$</span> git blame [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示暂存区和工作区的差异</div><div class="line"><span class="meta">$</span> git diff</div><div class="line"><span class="meta"></span></div><div class="line"># 显示暂存区和上一个commit的差异</div><div class="line"><span class="meta">$</span> git diff --cached [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示工作区与当前分支最新commit之间的差异</div><div class="line"><span class="meta">$</span> git diff HEAD</div><div class="line"><span class="meta"></span></div><div class="line"># 显示两次提交之间的差异</div><div class="line"><span class="meta">$</span> git diff [first-branch]...[second-branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示今天你写了多少行代码</div><div class="line"><span class="meta">$</span> git diff --shortstat "@&#123;0 day ago&#125;"</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某次提交的元数据和内容变化</div><div class="line"><span class="meta">$</span> git show [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某次提交发生变化的文件</div><div class="line"><span class="meta">$</span> git show --name-only [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某次提交时，某个文件的内容</div><div class="line"><span class="meta">$</span> git show [commit]:[filename]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示当前分支的最近几次提交</div><div class="line"><span class="meta">$</span> git reflog</div></pre></td></tr></table></figure>
-<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 下载远程仓库的所有变动</div><div class="line"><span class="meta">$</span> git fetch [remote]</div><div class="line"><span class="meta"></span></div><div class="line"># 显示所有远程仓库</div><div class="line"><span class="meta">$</span> git remote -v</div><div class="line"><span class="meta"></span></div><div class="line"># 显示某个远程仓库的信息</div><div class="line"><span class="meta">$</span> git remote show [remote]</div><div class="line"><span class="meta"></span></div><div class="line"># 增加一个新的远程仓库，并命名</div><div class="line"><span class="meta">$</span> git remote add [shortname] [url]</div><div class="line"><span class="meta"></span></div><div class="line"># 取回远程仓库的变化，并与本地分支合并</div><div class="line"><span class="meta">$</span> git pull [remote] [branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 上传本地指定分支到远程仓库</div><div class="line"><span class="meta">$</span> git push [remote] [branch]</div><div class="line"><span class="meta"></span></div><div class="line"># 强行推送当前分支到远程仓库，即使有冲突</div><div class="line"><span class="meta">$</span> git push [remote] --force</div><div class="line"><span class="meta"></span></div><div class="line"># 推送所有分支到远程仓库</div><div class="line"><span class="meta">$</span> git push [remote] --all</div></pre></td></tr></table></figure>
-<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 恢复暂存区的指定文件到工作区</div><div class="line"><span class="meta">$</span> git checkout [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 恢复某个commit的指定文件到暂存区和工作区</div><div class="line"><span class="meta">$</span> git checkout [commit] [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 恢复暂存区的所有文件到工作区</div><div class="line"><span class="meta">$</span> git checkout .</div><div class="line"><span class="meta"></span></div><div class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</div><div class="line"><span class="meta">$</span> git reset [file]</div><div class="line"><span class="meta"></span></div><div class="line"># 重置暂存区与工作区，与上一次commit保持一致</div><div class="line"><span class="meta">$</span> git reset --hard</div><div class="line"><span class="meta"></span></div><div class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</div><div class="line"><span class="meta">$</span> git reset [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</div><div class="line"><span class="meta">$</span> git reset --hard [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</div><div class="line"><span class="meta">$</span> git reset --keep [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 新建一个commit，用来撤销指定commit</div><div class="line"><span class="meta">#</span> 后者的所有变化都将被前者抵消，并且应用到当前分支</div><div class="line"><span class="meta">$</span> git revert [commit]</div><div class="line"><span class="meta"></span></div><div class="line"># 暂时将未提交的变化移除，稍后再移入</div><div class="line"><span class="meta">$</span> git stash</div><div class="line"><span class="meta">$</span> git stash pop</div></pre></td></tr></table></figure>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 生成一个可供发布的压缩包</div><div class="line"><span class="meta">$</span> git archive</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 显示当前的Git配置</span></div><div class="line"><span class="meta">$</span><span class="bash"> git config --list</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 编辑Git配置文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git config <span class="_">-e</span> [--global]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 设置提交代码时的用户信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.name <span class="string">"[name]"</span></span></div><div class="line"><span class="meta">$</span><span class="bash"> git config [--global] user.email <span class="string">"[email address]"</span></span></div></pre></td></tr></table></figure>
+<h2 id="增加-删除文件"><a href="#增加-删除文件" class="headerlink" title="增加/删除文件"></a>增加/删除文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 添加指定文件到暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add [file1] [file2] ...</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加指定目录到暂存区，包括子目录</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add [dir]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加当前目录的所有文件到暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add .</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 添加每个变化前，都会要求确认</span></div><div class="line"><span class="meta">#</span><span class="bash"> 对于同一个文件的多处变化，可以实现分次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git add -p</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除工作区文件，并且将这次删除放入暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git rm [file1] [file2] ...</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 改名文件，并且将这个改名放入暂存区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git mv [file-original] [file-renamed]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 停止追踪指定文件(删除的文件追踪不了)，但该文件会保留在工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git rm --cached [file]</span></div></pre></td></tr></table></figure>
+<h2 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 提交暂存区到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交暂存区的指定文件到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit [file1] [file2] ... -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交工作区自上次commit之后的变化，直接到仓库区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit <span class="_">-a</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交时显示所有diff信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit -v</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 使用一次新的commit，替代上一次提交</span></div><div class="line"><span class="meta">#</span><span class="bash"> 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit --amend -m [message]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重做上一次commit，并包括指定文件的新变化</span></div><div class="line"><span class="meta">$</span><span class="bash"> git commit --amend [file1] [file2] ...</span></div></pre></td></tr></table></figure>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 列出所有本地分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 列出所有远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -r</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 列出所有本地分支和远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch <span class="_">-a</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，但依然停留在当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，并切换到该分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，指向指定commit</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch [branch] [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，与指定的远程分支建立追踪关系</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch --track [branch] [remote-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 切换到指定分支，并更新工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 切换到上一个分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 建立追踪关系，在现有分支与指定的远程分支之间</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch --set-upstream [branch] [remote-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 合并指定分支到当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git merge [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 选择一个commit，合并进当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git cherry-pick [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch <span class="_">-d</span> [branch-name]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除远程分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push origin --delete [branch-name]</span></div><div class="line"><span class="meta">$</span><span class="bash"> git branch -dr [remote/branch]</span></div></pre></td></tr></table></figure>
+<h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 列出所有tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个tag在当前commit</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个tag在指定commit</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag [tag] [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除本地tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git tag <span class="_">-d</span> [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 删除远程tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push origin :refs/tags/[tagName]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 查看tag信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交指定tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] [tag]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 提交所有tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --tags</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个分支，指向某个tag</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout -b [branch] [tag]</span></div></pre></td></tr></table></figure>
+<h2 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示有变更的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git status</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示当前分支的版本历史</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示commit历史，以及每次commit发生变更的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --stat</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 搜索提交历史，根据关键词</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -S [keyword]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个commit之后的所有变动，每个commit占据一行</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> [tag] HEAD --pretty=format:%s</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个commit之后的所有变动，其<span class="string">"提交说明"</span>必须符合搜索条件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> [tag] HEAD --grep feature</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个文件的版本历史，包括文件改名</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --follow [file]</span></div><div class="line"><span class="meta">$</span><span class="bash"> git whatchanged [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示指定文件相关的每一次diff</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -p [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示过去5次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> -5 --pretty --oneline</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示所有提交过的用户，按提交次数排序</span></div><div class="line"><span class="meta">$</span><span class="bash"> git shortlog -sn</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示指定文件是什么人在什么时间修改过</span></div><div class="line"><span class="meta">$</span><span class="bash"> git blame [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示暂存区和工作区的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示暂存区和上一个commit的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff --cached [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示工作区与当前分支最新commit之间的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff HEAD</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示两次提交之间的差异</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff [first-branch]...[second-branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示今天你写了多少行代码</span></div><div class="line"><span class="meta">$</span><span class="bash"> git diff --shortstat <span class="string">"@&#123;0 day ago&#125;"</span></span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某次提交的元数据和内容变化</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某次提交发生变化的文件</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show --name-only [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某次提交时，某个文件的内容</span></div><div class="line"><span class="meta">$</span><span class="bash"> git show [commit]:[filename]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示当前分支的最近几次提交</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reflog</span></div></pre></td></tr></table></figure>
+<h2 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 下载远程仓库的所有变动</span></div><div class="line"><span class="meta">$</span><span class="bash"> git fetch [remote]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示所有远程仓库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 显示某个远程仓库的信息</span></div><div class="line"><span class="meta">$</span><span class="bash"> git remote show [remote]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 增加一个新的远程仓库，并命名</span></div><div class="line"><span class="meta">$</span><span class="bash"> git remote add [shortname] [url]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 取回远程仓库的变化，并与本地分支合并</span></div><div class="line"><span class="meta">$</span><span class="bash"> git pull [remote] [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 上传本地指定分支到远程仓库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] [branch]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 强行推送当前分支到远程仓库，即使有冲突</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --force</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 推送所有分支到远程仓库</span></div><div class="line"><span class="meta">$</span><span class="bash"> git push [remote] --all</span></div></pre></td></tr></table></figure>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 恢复暂存区的指定文件到工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 恢复某个commit的指定文件到暂存区和工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout [commit] [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 恢复暂存区的所有文件到工作区</span></div><div class="line"><span class="meta">$</span><span class="bash"> git checkout .</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset [file]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置暂存区与工作区，与上一次commit保持一致</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset --hard</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset --hard [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></div><div class="line"><span class="meta">$</span><span class="bash"> git reset --keep [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 新建一个commit，用来撤销指定commit</span></div><div class="line"><span class="meta">#</span><span class="bash"> 后者的所有变化都将被前者抵消，并且应用到当前分支</span></div><div class="line"><span class="meta">$</span><span class="bash"> git revert [commit]</span></div><div class="line"><span class="meta"></span></div><div class="line">#<span class="bash"> 暂时将未提交的变化移除，稍后再移入</span></div><div class="line"><span class="meta">$</span><span class="bash"> git stash</span></div><div class="line"><span class="meta">$</span><span class="bash"> git stash pop</span></div></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 生成一个可供发布的压缩包</span></div><div class="line"><span class="meta">$</span><span class="bash"> git archive</span></div></pre></td></tr></table></figure>
 <h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</a></p>
 ]]></content>
     
