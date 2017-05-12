@@ -35,6 +35,10 @@ $ npm run deploy
 
 **hexo-asset-image 插件**
 
+Make sure `post_asset_folder: true` in your `_config.yml`.
+
+Just use `![logo](logo.jpg)` to insert `logo.jpg`.
+
 ```js
 //index.js中的44行
 $(this).attr('src', '/' + link + src);
