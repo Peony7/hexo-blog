@@ -31,10 +31,10 @@ Linux 系统是大小写敏感的，而 Windows 系统和 Mac 系统正好相反
 
 另一方面，在 Mac 系统上开发时，有时会疏忽，写错大小写。
 
-> ```javascript
-> // 正确文件名是 MyModule.js
-> const module = require('./myModule');
-> ```
+ ```javascript
+ // 正确文件名是 MyModule.js
+ const module = require('./myModule');
+ ```
 
 上面的代码在 Mac 上面可以运行，因为 Mac 认为`MyModule.js`和`myModule.js`是同一个文件。但是，一旦代码到服务器运行就会报错，因为 Linux 系统找不到`myModule.js`。
 
@@ -46,15 +46,11 @@ Linux 系统是大小写敏感的，而 Windows 系统和 Mac 系统正好相反
 
 有人习惯使用[驼峰命名法](http://www.ruanyifeng.com/blog/2007/06/camelcase.html)，单词的第一个字母大写，其他字母小写。这种方法的问题是，如果遇到全部是大写的缩略词，就会不适用。
 
-**![img](name-the-file/bg2017021002.jpg)**
-
 比如，一个姓李的纽约特警，无论写成`NYPoliceSWATLee`还是`NyPoliceSwatlee`，都怪怪的，还是写成`ny-police-swat-lee`比较容易接受。
 
 ## 三、易用性
 
 某些系统会生成一些预置的用户目录，采用首字母大写的目录名。比如，Ubuntu 在用户主目录会默认生成`Downloads`、 `Pictures`、`Documents`等目录。
-
-**![img](name-the-file/bg2017021003.png)**
 
 Mac 系统更过分，一部分系统目录也是大写的，比如`/Library/Audio/Apple Loops/`。
 
@@ -70,15 +66,15 @@ Mac 系统更过分，一部分系统目录也是大写的，比如`/Library/Aud
 
 文件名全部小写，还有利于命令行操作。比如，某些命令可以不使用`-i`参数了。
 
-> ```shell
-> # 大小写敏感的搜索
-> $ find . -name abc
-> $ locate "*.htmL"
->
-> # 大小写不敏感的搜索
-> $ find . -iname abc
-> $ locate -i "*.HtmL"
-> ```
+ ```shell
+ # 大小写敏感的搜索
+ $ find . -name abc
+ $ locate "*.htmL"
+
+ # 大小写不敏感的搜索
+ $ find . -iname abc
+ $ locate -i "*.HtmL"
+ ```
 
 **![img](name-the-file/bg2017021004.png)**
 
