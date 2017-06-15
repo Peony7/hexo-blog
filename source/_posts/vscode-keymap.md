@@ -29,58 +29,58 @@ tags: keymap
 
 ### Basic Editing
 
-| Key              | Command                                  | Command id                               |
-| ---------------- | ---------------------------------------- | ---------------------------------------- |
-| Ctrl+X           | Cut line (empty selection)               | `editor.action.clipboardCutAction`       |
-| Ctrl+C           | Copy line (empty selection)              | `editor.action.clipboardCopyAction`      |
-| Ctrl+Shift+K     | Delete Line                              | `editor.action.deleteLines`              |
-| Ctrl+Enter       | Insert Line Below                        | `editor.action.insertLineAfter`          |
-| Ctrl+Shift+Enter | Insert Line Above                        | `editor.action.insertLineBefore`         |
-| Alt+Down         | Move Line Down                           | `editor.action.moveLinesDownAction`      |
-| Alt+Up           | Move Line Up                             | `editor.action.moveLinesUpAction`        |
-| Shift+Alt+Down   | Copy Line Down                           | `editor.action.copyLinesDownAction`      |
-| Shift+Alt+Up     | Copy Line Up                             | `editor.action.copyLinesUpAction`        |
-| Ctrl+D           | Add Selection To Next Find Match         | `editor.action.addSelectionToNextFindMatch` |
-| Ctrl+K Ctrl+D    | Move Last Selection To Next Find Match   | `editor.action.moveSelectionToNextFindMatch` |
-| Ctrl+U           | Undo last cursor operation               | `cursorUndo`                             |
-| Shift+Alt+I      | Insert cursor at end of each line selected | `editor.action.insertCursorAtEndOfEachLineSelected` |
-| Ctrl+Shift+L     | Select all occurrences of current selection | `editor.action.selectHighlights`         |
-| Ctrl+F2          | Select all occurrences of current word   | `editor.action.changeAll`                |
-| Ctrl+I           | Select current line                      | `expandLineSelection`                    |
-| Ctrl+Alt+Down    | Insert Cursor Below                      | `editor.action.insertCursorBelow`        |
-| Ctrl+Alt+Up      | Insert Cursor Above                      | `editor.action.insertCursorAbove`        |
-| Ctrl+Shift+\     | Jump to matching bracket                 | `editor.action.jumpToBracket`            |
-| Ctrl+]           | Indent Line                              | `editor.action.indentLines`              |
-| Ctrl+[           | Outdent Line                             | `editor.action.outdentLines`             |
-| Home             | Go to Beginning of Line                  | `cursorHome`                             |
-| End              | Go to End of Line                        | `cursorEnd`                              |
-| Ctrl+End         | Go to End of File                        | `cursorBottom`                           |
-| Ctrl+Home        | Go to Beginning of File                  | `cursorTop`                              |
-| Ctrl+Down        | Scroll Line Down                         | `scrollLineDown`                         |
-| Ctrl+Up          | Scroll Line Up                           | `scrollLineUp`                           |
-| Alt+PageDown     | Scroll Page Down                         | `scrollPageDown`                         |
-| Alt+PageUp       | Scroll Page Up                           | `scrollPageUp`                           |
-| Ctrl+Shift+[     | Fold (collapse) region                   | `editor.fold`                            |
-| Ctrl+Shift+]     | Unfold (uncollapse) region               | `editor.unfold`                          |
-| Ctrl+K Ctrl+[    | Fold (collapse) all subregions           | `editor.foldRecursively`                 |
-| Ctrl+K Ctrl+]    | Unfold (uncollapse) all subregions       | `editor.unfoldRecursively`               |
-| Ctrl+K Ctrl+0    | Fold (collapse) all regions              | `editor.foldAll`                         |
-| Ctrl+K Ctrl+J    | Unfold (uncollapse) all regions          | `editor.unfoldAll`                       |
-| Ctrl+K Ctrl+C    | Add Line Comment                         | `editor.action.addCommentLine`           |
-| Ctrl+K Ctrl+U    | Remove Line Comment                      | `editor.action.removeCommentLine`        |
-| Ctrl+/           | Toggle Line Comment                      | `editor.action.commentLine`              |
-| Shift+Alt+A      | Toggle Block Comment                     | `editor.action.blockComment`             |
-| Ctrl+F           | Find                                     | `actions.find`                           |
-| Ctrl+H           | Replace                                  | `editor.action.startFindReplaceAction`   |
-| F3               | Find Next                                | `editor.action.nextMatchFindAction`      |
-| Shift+F3         | Find Previous                            | `editor.action.previousMatchFindAction`  |
-| Alt+Enter        | Select All Occurrences of Find Match     | `editor.action.selectAllMatches`         |
-| Alt+C            | Toggle Find Case Sensitive               | `toggleFindCaseSensitive`                |
-| Alt+R            | Toggle Find Regex                        | `toggleFindRegex`                        |
-| Alt+W            | Toggle Find Whole Word                   | `toggleFindWholeWord`                    |
-| Ctrl+M           | Toggle Use of Tab Key for Setting Focus  | `editor.action.toggleTabFocusMode`       |
-| unassigned       | Toggle Render Whitespace                 | `toggleRenderWhitespace`                 |
-| Alt+Z            | Toggle Word Wrap                         | `editor.action.toggleWordWrap`           |
+| Key                  | Command                                  | Command id                               |
+| -------------------- | ---------------------------------------- | ---------------------------------------- |
+| **Ctrl+X**           | Cut line (empty selection)               | 剪切                                       |
+| **Ctrl+C**           | Copy line (empty selection)              | 复制                                       |
+| **Ctrl+Shift+K**     | Delete Line                              | 删除当前行                                    |
+| **Ctrl+Enter**       | Insert Line Below                        | 向下插入空行                                   |
+| **Ctrl+Shift+Enter** | Insert Line Above                        | 向上插入空行                                   |
+| **Alt+Down**         | Move Line Down                           | 向下移动当前行                                  |
+| **Alt+Up**           | Move Line Up                             | 向上移动当前行                                  |
+| **Shift+Alt+Down**   | Copy Line Down                           | 向下插入当前行内容                                |
+| **Shift+Alt+Up**     | Copy Line Up                             | 向上插入当前行内容                                |
+| **Ctrl+D**           | Add Selection To Next Find Match         | `editor.action.addSelectionToNextFindMatch` |
+| Ctrl+K Ctrl+D        | Move Last Selection To Next Find Match   | `editor.action.moveSelectionToNextFindMatch` |
+| **Ctrl+U**           | Undo last cursor operation               | 回退光标操作位置                                 |
+| Shift+Alt+I          | Insert cursor at end of each line selected | `editor.action.insertCursorAtEndOfEachLineSelected` |
+| Ctrl+Shift+L         | Select all occurrences of current selection | `editor.action.selectHighlights`         |
+| Ctrl+F2              | Select all occurrences of current word   | `editor.action.changeAll`                |
+| **Ctrl+I**           | Select current line                      | 选中当前行内容                                  |
+| Ctrl+Alt+Down        | Insert Cursor Below                      | `editor.action.insertCursorBelow`        |
+| Ctrl+Alt+Up          | Insert Cursor Above                      | `editor.action.insertCursorAbove`        |
+| Ctrl+Shift+\         | Jump to matching bracket                 | `editor.action.jumpToBracket`            |
+| **Ctrl+]**           | Indent Line                              | 增加当前行缩进                                  |
+| **Ctrl+[**           | Outdent Line                             | 减少当前行缩进                                  |
+| **Home**             | Go to Beginning of Line                  | 光标定位到行首                                  |
+| **End**              | Go to End of Line                        | 光标定位到行尾                                  |
+| **Ctrl+End**         | Go to End of File                        | 光标定位到文件的尾部                               |
+| **Ctrl+Home**        | Go to Beginning of File                  | 光标定位到文件的开头                               |
+| **Ctrl+Down**        | Scroll Line Down                         | 滚动条向下移动                                  |
+| **Ctrl+Up**          | Scroll Line Up                           | 滚动条向上移动                                  |
+| **Alt+PageDown**     | Scroll Page Down                         | 滚动条向下移动一屏                                |
+| **Alt+PageUp**       | Scroll Page Up                           | 滚动条向上移动一屏                                |
+| Ctrl+Shift+[         | Fold (collapse) region                   | 折叠代码                                     |
+| Ctrl+Shift+]         | Unfold (uncollapse) region               | 展开代码                                     |
+| Ctrl+K Ctrl+[        | Fold (collapse) all subregions           | `editor.foldRecursively`                 |
+| Ctrl+K Ctrl+]        | Unfold (uncollapse) all subregions       | `editor.unfoldRecursively`               |
+| Ctrl+K Ctrl+0        | Fold (collapse) all regions              | `editor.foldAll`                         |
+| Ctrl+K Ctrl+J        | Unfold (uncollapse) all regions          | `editor.unfoldAll`                       |
+| Ctrl+K Ctrl+C        | Add Line Comment                         | `editor.action.addCommentLine`           |
+| Ctrl+K Ctrl+U        | Remove Line Comment                      | `editor.action.removeCommentLine`        |
+| **Ctrl+/**           | Toggle Line Comment                      | 注释(或取消注释)当前行代码,`//注释内容`                  |
+| **Shift+Alt+A**      | Toggle Block Comment                     | 注释(或取消注释)选择代码,`/*注释内容*/`                 |
+| **Ctrl+F**           | Find                                     | 查找                                       |
+| **Ctrl+H**           | Replace                                  | 替换                                       |
+| **F3**               | Command                                  | Command id                               |
+| **Shift+F3**         | Cut line (empty selection)               | 剪切                                       |
+| **Ctrl+C**           | Copy line (empty selection)              | 复制                                       |
+| **Ctrl+Shift+K**     | Delete Line                              | 删除当前行                                    |
+| **Ctrl+Enter**       | Insert Line Below                        | 向下插入空行                                   |
+| **Ctrl+Shift+Enter** | Insert Line Above                        | 向上插入空行                                   |
+| **Alt+Down**         | Move Line Down                           | 向下移动当前行                                  |
+| **Alt+Up**           | Move Line Up                             | 向上移动当前行                                  |
+| **Shift+Alt+Down**   | Copy Line Down                           | 向下插入当前行内容                                |
 
 ### Rich Languages Editing
 
