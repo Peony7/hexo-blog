@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JSX语法深入理解 | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="简介：从根本上来说，JSX语法提供了一种创建React元素的语法糖，JSX语句可以编译成：React.createElement(component, props, …children)的形式，比如： 123&amp;lt;MyButton color=&quot;blue&quot; shadowSize=&amp;#123;2&amp;#125;&amp;gt;  Click Me&amp;lt;/MyButton&amp;gt; 编译结果： 12345Rea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSX语法深入理解">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/react-jsx-syntax/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="简介：从根本上来说，JSX语法提供了一种创建React元素的语法糖，JSX语句可以编译成：React.createElement(component, props, …children)的形式，比如： 123&amp;lt;MyButton color=&quot;blue&quot; shadowSize=&amp;#123;2&amp;#125;&amp;gt;  Click Me&amp;lt;/MyButton&amp;gt; 编译结果： 12345Rea">
+<meta property="og:updated_time" content="2017-05-17T06:53:20.705Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSX语法深入理解">
+<meta name="twitter:description" content="简介：从根本上来说，JSX语法提供了一种创建React元素的语法糖，JSX语句可以编译成：React.createElement(component, props, …children)的形式，比如： 123&amp;lt;MyButton color=&quot;blue&quot; shadowSize=&amp;#123;2&amp;#125;&amp;gt;  Click Me&amp;lt;/MyButton&amp;gt; 编译结果： 12345Rea">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="/hexo-blog/css/style.css?v=1.6.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JSX语法深入理解</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JSX语法深入理解</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-17T06:51:31.000Z" itemprop="datePublished" class="page-time">
+  2017-05-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/hexo-blog/categories/react/">react</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#指定React元素的类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">指定React元素的类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSX中的Props属性"><span class="post-toc-number">2.</span> <span class="post-toc-text">JSX中的Props属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JSX中的children"><span class="post-toc-number">3.</span> <span class="post-toc-text">JSX中的children</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考地址"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考地址</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-react-jsx-syntax"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JSX语法深入理解</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-17 14:51:31" datetime="2017-05-17T06:51:31.000Z"  itemprop="datePublished">2017-05-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/hexo-blog/categories/react/">react</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>简介：从根本上来说，JSX语法提供了一种创建<a href="http://lib.csdn.net/base/react" target="_blank" rel="external">React</a>元素的语法糖，JSX语句可以编译成：<br>React.createElement(component, props, …children)的形式，比如：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;MyButton color=<span class="string">"blue"</span> shadowSize=&#123;<span class="number">2</span>&#125;&gt;</div><div class="line">  Click Me</div><div class="line">&lt;<span class="regexp">/MyButton&gt;</span></div></pre></td></tr></table></figure>
+<p>编译结果：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">React.createElement(</div><div class="line">  MyButton,</div><div class="line">  &#123;<span class="attr">color</span>: <span class="string">'blue'</span>, <span class="attr">shadowSize</span>: <span class="number">2</span>&#125;,</div><div class="line">  <span class="string">'Click Me'</span></div><div class="line">)</div></pre></td></tr></table></figure>
+<h2 id="指定React元素的类型"><a href="#指定React元素的类型" class="headerlink" title="指定React元素的类型"></a>指定React元素的类型</h2><p>JSX标签的头部，决定了React元素的类型，大写的标签，意味着JSX的标签与React的组件一一对应，比如</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Foo/&gt;标签就对应了Foo组件</div></pre></td></tr></table></figure>
+<p><strong>（1）必须包裹在一定的范围内</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> CustomButton <span class="keyword">from</span> <span class="string">'./CustomButton'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">WarningButton</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// return React.createElement(CustomButton, &#123;color: 'red'&#125;, null);</span></div><div class="line">  <span class="keyword">return</span> &lt;CustomButton color="red" /&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>比如这样，引入了2个组件，构成了一个新的组件WarningButton，组件的返回值的元素，必须包含在一定范围内，这里通过函数的’{ ‘, ’ } ‘实现包裹的效果。</p>
+<p><strong>（2）用户定义的组件必须大写</strong></p>
+<p>我们前面已经说过，JSX的标签与组件是一一对应的，当我们使用JSX语法，引用组件的时候，标签必须要大写（同时定义组件的函数名也必须是大写的）。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hello</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> &lt;h2&gt;Hello,World&lt;/h2&gt;</div><div class="line">&#125;</div><div class="line"><span class="comment">//定义过程</span></div><div class="line"></div><div class="line">&lt;Hello/&gt;</div><div class="line"><span class="comment">//使用过程</span></div></pre></td></tr></table></figure>
+<p><strong>（3）不能在运行期间，动态的选择类型</strong><br>我们不能在JSX中，动态的规定组件的类型，举例来说：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; PhotoStory, VideoStory &#125; <span class="keyword">from</span> <span class="string">'./stories'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> components = &#123;</div><div class="line">  <span class="attr">photo</span>: PhotoStory,</div><div class="line">  <span class="attr">video</span>: VideoStory</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Story</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &lt;components[props.storyType] story=&#123;props.story&#125; /&gt;;</div><div class="line">  //这样写是不对的，我们在返回的组件中，动态定义了组件，这种动态的定义是无效的</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>应该改写为：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123; PhotoStory, VideoStory &#125; <span class="keyword">from</span> <span class="string">'./stories'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> components = &#123;</div><div class="line">  <span class="attr">photo</span>: PhotoStory,</div><div class="line">  <span class="attr">video</span>: VideoStory</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Story</span>(<span class="params">props</span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">const</span> SpecificStory = components[props.storyType];</div><div class="line">  <span class="keyword">return</span> &lt; SpecificStory  story=&#123;props.story&#125; /&gt;;</div><div class="line">    //这样就是正确的，我们不要在JSX的标签中使用动态定义</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="JSX中的Props属性"><a href="#JSX中的Props属性" class="headerlink" title="JSX中的Props属性"></a>JSX中的Props属性</h2><p><strong>（1）JS表达式</strong><br>可以通过{}，包裹js的语法来使用。比如：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;MyComponent foo=&#123;<span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span> + <span class="number">4</span>&#125; /&gt;</div></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;MyComponent foo=&#123;<span class="number">10</span>&#125; /&gt;</div></pre></td></tr></table></figure>
+<p>如果不是js表达式，则不能包裹在{}中使用。</p>
+<p><strong>（2）Props属性的默认值</strong><br>Props上的属性可以有默认值，并且默认值为true，比如：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;MyTextBox autocomplete /&gt;</div><div class="line">&lt;MyTextBox autocomplete=&#123;true&#125; /&gt;</div></pre></td></tr></table></figure>
+<p>上面这两个式子是等价的，但是不推荐使用默认值，因为在<code>ES6</code>的语法中<code>{foo}</code>代表的意思是：<code>{foo:foo}</code>的意思，并不是<code>{foo:true}</code>。</p>
+<p><strong>（3）扩展属性</strong><br>可以通过ES6的…方法，给组件赋属性值，例如：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">App1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &lt;Greeting firstName="Ben" lastName="Hector" /&gt;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function App2() &#123;</div><div class="line">  const props = &#123;firstName: 'Ben', lastName: 'Hector'&#125;;</div><div class="line">  return &lt;Greeting &#123;...props&#125; /&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的这两种方式是等价的。</p>
+<h2 id="JSX中的children"><a href="#JSX中的children" class="headerlink" title="JSX中的children"></a>JSX中的children</h2><p><strong>（1）children中的function</strong></p>
+<p>我们来考虑自定义组件中包含函数的情况：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ListOfTenThings</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;Repeat numTimes=&#123;10&#125;&gt;</div><div class="line">      &#123;(index) =&gt; &lt;div key=&#123;index&#125;&gt;This is item &#123;index&#125; in the list&lt;/div&gt;&#125;</div><div class="line">    &lt;/Repeat&gt;</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>那么何时调用这个children中的方法呢？</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Repeat</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> items = [];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; props.numTimes; i++) &#123;</div><div class="line">    items.push(props.children(i));</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> &lt;div&gt;&#123;items&#125;&lt;/div&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们从上述的Repeat组件的定义中可以看出来，children中的方法按此定义会一直执行10次。</p>
+<p><strong>（2）忽略Boolean，Null以及Undefined</strong></p>
+<p><code>false</code>,<code>null</code>,<code>undefined</code>以及<code>true</code>是不能通过render()方法，呈现在页面上的，下面的这些div块的样式<br>相同，都是空白块：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div /&gt;</div><div class="line">&lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;div&gt;&#123;false&#125;&lt;/div&gt;</div><div class="line">&lt;div&gt;&#123;null&#125;&lt;/div&gt;</div><div class="line">&lt;div&gt;&#123;true&#125;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>这种属性，在通过render呈现元素的时候，是十分有用的，比如我们只想在div元素中展现Head组件，<br>例子如下：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &#123;showHeader &amp;&amp; &lt;Header /&gt;&#125;</div><div class="line">  &lt;Content /&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>这里的逻辑是，只有<code>showHeader==true</code>，在会在页面呈现<code>Header</code>组件，否则为<code>null</code>，即为不显示任何东西，这相当于一个<code>if</code>的判断了。</p>
+<p>再举一个例子：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  &#123;props.messages.length &amp;&amp;</div><div class="line">    &lt;MessageList messages=&#123;props.messages&#125; /&gt;</div><div class="line">  &#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>在这个<code>div</code>中，我们需要知道的是即使元素为0，0是能够呈现在页面中的。也就是说上述代码中，只要<br><code>props.messages</code>数组存在，不管长度是否为<code>0</code>都是存在的。（这里不同于<code>js</code>，<code>js</code>中的语法认为<code>0==false</code>）</p>
+<p><strong>（3）如何显示Null，Undefined和Boolean</strong></p>
+<p>如果我们一定要再页面上显示<code>Null</code>等，可以将其先转化为字符串之后再显示。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">  My JavaScript variable is &#123;<span class="built_in">String</span>(myVariable)&#125;.</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<p>通过String的转化后就能在页面上显示了。</p>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p><a href="http://blog.csdn.net/liwusen/article/details/53383922" target="_blank" rel="external">http://blog.csdn.net/liwusen/article/details/53383922</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-17T06:53:20.705Z" itemprop="dateUpdated">2017-05-17 14:53:20</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/05/17/react-jsx-syntax/" target="_blank" rel="external">http://yoursite.com/2017/05/17/react-jsx-syntax/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/17/react-jsx-syntax/&title=《JSX语法深入理解》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/17/react-jsx-syntax/&title=《JSX语法深入理解》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/17/react-jsx-syntax/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSX语法深入理解》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/17/react-jsx-syntax/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/17/react-jsx-syntax/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/hexo-blog/2017/05/17/react-context/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">React中的Context</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/05/12/name-the-file/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">为什么文件名要小写？</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/17/react-jsx-syntax/&title=《JSX语法深入理解》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/17/react-jsx-syntax/&title=《JSX语法深入理解》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/17/react-jsx-syntax/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSX语法深入理解》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/17/react-jsx-syntax/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/17/react-jsx-syntax/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQW7DMAwF0dz/0inQVYvA9nxSCWJqtDKa1NLTgiFFPR54PH/H6/Pfv7yOo0/5/y4eMmTIuC3jeTrOl86Xkr6Br02GDBn7MHiQJVOSqMjnOl+bDBkyZBxNz8MiD+Uk0MuQIUNGGnB58tcpgGXIkCGDh0UyQZoC1spjGTJk7MboNAbe/fyh/oYMGTK+mNEpPtN3kqBcXI8MGTJGM/iBfq15WUsfa8moDBkypjLSw3o+ZVrQpgnixe+GDBkyBjFqjYE0BeRhNP6t6PQ3ZMiQcSsGKSnTTKy2EZ02gwwZMvZhkCl5OsgL4GUtTBkyZAxl8OOz9Fh/bSi/eIMMGTKGMlaVoLw9wPHkYE6GDBk7MNIjeB4QeQBd1VSQIUPGVAZShi3G2hJrQf/f74YMGTJGM8hYtdy0SUCeZciQsQ8jDXNpyZpeoTjfIBkyZOzGiKvexlWz9JoFmkWGDBkbMNLUrX9UxxsG6FmGDBmjGeRLaUuAL6iTDqI7IzJkyNiAQRoDJL3jB3npJsZdCxkyZAxidNJE/mktEAcBV4YMGYMY6UWu2tL5lS+OibsKMmTIuCHjGQ7eMayVuOnFi8NTQxkyZAxi1FqStWXxAMpbAjJkyNiHUQuynSnTchdtkAwZMjZg9INseoiWXju7eL8MGTJkhGVnJ4iTRkKwHzJkyNiM0S84P1Rny5AhYyiDBMdVB/3vuJAhQ4aM2YxVjYHa5QxyRYNvhAwZMsYxfgCwxlbkt+7hfwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/hexo-blog/js/main.min.js?v=1.6.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/hexo-blog/js/search.min.js?v=1.6.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

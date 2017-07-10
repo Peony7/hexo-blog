@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>React中的Context | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="简介：在React中，数据可以以流的形式自上而下的传递，每当你使用一个组件的时候，你可以看到组件的props属性会自上而下的传递。但是，在某些情况下，我们不想通过父组件的props属性一级一级的往下传递，我们希望在某一级子组件中，直接得到上N级父组件中props中的值。 一般情况下通过props传值的情况12345678910111213141516171819202122232425262728">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React中的Context">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/react-context/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="简介：在React中，数据可以以流的形式自上而下的传递，每当你使用一个组件的时候，你可以看到组件的props属性会自上而下的传递。但是，在某些情况下，我们不想通过父组件的props属性一级一级的往下传递，我们希望在某一级子组件中，直接得到上N级父组件中props中的值。 一般情况下通过props传值的情况12345678910111213141516171819202122232425262728">
+<meta property="og:updated_time" content="2017-05-17T07:11:32.077Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React中的Context">
+<meta name="twitter:description" content="简介：在React中，数据可以以流的形式自上而下的传递，每当你使用一个组件的时候，你可以看到组件的props属性会自上而下的传递。但是，在某些情况下，我们不想通过父组件的props属性一级一级的往下传递，我们希望在某一级子组件中，直接得到上N级父组件中props中的值。 一般情况下通过props传值的情况12345678910111213141516171819202122232425262728">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="/hexo-blog/css/style.css?v=1.6.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">React中的Context</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">React中的Context</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-17T07:07:23.000Z" itemprop="datePublished" class="page-time">
+  2017-05-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/hexo-blog/categories/react/">react</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一般情况下通过props传值的情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">一般情况下通过props传值的情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何利用React中的Context来进行值的越级传递。"><span class="post-toc-number">2.</span> <span class="post-toc-text">如何利用React中的Context来进行值的越级传递。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考地址"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考地址</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-react-context"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">React中的Context</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-17 15:07:23" datetime="2017-05-17T07:07:23.000Z"  itemprop="datePublished">2017-05-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/hexo-blog/categories/react/">react</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>简介：在<a href="http://lib.csdn.net/base/react" target="_blank" rel="external">React</a>中，数据可以以流的形式自上而下的传递，每当你使用一个组件的时候，你可以看到组件的props属性会自上而下的传递。但是，在某些情况下，我们不想通过父组件的props属性一级一级的往下传递，我们希望在某一级子组件中，直接得到上N级父组件中props中的值。</p>
+<h2 id="一般情况下通过props传值的情况"><a href="#一般情况下通过props传值的情况" class="headerlink" title="一般情况下通过props传值的情况"></a>一般情况下通过props传值的情况</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Button</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;button style=&#123;&#123;background: this.props.color&#125;&#125;&gt;</div><div class="line">        &#123;this.props.children&#125;</div><div class="line">      &lt;/button&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &#123;this.props.text&#125; &lt;Button color=&#123;this.props.color&#125;&gt;Delete&lt;/Button&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> color = <span class="string">"purple"</span>;</div><div class="line">    <span class="keyword">const</span> children = <span class="keyword">this</span>.props.messages.map(<span class="function">(<span class="params">message</span>) =&gt;</span></div><div class="line">      &lt;Message text=&#123;message.text&#125; color=&#123;color&#125; /&gt;</div><div class="line">    );</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;&#123;children&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们来分析一下这段代码，大致的组件分为3级:</p>
+<p>顶层MessageLists——&gt;Message一级子类——&gt;Button底层子类</p>
+<p>我们来看从父组件到子组件的值的传递情况：</p>
+<p><strong>（1）text:</strong></p>
+<p>我们可以看到，在顶层组件MessageLists中的值，传递到一级子组件Message中，并在此组件中被使用。</p>
+<p><strong>（2）color:</strong></p>
+<p>再看props中的color的传递情况，在顶层组件MessageLists中的值，先传递到一级子组件Message中，</p>
+<p>在传递到二级子组件Button中，最后在二级子组件中被使用。</p>
+<p>综上：这就是一般在React中，所使用的通过props属性，在父组件与子组件中进行值传递。</p>
+<h2 id="如何利用React中的Context来进行值的越级传递。"><a href="#如何利用React中的Context来进行值的越级传递。" class="headerlink" title="如何利用React中的Context来进行值的越级传递。"></a>如何利用React中的Context来进行值的越级传递。</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Button</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;button style=&#123;&#123;background: this.context.color&#125;&#125;&gt;</div><div class="line">        &#123;this.props.children&#125;</div><div class="line">      &lt;/button&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Button.contextTypes = &#123;</div><div class="line">  <span class="attr">color</span>: React.PropTypes.string</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &#123;this.props.text&#125; &lt;Button&gt;Delete&lt;/Button&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  getChildContext() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">color</span>: <span class="string">"purple"</span>&#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> children = <span class="keyword">this</span>.props.messages.map(<span class="function">(<span class="params">message</span>) =&gt;</span></div><div class="line">      &lt;Message text=&#123;message.text&#125; /&gt;</div><div class="line">    );</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;&#123;children&#125;&lt;/div&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MessageList.childContextTypes = &#123;</div><div class="line">  <span class="attr">color</span>: React.PropTypes.string</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>上述代码，我们实现了通过React的Context实现了值——color的越级传递。我们来分析一下上述的方法。</p>
+<p><strong>（1）首先在顶层组件中：</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">MessageList.childContextTypes = &#123;</div><div class="line">  <span class="attr">color</span>: React.PropTypes.string</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>定义了顶层组件所拥有的子类context对象——该顶层组件所拥有的的子类context对象为color，且必须为字符串。</p>
+<p>然后通过getChildText方法，来给子context对象的属性赋值：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">getChildContext() &#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">color</span>: <span class="string">"purple"</span>&#125;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>这样就完成了顶层组件中，context对象的赋值。</p>
+<p><strong>（2）越级传递，因为color属性只在最底层使用</strong></p>
+<p>我们来看color属性的越级传递，因为color属性，在一级子组件Message中并没有直接用到，因此我们可以</p>
+<p>直接传递到最底层（越级），在Button组件中使用。</p>
+<p>首先Button组件中，再次声明了所接受到的context的子组件color的类型，声明必须为字符串：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Button.contextTypes = &#123;</div><div class="line">  <span class="attr">color</span>: React.PropTypes.string</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>然后可以通过this.context.color这种方式调用：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button style=&#123;&#123;<span class="attr">background</span>: <span class="keyword">this</span>.context.color&#125;&#125;&gt;</div><div class="line">       &#123;<span class="keyword">this</span>.props.children&#125;</div><div class="line">&lt;<span class="regexp">/button&gt;123123</span></div></pre></td></tr></table></figure>
+<p>综上：这样，我们发现通过Context，我们就能实现值得越级传递。</p>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p> <a href="http://blog.csdn.net/liwusen/article/details/53408906" target="_blank" rel="external">React高级教程（es6）——（3）React中的Context</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-17T07:11:32.077Z" itemprop="dateUpdated">2017-05-17 15:11:32</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/05/17/react-context/" target="_blank" rel="external">http://yoursite.com/2017/05/17/react-context/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/17/react-context/&title=《React中的Context》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/17/react-context/&title=《React中的Context》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/17/react-context/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React中的Context》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/17/react-context/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/17/react-context/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/hexo-blog/2017/05/17/react-scu/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">react-scu</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/05/17/react-jsx-syntax/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JSX语法深入理解</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/17/react-context/&title=《React中的Context》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/17/react-context/&title=《React中的Context》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/17/react-context/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React中的Context》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/17/react-context/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/17/react-context/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACFklEQVR42u3ay27EMAgF0P7/T6fbSlXci0kqjTlejZTHcLJABvP1Fa/r17q7enf/3dX1ex5eGBgYH8u4lmvNWD/1857qe/LYMDAw5jDuMtg6lDyB3r0t+a91bBgYGBjJPfkWsEPCwMDAeCPh5gUwBgYGRsJIUmf+Z0+F/kotjoGB8YGMvOv+/79fOd/AwMD4KMZVXEl6rYZ1tRcGBsbZjDzB7Y1Z9JN4IR4MDIwBjE6g+djE3tFmUgZjYGCcysjbWMnVaorMxzX+aNJhYGAMYFRHKJKk2dlu5h8IAwNjAqPTlM9bcnm41TELDAyMCYy9xNoBdO6//RAYGBgDGHnRWN3Y5e/sHH9iYGBMYHTK1ORD5Gm92mjDwMCYwOg8Vk2je6VvftSKgYFxKiMfd+gMh+Xh7qVjDAyMsxn5wWG1DffAJi8ftsDAwDiakW/v8nI3ecOz7TkMDIyzGXtN+b2yM2/JVT8rBgbGHEZ1nKLfJtvbgP6RcDEwMAYw8kbb2+Ni5U+GgYExhrE3WrEXYnV0I6rIMTAwBjDy9JqXo+vQC0eS6zsxMDAOZVzFlSfBPcxeAw4DA+NsRr46zbJqkq028jAwMCYw9pJs5xjylYSLgYExgLGX+KrjEeUKu1qLY2BgYBTTYvVIcvNIAAMDA+OhVlf1aLP8LAYGxgBGdeSi/1SnnYeBgTGNsVc65iFWDzg7VAwMjOMY35/oiYfEeViZAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/hexo-blog/js/main.min.js?v=1.6.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/hexo-blog/js/search.min.js?v=1.6.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

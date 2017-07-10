@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/05/vscode-keymap/index.html">
 <meta property="og:site_name" content="Peony7的博客乐园">
 <meta property="og:description" content="主命令框F1或 Ctrl+Shift+P: 打开命令面板。在打开的输入框内，可以输入任何命令，例如：  按一下 Backspace会进入到Ctrl+P 模式   在Ctrl+P下输入 &amp;gt;可以进入Ctrl+Shift+P模式  在 Ctrl+P 窗口下还可以:  直接输入文件名，跳转到文件 ?列出当前可执行的动作 ! 显示 Errors或 Warnings，也可以 Ctrl+Shift+M :">
-<meta property="og:updated_time" content="2017-05-11T08:20:54.392Z">
+<meta property="og:updated_time" content="2017-05-23T09:41:13.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Visual Studio Code 常用快捷键(WIN)">
 <meta name="twitter:description" content="主命令框F1或 Ctrl+Shift+P: 打开命令面板。在打开的输入框内，可以输入任何命令，例如：  按一下 Backspace会进入到Ctrl+P 模式   在Ctrl+P下输入 &amp;gt;可以进入Ctrl+Shift+P模式  在 Ctrl+P 窗口下还可以:  直接输入文件名，跳转到文件 ?列出当前可执行的动作 ! 显示 Errors或 Warnings，也可以 Ctrl+Shift+M :">
@@ -113,7 +113,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -204,52 +204,52 @@
 </thead>
 <tbody>
 <tr>
-<td>Ctrl+X</td>
+<td><strong>Ctrl+X</strong></td>
 <td>Cut line (empty selection)</td>
-<td><code>editor.action.clipboardCutAction</code></td>
+<td>剪切</td>
 </tr>
 <tr>
-<td>Ctrl+C</td>
+<td><strong>Ctrl+C</strong></td>
 <td>Copy line (empty selection)</td>
-<td><code>editor.action.clipboardCopyAction</code></td>
+<td>复制</td>
 </tr>
 <tr>
-<td>Ctrl+Shift+K</td>
+<td><strong>Ctrl+Shift+K</strong></td>
 <td>Delete Line</td>
-<td><code>editor.action.deleteLines</code></td>
+<td>删除当前行</td>
 </tr>
 <tr>
-<td>Ctrl+Enter</td>
+<td><strong>Ctrl+Enter</strong></td>
 <td>Insert Line Below</td>
-<td><code>editor.action.insertLineAfter</code></td>
+<td>向下插入空行</td>
 </tr>
 <tr>
-<td>Ctrl+Shift+Enter</td>
+<td><strong>Ctrl+Shift+Enter</strong></td>
 <td>Insert Line Above</td>
-<td><code>editor.action.insertLineBefore</code></td>
+<td>向上插入空行</td>
 </tr>
 <tr>
-<td>Alt+Down</td>
+<td><strong>Alt+Down</strong></td>
 <td>Move Line Down</td>
-<td><code>editor.action.moveLinesDownAction</code></td>
+<td>向下移动当前行</td>
 </tr>
 <tr>
-<td>Alt+Up</td>
+<td><strong>Alt+Up</strong></td>
 <td>Move Line Up</td>
-<td><code>editor.action.moveLinesUpAction</code></td>
+<td>向上移动当前行</td>
 </tr>
 <tr>
-<td>Shift+Alt+Down</td>
+<td><strong>Shift+Alt+Down</strong></td>
 <td>Copy Line Down</td>
-<td><code>editor.action.copyLinesDownAction</code></td>
+<td>向下插入当前行内容</td>
 </tr>
 <tr>
-<td>Shift+Alt+Up</td>
+<td><strong>Shift+Alt+Up</strong></td>
 <td>Copy Line Up</td>
-<td><code>editor.action.copyLinesUpAction</code></td>
+<td>向上插入当前行内容</td>
 </tr>
 <tr>
-<td>Ctrl+D</td>
+<td><strong>Ctrl+D</strong></td>
 <td>Add Selection To Next Find Match</td>
 <td><code>editor.action.addSelectionToNextFindMatch</code></td>
 </tr>
@@ -259,9 +259,9 @@
 <td><code>editor.action.moveSelectionToNextFindMatch</code></td>
 </tr>
 <tr>
-<td>Ctrl+U</td>
+<td><strong>Ctrl+U</strong></td>
 <td>Undo last cursor operation</td>
-<td><code>cursorUndo</code></td>
+<td>回退光标操作位置</td>
 </tr>
 <tr>
 <td>Shift+Alt+I</td>
@@ -279,9 +279,9 @@
 <td><code>editor.action.changeAll</code></td>
 </tr>
 <tr>
-<td>Ctrl+I</td>
+<td><strong>Ctrl+I</strong></td>
 <td>Select current line</td>
-<td><code>expandLineSelection</code></td>
+<td>选中当前行内容</td>
 </tr>
 <tr>
 <td>Ctrl+Alt+Down</td>
@@ -299,64 +299,64 @@
 <td><code>editor.action.jumpToBracket</code></td>
 </tr>
 <tr>
-<td>Ctrl+]</td>
+<td><strong>Ctrl+]</strong></td>
 <td>Indent Line</td>
-<td><code>editor.action.indentLines</code></td>
+<td>增加当前行缩进</td>
 </tr>
 <tr>
-<td>Ctrl+[</td>
+<td><strong>Ctrl+[</strong></td>
 <td>Outdent Line</td>
-<td><code>editor.action.outdentLines</code></td>
+<td>减少当前行缩进</td>
 </tr>
 <tr>
-<td>Home</td>
+<td><strong>Home</strong></td>
 <td>Go to Beginning of Line</td>
-<td><code>cursorHome</code></td>
+<td>光标定位到行首</td>
 </tr>
 <tr>
-<td>End</td>
+<td><strong>End</strong></td>
 <td>Go to End of Line</td>
-<td><code>cursorEnd</code></td>
+<td>光标定位到行尾</td>
 </tr>
 <tr>
-<td>Ctrl+End</td>
+<td><strong>Ctrl+End</strong></td>
 <td>Go to End of File</td>
-<td><code>cursorBottom</code></td>
+<td>光标定位到文件的尾部</td>
 </tr>
 <tr>
-<td>Ctrl+Home</td>
+<td><strong>Ctrl+Home</strong></td>
 <td>Go to Beginning of File</td>
-<td><code>cursorTop</code></td>
+<td>光标定位到文件的开头</td>
 </tr>
 <tr>
-<td>Ctrl+Down</td>
+<td><strong>Ctrl+Down</strong></td>
 <td>Scroll Line Down</td>
-<td><code>scrollLineDown</code></td>
+<td>滚动条向下移动</td>
 </tr>
 <tr>
-<td>Ctrl+Up</td>
+<td><strong>Ctrl+Up</strong></td>
 <td>Scroll Line Up</td>
-<td><code>scrollLineUp</code></td>
+<td>滚动条向上移动</td>
 </tr>
 <tr>
-<td>Alt+PageDown</td>
+<td><strong>Alt+PageDown</strong></td>
 <td>Scroll Page Down</td>
-<td><code>scrollPageDown</code></td>
+<td>滚动条向下移动一屏</td>
 </tr>
 <tr>
-<td>Alt+PageUp</td>
+<td><strong>Alt+PageUp</strong></td>
 <td>Scroll Page Up</td>
-<td><code>scrollPageUp</code></td>
+<td>滚动条向上移动一屏</td>
 </tr>
 <tr>
 <td>Ctrl+Shift+[</td>
 <td>Fold (collapse) region</td>
-<td><code>editor.fold</code></td>
+<td>折叠代码</td>
 </tr>
 <tr>
 <td>Ctrl+Shift+]</td>
 <td>Unfold (uncollapse) region</td>
-<td><code>editor.unfold</code></td>
+<td>展开代码</td>
 </tr>
 <tr>
 <td>Ctrl+K Ctrl+[</td>
@@ -389,69 +389,69 @@
 <td><code>editor.action.removeCommentLine</code></td>
 </tr>
 <tr>
-<td>Ctrl+/</td>
+<td><strong>Ctrl+/</strong></td>
 <td>Toggle Line Comment</td>
-<td><code>editor.action.commentLine</code></td>
+<td>注释(或取消注释)当前行代码,<code>//注释内容</code></td>
 </tr>
 <tr>
-<td>Shift+Alt+A</td>
+<td><strong>Shift+Alt+A</strong></td>
 <td>Toggle Block Comment</td>
-<td><code>editor.action.blockComment</code></td>
+<td>注释(或取消注释)选择代码,<code>/*注释内容*/</code></td>
 </tr>
 <tr>
-<td>Ctrl+F</td>
+<td><strong>Ctrl+F</strong></td>
 <td>Find</td>
-<td><code>actions.find</code></td>
+<td>查找</td>
 </tr>
 <tr>
-<td>Ctrl+H</td>
+<td><strong>Ctrl+H</strong></td>
 <td>Replace</td>
-<td><code>editor.action.startFindReplaceAction</code></td>
+<td>替换</td>
 </tr>
 <tr>
-<td>F3</td>
-<td>Find Next</td>
-<td><code>editor.action.nextMatchFindAction</code></td>
+<td><strong>F3</strong></td>
+<td>Command</td>
+<td>Command id</td>
 </tr>
 <tr>
-<td>Shift+F3</td>
-<td>Find Previous</td>
-<td><code>editor.action.previousMatchFindAction</code></td>
+<td><strong>Shift+F3</strong></td>
+<td>Cut line (empty selection)</td>
+<td>剪切</td>
 </tr>
 <tr>
-<td>Alt+Enter</td>
-<td>Select All Occurrences of Find Match</td>
-<td><code>editor.action.selectAllMatches</code></td>
+<td><strong>Ctrl+C</strong></td>
+<td>Copy line (empty selection)</td>
+<td>复制</td>
 </tr>
 <tr>
-<td>Alt+C</td>
-<td>Toggle Find Case Sensitive</td>
-<td><code>toggleFindCaseSensitive</code></td>
+<td><strong>Ctrl+Shift+K</strong></td>
+<td>Delete Line</td>
+<td>删除当前行</td>
 </tr>
 <tr>
-<td>Alt+R</td>
-<td>Toggle Find Regex</td>
-<td><code>toggleFindRegex</code></td>
+<td><strong>Ctrl+Enter</strong></td>
+<td>Insert Line Below</td>
+<td>向下插入空行</td>
 </tr>
 <tr>
-<td>Alt+W</td>
-<td>Toggle Find Whole Word</td>
-<td><code>toggleFindWholeWord</code></td>
+<td><strong>Ctrl+Shift+Enter</strong></td>
+<td>Insert Line Above</td>
+<td>向上插入空行</td>
 </tr>
 <tr>
-<td>Ctrl+M</td>
-<td>Toggle Use of Tab Key for Setting Focus</td>
-<td><code>editor.action.toggleTabFocusMode</code></td>
+<td><strong>Alt+Down</strong></td>
+<td>Move Line Down</td>
+<td>向下移动当前行</td>
 </tr>
 <tr>
-<td>unassigned</td>
-<td>Toggle Render Whitespace</td>
-<td><code>toggleRenderWhitespace</code></td>
+<td><strong>Alt+Up</strong></td>
+<td>Move Line Up</td>
+<td>向上移动当前行</td>
 </tr>
 <tr>
-<td>Alt+Z</td>
-<td>Toggle Word Wrap</td>
-<td><code>editor.action.toggleWordWrap</code></td>
+<td><strong>Shift+Alt+Down</strong></td>
+<td>Copy Line Down</td>
+<td>向下插入当前行内容</td>
 </tr>
 </tbody>
 </table>
@@ -1120,7 +1120,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-05-11T08:20:54.392Z" itemprop="dateUpdated">2017-05-11 16:20:54</time>
+    最后更新时间：<time datetime="2017-05-23T09:41:13.217Z" itemprop="dateUpdated">2017-05-23 17:41:13</time>
 </span><br>
 
 
@@ -1203,7 +1203,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/hexo-blog/2017/05/05/create-sshkey/" id="post-prev" class="post-nav-link">
+      <a href="/hexo-blog/2017/05/05/sshkey/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">SSH key (win)</h4>
       </a>
@@ -1283,7 +1283,7 @@
             
                 <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>webpack3.0 配置 | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="webpack">
+    <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack3.0 配置">
+<meta property="og:url" content="http://yoursite.com/2017/06/26/webpack-setting/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:updated_time" content="2017-06-26T07:10:49.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack3.0 配置">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="/hexo-blog/css/style.css?v=1.6.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">webpack3.0 配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">webpack3.0 配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-25T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-06-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-webpack-setting"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">webpack3.0 配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-06-26 00:00:00" datetime="2017-06-25T16:00:00.000Z"  itemprop="datePublished">2017-06-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div><div class="line">268</div><div class="line">269</div><div class="line">270</div><div class="line">271</div><div class="line">272</div><div class="line">273</div><div class="line">274</div><div class="line">275</div><div class="line">276</div><div class="line">277</div><div class="line">278</div><div class="line">279</div><div class="line">280</div><div class="line">281</div><div class="line">282</div><div class="line">283</div><div class="line">284</div><div class="line">285</div><div class="line">286</div><div class="line">287</div><div class="line">288</div><div class="line">289</div><div class="line">290</div><div class="line">291</div><div class="line">292</div><div class="line">293</div><div class="line">294</div><div class="line">295</div><div class="line">296</div><div class="line">297</div><div class="line">298</div><div class="line">299</div><div class="line">300</div><div class="line">301</div><div class="line">302</div><div class="line">303</div><div class="line">304</div><div class="line">305</div><div class="line">306</div><div class="line">307</div><div class="line">308</div><div class="line">309</div><div class="line">310</div><div class="line">311</div><div class="line">312</div><div class="line">313</div><div class="line">314</div><div class="line">315</div><div class="line">316</div><div class="line">317</div><div class="line">318</div><div class="line">319</div><div class="line">320</div><div class="line">321</div><div class="line">322</div><div class="line">323</div><div class="line">324</div><div class="line">325</div><div class="line">326</div><div class="line">327</div><div class="line">328</div><div class="line">329</div><div class="line">330</div><div class="line">331</div><div class="line">332</div><div class="line">333</div><div class="line">334</div><div class="line">335</div><div class="line">336</div><div class="line">337</div><div class="line">338</div><div class="line">339</div><div class="line">340</div><div class="line">341</div><div class="line">342</div><div class="line">343</div><div class="line">344</div><div class="line">345</div><div class="line">346</div><div class="line">347</div><div class="line">348</div><div class="line">349</div><div class="line">350</div><div class="line">351</div><div class="line">352</div><div class="line">353</div><div class="line">354</div><div class="line">355</div><div class="line">356</div><div class="line">357</div><div class="line">358</div><div class="line">359</div><div class="line">360</div><div class="line">361</div><div class="line">362</div><div class="line">363</div><div class="line">364</div><div class="line">365</div><div class="line">366</div><div class="line">367</div><div class="line">368</div><div class="line">369</div><div class="line">370</div><div class="line">371</div><div class="line">372</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="attr">entry</span>: <span class="string">"./app/entry"</span>, <span class="comment">// string | object | array</span></div><div class="line">  entry: [<span class="string">"./app/entry1"</span>, <span class="string">"./app/entry2"</span>],</div><div class="line">  <span class="attr">entry</span>: &#123;</div><div class="line">    <span class="attr">a</span>: <span class="string">"./app/entry-a"</span>,</div><div class="line">    <span class="attr">b</span>: [<span class="string">"./app/entry-b1"</span>, <span class="string">"./app/entry-b2"</span>]</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 这里应用程序开始执行</span></div><div class="line">  <span class="comment">// webpack 开始打包</span></div><div class="line"></div><div class="line">  output: &#123;</div><div class="line">    <span class="comment">// webpack 如何输出结果的相关选项</span></div><div class="line"></div><div class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>), <span class="comment">// string</span></div><div class="line">    <span class="comment">// 所有输出文件的目标路径</span></div><div class="line">    <span class="comment">// 必须是绝对路径（使用 Node.js 的 path 模块）</span></div><div class="line"></div><div class="line">    filename: <span class="string">"bundle.js"</span>, <span class="comment">// string</span></div><div class="line">    filename: <span class="string">"[name].js"</span>, <span class="comment">// 用于多个入口点(entry point)（出口点？）</span></div><div class="line">    filename: <span class="string">"[chunkhash].js"</span>, <span class="comment">// 用于长效缓存</span></div><div class="line">    <span class="comment">// 「入口分块(entry chunk)」的文件名模板（出口分块？）</span></div><div class="line"></div><div class="line">    publicPath: <span class="string">"/assets/"</span>, <span class="comment">// string</span></div><div class="line">    publicPath: <span class="string">""</span>,</div><div class="line">    <span class="attr">publicPath</span>: <span class="string">"https://cdn.example.com/"</span>,</div><div class="line">    <span class="comment">// 输出解析文件的目录，url 相对于 HTML 页面</span></div><div class="line"></div><div class="line">    library: <span class="string">"MyLibrary"</span>, <span class="comment">// string,</span></div><div class="line">    <span class="comment">// 导出库(exported library)的名称</span></div><div class="line"></div><div class="line">    libraryTarget: <span class="string">"umd"</span>, <span class="comment">// 通用模块定义</span></div><div class="line">    libraryTarget: <span class="string">"umd2"</span>, <span class="comment">// 通用模块定义</span></div><div class="line">    libraryTarget: <span class="string">"commonjs2"</span>, <span class="comment">// exported with module.exports</span></div><div class="line">    libraryTarget: <span class="string">"commonjs-module"</span>, <span class="comment">// 使用 module.exports 导出</span></div><div class="line">    libraryTarget: <span class="string">"commonjs"</span>, <span class="comment">// 作为 exports 的属性导出</span></div><div class="line">    libraryTarget: <span class="string">"amd"</span>, <span class="comment">// 使用 AMD 定义方法来定义</span></div><div class="line">    libraryTarget: <span class="string">"this"</span>, <span class="comment">// 在 this 上设置属性</span></div><div class="line">    libraryTarget: <span class="string">"var"</span>, <span class="comment">// 变量定义于根作用域下</span></div><div class="line">    libraryTarget: <span class="string">"assign"</span>, <span class="comment">// 盲分配(blind assignment)</span></div><div class="line">    libraryTarget: <span class="string">"window"</span>, <span class="comment">// 在 window 对象上设置属性</span></div><div class="line">    libraryTarget: <span class="string">"global"</span>, <span class="comment">// property set to global object</span></div><div class="line">    libraryTarget: <span class="string">"jsonp"</span>, <span class="comment">// jsonp wrapper</span></div><div class="line">    <span class="comment">// 导出库(exported library)的类型</span></div><div class="line"></div><div class="line">    <span class="comment">/* 高级输出配置（点击显示） */</span></div><div class="line"></div><div class="line">    pathinfo: <span class="literal">true</span>, <span class="comment">// boolean</span></div><div class="line">    <span class="comment">// 在生成代码时，引入相关的模块、导出、请求等有帮助的路径信息。</span></div><div class="line"></div><div class="line">    chunkFilename: <span class="string">"[id].js"</span>,</div><div class="line">    <span class="attr">chunkFilename</span>: <span class="string">"[chunkhash].js"</span>, <span class="comment">// 长效缓存(/guides/caching)</span></div><div class="line">    <span class="comment">// 「附加分块(additional chunk)」的文件名模板</span></div><div class="line"></div><div class="line">    jsonpFunction: <span class="string">"myWebpackJsonp"</span>, <span class="comment">// string</span></div><div class="line">    <span class="comment">// 用于加载分块的 JSONP 函数名</span></div><div class="line"></div><div class="line">    sourceMapFilename: <span class="string">"[file].map"</span>, <span class="comment">// string</span></div><div class="line">    sourceMapFilename: <span class="string">"sourcemaps/[file].map"</span>, <span class="comment">// string</span></div><div class="line">    <span class="comment">// 「source map 位置」的文件名模板</span></div><div class="line"></div><div class="line">    devtoolModuleFilenameTemplate: <span class="string">"webpack:///[resource-path]"</span>, <span class="comment">// string</span></div><div class="line">    <span class="comment">// 「devtool 中模块」的文件名模板</span></div><div class="line"></div><div class="line">    devtoolFallbackModuleFilenameTemplate: <span class="string">"webpack:///[resource-path]?[hash]"</span>, <span class="comment">// string</span></div><div class="line">    <span class="comment">// 「devtool 中模块」的文件名模板（用于冲突）</span></div><div class="line"></div><div class="line">    umdNamedDefine: <span class="literal">true</span>, <span class="comment">// boolean</span></div><div class="line">    <span class="comment">// 在 UMD 库中使用命名的 AMD 模块</span></div><div class="line"></div><div class="line">    crossOriginLoading: <span class="string">"use-credentials"</span>, <span class="comment">// 枚举</span></div><div class="line">    crossOriginLoading: <span class="string">"anonymous"</span>,</div><div class="line">    <span class="attr">crossOriginLoading</span>: <span class="literal">false</span>,</div><div class="line">    <span class="comment">// 指定运行时如何发出跨域请求问题</span></div><div class="line"></div><div class="line">    <span class="comment">/* 专家级输出配置（自行承担风险） */</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">module</span>: &#123;</div><div class="line">    <span class="comment">// 关于模块配置</span></div><div class="line"></div><div class="line">    rules: [</div><div class="line">      <span class="comment">// 模块规则（配置 loader、解析器等选项）</span></div><div class="line"></div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="regexp">/\.jsx?$/</span>,</div><div class="line">        <span class="attr">include</span>: [</div><div class="line">          path.resolve(__dirname, <span class="string">"app"</span>)</div><div class="line">        ],</div><div class="line">        <span class="attr">exclude</span>: [</div><div class="line">          path.resolve(__dirname, <span class="string">"app/demo-files"</span>)</div><div class="line">        ],</div><div class="line">        <span class="comment">// 这里是匹配条件，每个选项都接收一个正则表达式或字符串</span></div><div class="line">        <span class="comment">// test 和 include 具有相同的作用，都是必须匹配选项</span></div><div class="line">        <span class="comment">// exclude 是必不匹配选项（优先于 test 和 include）</span></div><div class="line">        <span class="comment">// 最佳实践：</span></div><div class="line">        <span class="comment">// - 只在 test 和 文件名匹配 中使用正则表达式</span></div><div class="line">        <span class="comment">// - 在 include 和 exclude 中使用绝对路径数组</span></div><div class="line">        <span class="comment">// - 尽量避免 exclude，更倾向于使用 include</span></div><div class="line"></div><div class="line">        issuer: &#123; test, include, exclude &#125;,</div><div class="line">        <span class="comment">// issuer 条件（导入源）</span></div><div class="line"></div><div class="line">        enforce: <span class="string">"pre"</span>,</div><div class="line">        <span class="attr">enforce</span>: <span class="string">"post"</span>,</div><div class="line">        <span class="comment">// 标识应用这些规则，即使规则覆盖（高级选项）</span></div><div class="line"></div><div class="line">        loader: <span class="string">"babel-loader"</span>,</div><div class="line">        <span class="comment">// 应该应用的 loader，它相对上下文解析</span></div><div class="line">        <span class="comment">// 为了更清晰，`-loader` 后缀在 webpack 2 中不再是可选的</span></div><div class="line">        <span class="comment">// 查看 webpack 1 升级指南。</span></div><div class="line"></div><div class="line">        options: &#123;</div><div class="line">          <span class="attr">presets</span>: [<span class="string">"es2015"</span>]</div><div class="line">        &#125;,</div><div class="line">        <span class="comment">// loader 的可选项</span></div><div class="line">      &#125;,</div><div class="line"></div><div class="line">      &#123;</div><div class="line">        <span class="attr">test</span>: <span class="string">"\.html$"</span></div><div class="line"></div><div class="line">        use: [</div><div class="line">          <span class="comment">// 应用多个 loader 和选项</span></div><div class="line">          <span class="string">"htmllint-loader"</span>,</div><div class="line">          &#123;</div><div class="line">            <span class="attr">loader</span>: <span class="string">"html-loader"</span>,</div><div class="line">            <span class="attr">options</span>: &#123;</div><div class="line">              <span class="comment">/* ... */</span></div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        ]</div><div class="line">      &#125;,</div><div class="line"></div><div class="line">      &#123; <span class="attr">oneOf</span>: [ <span class="comment">/* rules */</span> ] &#125;,</div><div class="line">      <span class="comment">// 只使用这些嵌套规则之一</span></div><div class="line"></div><div class="line">      &#123; <span class="attr">rules</span>: [ <span class="comment">/* rules */</span> ] &#125;,</div><div class="line">      <span class="comment">// 使用所有这些嵌套规则（合并可用条件）</span></div><div class="line"></div><div class="line">      &#123; <span class="attr">resource</span>: &#123; <span class="attr">and</span>: [ <span class="comment">/* 条件 */</span> ] &#125; &#125;,</div><div class="line">      <span class="comment">// 仅当所有条件都匹配时才匹配</span></div><div class="line"></div><div class="line">      &#123; <span class="attr">resource</span>: &#123; <span class="attr">or</span>: [ <span class="comment">/* 条件 */</span> ] &#125; &#125;,</div><div class="line">      &#123; <span class="attr">resource</span>: [ <span class="comment">/* 条件 */</span> ] &#125;,</div><div class="line">      <span class="comment">// 任意条件匹配时匹配（默认为数组）</span></div><div class="line"></div><div class="line">      &#123; <span class="attr">resource</span>: &#123; <span class="attr">not</span>: <span class="comment">/* 条件 */</span> &#125; &#125;</div><div class="line">      <span class="comment">// 条件不匹配时匹配</span></div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="comment">/* 高级模块配置（点击展示） */</span></div><div class="line"></div><div class="line">    noParse: [</div><div class="line">      <span class="regexp">/special-library\.js$/</span></div><div class="line">    ],</div><div class="line">    <span class="comment">// 不解析这里的模块</span></div><div class="line"></div><div class="line">    unknownContextRequest: <span class="string">"."</span>,</div><div class="line">    <span class="attr">unknownContextRecursive</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">unknownContextRegExp</span>: <span class="regexp">/^\.\/.*$/</span>,</div><div class="line">    <span class="attr">unknownContextCritical</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">exprContextRequest</span>: <span class="string">"."</span>,</div><div class="line">    <span class="attr">exprContextRegExp</span>: <span class="regexp">/^\.\/.*$/</span>,</div><div class="line">    <span class="attr">exprContextRecursive</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">exprContextCritical</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">wrappedContextRegExp</span>: <span class="regexp">/.*/</span>,</div><div class="line">    <span class="attr">wrappedContextRecursive</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">wrappedContextCritical</span>: <span class="literal">false</span>,</div><div class="line">    <span class="comment">// specifies default behavior for dynamic requests</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">resolve</span>: &#123;</div><div class="line">    <span class="comment">// 解析模块请求的选项</span></div><div class="line">    <span class="comment">// （不适用于对 loader 解析）</span></div><div class="line"></div><div class="line">    modules: [</div><div class="line">      <span class="string">"node_modules"</span>,</div><div class="line">      path.resolve(__dirname, <span class="string">"app"</span>)</div><div class="line">    ],</div><div class="line">    <span class="comment">// 用于查找模块的目录</span></div><div class="line"></div><div class="line">    extensions: [<span class="string">".js"</span>, <span class="string">".json"</span>, <span class="string">".jsx"</span>, <span class="string">".css"</span>],</div><div class="line">    <span class="comment">// 使用的扩展名</span></div><div class="line"></div><div class="line">    alias: &#123;</div><div class="line">      <span class="comment">// 模块别名列表</span></div><div class="line"></div><div class="line">      <span class="string">"module"</span>: <span class="string">"new-module"</span>,</div><div class="line">      <span class="comment">// 起别名："module" -&gt; "new-module" 和 "module/path/file" -&gt; "new-module/path/file"</span></div><div class="line"></div><div class="line">      <span class="string">"only-module$"</span>: <span class="string">"new-module"</span>,</div><div class="line">      <span class="comment">// 起别名 "only-module" -&gt; "new-module"，但不匹配 "module/path/file" -&gt; "new-module/path/file"</span></div><div class="line"></div><div class="line">      <span class="string">"module"</span>: path.resolve(__dirname, <span class="string">"app/third/module.js"</span>),</div><div class="line">      <span class="comment">// 起别名 "module" -&gt; "./app/third/module.js" 和 "module/file" 会导致错误</span></div><div class="line">      <span class="comment">// 模块别名相对于当前上下文导入</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">/* 可供选择的别名语法（点击展示） */</span></div><div class="line">    alias: [</div><div class="line">      &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">"module"</span>,</div><div class="line">        <span class="comment">// 旧的请求</span></div><div class="line"></div><div class="line">        alias: <span class="string">"new-module"</span>,</div><div class="line">        <span class="comment">// 新的请求</span></div><div class="line"></div><div class="line">        onlyModule: <span class="literal">true</span></div><div class="line">        <span class="comment">// 如果为 true，只有 "module" 是别名</span></div><div class="line">        <span class="comment">// 如果为 false，"module/inner/path" 也是别名</span></div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line"></div><div class="line">    <span class="comment">/* 高级解析选项（点击展示） */</span></div><div class="line"></div><div class="line">    symlinks: <span class="literal">true</span>,</div><div class="line">    <span class="comment">// 遵循符号链接(symlinks)到新位置</span></div><div class="line"></div><div class="line">    descriptionFiles: [<span class="string">"package.json"</span>],</div><div class="line">    <span class="comment">// 从 package 描述中读取的文件</span></div><div class="line"></div><div class="line">    mainFields: [<span class="string">"main"</span>],</div><div class="line">    <span class="comment">// 从描述文件中读取的属性</span></div><div class="line">    <span class="comment">// 当请求文件夹时</span></div><div class="line"></div><div class="line">    aliasFields: [<span class="string">"browser"</span>],</div><div class="line">    <span class="comment">// 从描述文件中读取的属性</span></div><div class="line">    <span class="comment">// 以对此 package 的请求起别名</span></div><div class="line"></div><div class="line">    enforceExtension: <span class="literal">false</span>,</div><div class="line">    <span class="comment">// 如果为 true，请求必不包括扩展名</span></div><div class="line">    <span class="comment">// 如果为 false，请求可以包括扩展名</span></div><div class="line"></div><div class="line">    moduleExtensions: [<span class="string">"-module"</span>],</div><div class="line">    <span class="attr">enforceModuleExtension</span>: <span class="literal">false</span>,</div><div class="line">    <span class="comment">// 类似 extensions/enforceExtension，但是用模块名替换文件</span></div><div class="line"></div><div class="line">    unsafeCache: <span class="literal">true</span>,</div><div class="line">    <span class="attr">unsafeCache</span>: &#123;&#125;,</div><div class="line">    <span class="comment">// 为解析的请求启用缓存</span></div><div class="line">    <span class="comment">// 这是不安全，因为文件夹结构可能会改动</span></div><div class="line">    <span class="comment">// 但是性能改善是很大的</span></div><div class="line"></div><div class="line">    cachePredicate: <span class="function">(<span class="params">path, request</span>) =&gt;</span> <span class="literal">true</span>,</div><div class="line">    <span class="comment">// predicate function which selects requests for caching</span></div><div class="line"></div><div class="line">    plugins: [</div><div class="line">      <span class="comment">// ...</span></div><div class="line">    ]</div><div class="line">    <span class="comment">// 应用于解析器的附加插件</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">performance</span>: &#123;</div><div class="line">    <span class="attr">hints</span>: <span class="string">"warning"</span>, <span class="comment">// 枚举</span></div><div class="line">    hints: <span class="string">"error"</span>, <span class="comment">// 性能提示中抛出错误</span></div><div class="line">    hints: <span class="literal">false</span>, <span class="comment">// 关闭性能提示</span></div><div class="line">    maxAssetSize: <span class="number">200000</span>, <span class="comment">// 整数类型（以字节为单位）</span></div><div class="line">    maxEntrypointSize: <span class="number">400000</span>, <span class="comment">// 整数类型（以字节为单位）</span></div><div class="line">    assetFilter: <span class="function"><span class="keyword">function</span>(<span class="params">assetFilename</span>) </span>&#123;</div><div class="line">      <span class="comment">// 提供资源文件名的断言函数</span></div><div class="line">      <span class="keyword">return</span> assetFilename.endsWith(<span class="string">'.css'</span>) || assetFilename.endsWith(<span class="string">'.js'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">devtool</span>: <span class="string">"source-map"</span>, <span class="comment">// enum</span></div><div class="line">  devtool: <span class="string">"inline-source-map"</span>, <span class="comment">// 嵌入到源文件中</span></div><div class="line">  devtool: <span class="string">"eval-source-map"</span>, <span class="comment">// 将 SourceMap 嵌入到每个模块中</span></div><div class="line">  devtool: <span class="string">"hidden-source-map"</span>, <span class="comment">// SourceMap 不在源文件中引用</span></div><div class="line">  devtool: <span class="string">"cheap-source-map"</span>, <span class="comment">// 没有模块映射(module mappings)的 SourceMap 低级变体(cheap-variant)</span></div><div class="line">  devtool: <span class="string">"cheap-module-source-map"</span>, <span class="comment">// 有模块映射(module mappings)的 SourceMap 低级变体</span></div><div class="line">  devtool: <span class="string">"eval"</span>, <span class="comment">// 没有模块映射，而是命名模块。以牺牲细节达到最快。</span></div><div class="line">  <span class="comment">// 通过在浏览器调试工具(browser devtools)中添加元信息(meta info)增强调试</span></div><div class="line">  <span class="comment">// 牺牲了构建速度的 `source-map' 是最详细的。</span></div><div class="line"></div><div class="line">  context: __dirname, <span class="comment">// string（绝对路径！）</span></div><div class="line">  <span class="comment">// webpack 的主目录</span></div><div class="line">  <span class="comment">// entry 和 module.rules.loader 选项</span></div><div class="line">  <span class="comment">// 相对于此目录解析</span></div><div class="line"></div><div class="line">  target: <span class="string">"web"</span>, <span class="comment">// 枚举</span></div><div class="line">  target: <span class="string">"webworker"</span>, <span class="comment">// WebWorker</span></div><div class="line">  target: <span class="string">"node"</span>, <span class="comment">// node.js 通过 require</span></div><div class="line">  target: <span class="string">"async-node"</span>, <span class="comment">// Node.js 通过 fs and vm</span></div><div class="line">  target: <span class="string">"node-webkit"</span>, <span class="comment">// nw.js</span></div><div class="line">  target: <span class="string">"electron-main"</span>, <span class="comment">// electron，主进程(main process)</span></div><div class="line">  target: <span class="string">"electron-renderer"</span>, <span class="comment">// electron，渲染进程(renderer process)</span></div><div class="line">  target: <span class="function">(<span class="params">compiler</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> &#125;, <span class="comment">// 自定义</span></div><div class="line">  <span class="comment">// 包(bundle)应该运行的环境</span></div><div class="line">  <span class="comment">// 更改 块加载行为(chunk loading behavior) 和 可用模块(available module)</span></div><div class="line"></div><div class="line">  externals: [<span class="string">"react"</span>, /^@angular\<span class="comment">//],</span></div><div class="line">  externals: <span class="string">"react"</span>, <span class="comment">// string（精确匹配）</span></div><div class="line">  externals: <span class="regexp">/^[a-z\-]+($|\/)/</span>, <span class="comment">// 正则</span></div><div class="line">  externals: &#123; <span class="comment">// 对象</span></div><div class="line">    angular: <span class="string">"this angular"</span>, <span class="comment">// this["angular"]</span></div><div class="line">    react: &#123; <span class="comment">// UMD</span></div><div class="line">      commonjs: <span class="string">"react"</span>,</div><div class="line">      <span class="attr">commonjs2</span>: <span class="string">"react"</span>,</div><div class="line">      <span class="attr">amd</span>: <span class="string">"react"</span>,</div><div class="line">      <span class="attr">root</span>: <span class="string">"React"</span></div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">externals</span>: <span class="function">(<span class="params">request</span>) =&gt;</span> &#123; <span class="comment">/* ... */</span> <span class="keyword">return</span> <span class="string">"commonjs "</span> + request &#125;</div><div class="line">  <span class="comment">// 不要遵循/打包这些模块，而是在运行时从环境中请求他们</span></div><div class="line"></div><div class="line">  stats: <span class="string">"errors-only"</span>,</div><div class="line">  <span class="attr">stats</span>: &#123; <span class="comment">//object</span></div><div class="line">    assets: <span class="literal">true</span>,</div><div class="line">    <span class="attr">colors</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">errors</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">errorDetails</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">hash</span>: <span class="literal">true</span>,</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 精确控制要显示的 bundle 信息</span></div><div class="line"></div><div class="line">  devServer: &#123;</div><div class="line">    <span class="attr">proxy</span>: &#123; <span class="comment">// proxy URLs to backend development server</span></div><div class="line">      <span class="string">'/api'</span>: <span class="string">'http://localhost:3000'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">contentBase</span>: path.join(__dirname, <span class="string">'public'</span>), <span class="comment">// boolean | string | array, static file location</span></div><div class="line">    compress: <span class="literal">true</span>, <span class="comment">// enable gzip compression</span></div><div class="line">    historyApiFallback: <span class="literal">true</span>, <span class="comment">// true for index.html upon 404, object for multiple paths</span></div><div class="line">    hot: <span class="literal">true</span>, <span class="comment">// hot module replacement. Depends on HotModuleReplacementPlugin</span></div><div class="line">    https: <span class="literal">false</span>, <span class="comment">// true for self-signed, object for cert authority</span></div><div class="line">    noInfo: <span class="literal">true</span>, <span class="comment">// only errors &amp; warns on hot reload</span></div><div class="line">    <span class="comment">// ...</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">plugins</span>: [</div><div class="line">    <span class="comment">// ...</span></div><div class="line">  ],</div><div class="line">  <span class="comment">// 附加插件列表</span></div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">/* 高级配置（点击展示） */</span></div><div class="line"></div><div class="line">  resolveLoader: &#123; <span class="comment">/* 等同于 resolve */</span> &#125;</div><div class="line">  <span class="comment">// 独立解析选项的 loader</span></div><div class="line"></div><div class="line">  profile: <span class="literal">true</span>, <span class="comment">// boolean</span></div><div class="line">  <span class="comment">// 捕获时机信息</span></div><div class="line"></div><div class="line">  bail: <span class="literal">true</span>, <span class="comment">//boolean</span></div><div class="line">  <span class="comment">// 在第一个错误出错时抛出，而不是无视错误。</span></div><div class="line"></div><div class="line">  cache: <span class="literal">false</span>, <span class="comment">// boolean</span></div><div class="line">  <span class="comment">// 禁用/启用缓存</span></div><div class="line"></div><div class="line">  watch: <span class="literal">true</span>, <span class="comment">// boolean</span></div><div class="line">  <span class="comment">// 启用观察</span></div><div class="line"></div><div class="line">  watchOptions: &#123;</div><div class="line">    <span class="attr">aggregateTimeout</span>: <span class="number">1000</span>, <span class="comment">// in ms</span></div><div class="line">    <span class="comment">// 将多个更改聚合到单个重构建(rebuild)</span></div><div class="line"></div><div class="line">    poll: <span class="literal">true</span>,</div><div class="line">    <span class="attr">poll</span>: <span class="number">500</span>, <span class="comment">// 间隔单位 ms</span></div><div class="line">    <span class="comment">// 启用轮询观察模式</span></div><div class="line">    <span class="comment">// 必须用在不通知更改的文件系统中</span></div><div class="line">    <span class="comment">// 即 nfs shares（译者注：Network FileSystem，最大的功能就是可以透過網路，讓不同的機器、不同的作業系統、可以彼此分享個別的檔案 ( share file )）</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">node</span>: &#123;</div><div class="line">    <span class="comment">/* TODO */</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="attr">recordsPath</span>: path.resolve(__dirname, <span class="string">"build/records.json"</span>),</div><div class="line">  <span class="attr">recordsInputPath</span>: path.resolve(__dirname, <span class="string">"build/records.json"</span>),</div><div class="line">  <span class="attr">recordsOutputPath</span>: path.resolve(__dirname, <span class="string">"build/records.json"</span>),</div><div class="line">  <span class="comment">// TODO</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-06-26T07:10:49.135Z" itemprop="dateUpdated">2017-06-26 15:10:49</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/06/26/webpack-setting/" target="_blank" rel="external">http://yoursite.com/2017/06/26/webpack-setting/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/webpack/">webpack</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/06/26/webpack-setting/&title=《webpack3.0 配置》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/06/26/webpack-setting/&title=《webpack3.0 配置》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/26/webpack-setting/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack3.0 配置》 — Peony7的博客乐园&url=http://yoursite.com/2017/06/26/webpack-setting/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/26/webpack-setting/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/hexo-blog/2017/07/04/shell-base/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">C语言中文网：Shell教程</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/05/17/es6-model/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ES6中的模块介绍</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/06/26/webpack-setting/&title=《webpack3.0 配置》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/06/26/webpack-setting/&title=《webpack3.0 配置》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/26/webpack-setting/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《webpack3.0 配置》 — Peony7的博客乐园&url=http://yoursite.com/2017/06/26/webpack-setting/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/26/webpack-setting/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3awY7DMAhF0fz/T6dSd1Va8h44lQw3q6rNxD5ZMGA4Dvk635d+5/X+6/dneB1PXDBgwNiWoTwu3pzynHij1+fYVBgwYAxgxEFWIbkBVwnuyt5gwIABQ99EJeDG6SMMGDBgVBjxwsrnX68ABgwYMHJFbLykEoJz+MW1OAwYMDZkuI2Bf35+sL8BAwaMTRhn6qqnj5XVv+wHBgwYrRlu2ldPH3PtUqm4hQEDxgCGPmCRa3wqK+qJKQwYMKYx4sN65VclUK4KxzeFLgwYMNox3M25LUz9NeUGwj5qcRgwYAxj6N/n2pZu0mkctMGAAaMpwx100IvMXLPBAMCAAWMkQ/leD8RPHMlJARcGDBjDGG6S5/5aSVK/zIzAgAGjNUMvU93iNles6sEXBgwYvRn6cENlmUpz1B0BgQEDRj9G/Wg+F6xzx23GsAUMGDDaMeyWYWoruVEzKdGEAQNGa4a7TO5+faOV1woDBoyuDPdoXr+/EmRhwIABI86scuMX7njZqsQUBgwYExjugZeLVFJM5W9vElAYMGC0ZuiPdjuibiDOjXfY/z1gwICxIeM0r8ohfqVdesOGAQNGa4Yb5nJHYPGG3OM5I0GEAQNGI4YSZN2F9eJzWcCFAQPGAIaS2D3XHsiVrz/7sTBgwBjPcI/b3LCuP6EUcGHAgNGUUR/n0gfO7AM+GDBgDGDoRWy9hekOeUidWBgwYLRmuI2Beuh0y9pljUwYMGDsx3gB/0YzCOafj/QAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/hexo-blog/js/main.min.js?v=1.6.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/hexo-blog/js/search.min.js?v=1.6.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

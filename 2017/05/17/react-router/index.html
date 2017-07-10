@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>路由的配置项 | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="路由的基本使用方法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152import React from &apos;react&apos;import &amp;#123; render &amp;#125; from &apos;react-dom&apos;import &amp;#123; Router, Route">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路由的配置项">
+<meta property="og:url" content="http://yoursite.com/2017/05/17/react-router/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="路由的基本使用方法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152import React from &apos;react&apos;import &amp;#123; render &amp;#125; from &apos;react-dom&apos;import &amp;#123; Router, Route">
+<meta property="og:updated_time" content="2017-05-19T08:40:22.009Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="路由的配置项">
+<meta name="twitter:description" content="路由的基本使用方法12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152import React from &apos;react&apos;import &amp;#123; render &amp;#125; from &apos;react-dom&apos;import &amp;#123; Router, Route">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="/hexo-blog/css/style.css?v=1.6.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">路由的配置项</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">路由的配置项</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-17T07:35:12.000Z" itemprop="datePublished" class="page-time">
+  2017-05-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/hexo-blog/categories/react/">react</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#路由的基本使用方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">路由的基本使用方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Router的基础配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">Router的基础配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考地址"><span class="post-toc-number">3.</span> <span class="post-toc-text">参考地址</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-react-router"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">路由的配置项</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-17 15:35:12" datetime="2017-05-17T07:35:12.000Z"  itemprop="datePublished">2017-05-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/hexo-blog/categories/react/">react</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="路由的基本使用方法"><a href="#路由的基本使用方法" class="headerlink" title="路由的基本使用方法"></a>路由的基本使用方法</h2><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span></div><div class="line"><span class="keyword">import</span> &#123; Router, Route, Link &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> App = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;h1&gt;App&lt;/h1&gt;</div><div class="line">        &lt;ul&gt;</div><div class="line">          &lt;li&gt;&lt;Link to="/about"&gt;About&lt;/Link&gt;&lt;/li&gt;</div><div class="line">          &lt;li&gt;&lt;Link to="/inbox"&gt;Inbox&lt;/Link&gt;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &#123;this.props.children&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> About = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;h3&gt;About&lt;/h3&gt;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> Inbox = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;div&gt;</div><div class="line">        &lt;h2&gt;Inbox&lt;/h2&gt;</div><div class="line">        &#123;this.props.children || "Welcome to your Inbox"&#125;</div><div class="line">      &lt;/div&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">const</span> Message = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;h3&gt;Message &#123;this.props.params.id&#125;&lt;/h3&gt;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<p>如果路由按这种配置，我们就可以得到路由与URL的映射表： </p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>App</td>
+</tr>
+<tr>
+<td>/about</td>
+<td>App -&gt; About</td>
+</tr>
+<tr>
+<td>/inbox</td>
+<td>App -&gt; Inbox</td>
+</tr>
+<tr>
+<td>/inbox/messages/:id</td>
+<td>App -&gt; Inbox -&gt; Message</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Router的基础配置"><a href="#Router的基础配置" class="headerlink" title="Router的基础配置"></a>Router的基础配置</h2><p><strong>（1）路由默认首页（<code>IndexRoute</code>）</strong> </p>
+<p>当URL为<code>/</code>的时候，我们需要增加一个默认的初始显示子组件。我们可以通过<code>IndexRoute</code>来设置默认页。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; IndexRoute &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> Dashboard = React.createClass(&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;div&gt;Welcome to the app!&lt;/div&gt;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &#123;/* Show the dashboard at / */&#125;</div><div class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<p>通过这样的设置，现在我们就有了默认元素了，这种方式类似于<code>apache</code>的直接根目录（<code>directorIndex</code>）或</p>
+<p>者是<code>nginx</code>的<code>index</code>.是对直接根路径匹配路由，下面我们来看现在这种方式下的路由与URL的关系：</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>App -&gt; Dashboard</td>
+</tr>
+<tr>
+<td>/about</td>
+<td>App -&gt; About</td>
+</tr>
+<tr>
+<td>/inbox</td>
+<td>App -&gt; Inbox</td>
+</tr>
+<tr>
+<td>/inbox/messages/:id</td>
+<td>App -&gt; Inbox -&gt; Message</td>
+</tr>
+</tbody>
+</table>
+<p>我们发现与上面相比，这里多了默认的首页路由：url为：<code>/</code>，路由的组件为<code>App -&gt;Dashboard</code></p>
+<p><strong>（2）从<code>URL</code>中解耦<code>UI</code></strong></p>
+<p>如果我们能从URL为<code>/inbox/messages/:id</code> 的路由中，移除<code>/inbox</code>使得路由的真正页面为：<code>/message/:id</code></p>
+<p>同时保留了<code>JSX</code>的页面结构，<a href="http://lib.csdn.net/base/react" target="_blank" rel="external">React</a>-router允许我们使用这种缺省路径的方法。我们来看如下代码：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125; /&gt;</div><div class="line"></div><div class="line">      &#123;/* Use /messages/:id instead of /inbox/messages/:id */&#125;</div><div class="line">      &lt;Route component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<p>注意：这里的<code>message</code>所在的父路由，缺省了<code>path</code>，这样实际上我们就将路由从<code>/inbox/message/:id</code>转化</p>
+<p>成为了<code>/message/:id</code>，但是整体的<code>JSX</code>结构并没有发生变化，只是缺省了<code>path</code>而已。这种缺省的方式，</p>
+<p>使得我们能够避免非常复杂的层层<code>url</code>的书写方式，这样使得我们整个路由的控制显得简单名了。这种方式</p>
+<p>的访问结果如下：</p>
+<table>
+<thead>
+<tr>
+<th>URl</th>
+<th>Components</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/</td>
+<td>App -&gt; Dashboard</td>
+</tr>
+<tr>
+<td>/about</td>
+<td>App -&gt; About</td>
+</tr>
+<tr>
+<td>/inbox</td>
+<td>App -&gt; Inbox</td>
+</tr>
+<tr>
+<td>/messages/:id</td>
+<td>App -&gt; Inbox -&gt; Message</td>
+</tr>
+</tbody>
+</table>
+<p>上图中，值得注意的是我们只要通过<code>url: /message/:id</code>就可以访问到组件：<code>App -&gt; Inbox -&gt; Message</code>，大大的简化了<code>url</code>，但是访问结果却与<code>inbox/message/:id</code>完全相同。</p>
+<p><strong>（3）重定向路由（<code>Redirect</code>）</strong></p>
+<p>通过<code>Redirect</code>，我们可以重新定向路由。我们来看下面的例子：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Redirect &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></div><div class="line"></div><div class="line">render((</div><div class="line">  &lt;Router&gt;</div><div class="line">    &lt;Route path="/" component=&#123;App&#125;&gt;</div><div class="line">      &lt;IndexRoute component=&#123;Dashboard&#125; /&gt;</div><div class="line">      &lt;Route path="about" component=&#123;About&#125; /&gt;</div><div class="line"></div><div class="line">      &lt;Route path="inbox" component=&#123;Inbox&#125;&gt;</div><div class="line">        &#123;/* Redirect /inbox/messages/:id to /messages/:id */&#125;</div><div class="line">        &lt;Redirect from="messages/:id" to="/messages/:id" /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line"></div><div class="line">      &lt;Route component=&#123;Inbox&#125;&gt;</div><div class="line">        &lt;Route path="messages/:id" component=&#123;Message&#125; /&gt;</div><div class="line">      &lt;/Route&gt;</div><div class="line">    &lt;/Route&gt;</div><div class="line">  &lt;/Router&gt;</div><div class="line">), document.body)</div></pre></td></tr></table></figure>
+<p>现在，当我们访问<code>/inbox/message/:id</code>的时候，路由会自动跳转到新的<code>url：/message/:id</code>，这样我们就实现了路由的重定向。</p>
+<p><strong>（4）路由的leave和enter,路由的进入和移除的过程</strong></p>
+<p>路由定义了进入和移除时的<code>hook</code>，也就是路由的移入或者移除的时候会触发一定的事件，这些<code>hooks</code>是非常</p>
+<p>有用的，比如路由移入（进入访问）的时候需要做一个<strong>权限认证</strong>，或者说路由移除（移除访问）的时候需要</p>
+<p><strong>保存一些参数</strong>等，我们来看什么时候会触发<code>leave hook</code>，什么时候会触发<code>enter hook</code>。</p>
+<p>举一个例子：当我们从<code>url：/messages/5</code>，跳转到新的<code>url：/about</code>的过程。</p>
+<p>（a）首先触发<code>/messages/:id</code> 路由的<code>leave hook</code></p>
+<p>（b）再次触发<code>/inbox</code>路由的<code>leave hook</code></p>
+<p>（c）最后触发<code>/about</code>路由的<code>enter hook</code></p>
+<p><strong>（5）利用插件的方法来配置路由，并且同时根据leave和enter hook，在JS中实现Redirect</strong></p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> routes = &#123;</div><div class="line">  <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">  <span class="attr">component</span>: App,</div><div class="line">  <span class="attr">indexRoute</span>: &#123; <span class="attr">component</span>: Dashboard &#125;,</div><div class="line">  <span class="attr">childRoutes</span>: [</div><div class="line">    &#123; <span class="attr">path</span>: <span class="string">'about'</span>, <span class="attr">component</span>: About &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">path</span>: <span class="string">'inbox'</span>,</div><div class="line">      <span class="attr">component</span>: Inbox,</div><div class="line">      <span class="attr">childRoutes</span>: [&#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'messages/:id'</span>,</div><div class="line">        <span class="attr">onEnter</span>: <span class="function">(<span class="params">&#123; params &#125;, replace</span>) =&gt;</span> replace(<span class="string">`/messages/<span class="subst">$&#123;params.id&#125;</span>`</span>)</div><div class="line">      &#125;]</div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">component</span>: Inbox,</div><div class="line">      <span class="attr">childRoutes</span>: [&#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'messages/:id'</span>, <span class="attr">component</span>: Message</div><div class="line">      &#125;]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line"></div><div class="line">render(&lt;Router routes=&#123;routes&#125; /&gt;, document.body)</div></pre></td></tr></table></figure>
+<p>这里通过<code>onEnter</code>中的方法来触发重定向，从而实现<code>Redirect</code>.</p>
+<h2 id="参考地址"><a href="#参考地址" class="headerlink" title="参考地址"></a>参考地址</h2><p> <a href="http://blog.csdn.net/liwusen/article/details/53282245" target="_blank" rel="external">Reacter-router（config）基础配置项</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-19T08:40:22.009Z" itemprop="dateUpdated">2017-05-19 16:40:22</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/05/17/react-router/" target="_blank" rel="external">http://yoursite.com/2017/05/17/react-router/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/17/react-router/&title=《路由的配置项》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/17/react-router/&title=《路由的配置项》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/17/react-router/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《路由的配置项》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/17/react-router/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/17/react-router/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/hexo-blog/2017/05/17/es6-model/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ES6中的模块介绍</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/05/17/react-scu/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react-scu</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/17/react-router/&title=《路由的配置项》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/17/react-router/&title=《路由的配置项》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/17/react-router/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《路由的配置项》 — Peony7的博客乐园&url=http://yoursite.com/2017/05/17/react-router/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/17/react-router/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQW7DMAwF0dz/0inQbWF5PqkUMTVaBQls83nBiCJfL7zev2v969919ev6qvWzWkuGDBmPZZDbXd2ah5K+iJgqQ4aMAxjrJHt163UQabjrzzcxy5AhQwZOyrVFXp8MGTJk8IRLEujVVek3MmTIkFFLphxAQkyfsqEWlyFDxgMZaWPgPz9/sL8hQ4aMhzD6BWfazlwn5WI8MmTIGM1Yb+P44EXa+CTPTe8mQ4aMqQxeiNaO23hBm24Qb/43ZMiQMY7BExw/jONJlo90BBW2DBkyBjFq51fpljF9KZ2ULUOGjHmMTqApiR/6E/DlQZsMGTKOYdS2jLURirRhgGpxGTJkDGJ0kmPtQL9WAKOxMxkyZIxmkEKxQyVDFdu2mDJkyBjH+NzgV2csLH26DBkyZjM6x/c8gfabo+iwT4YMGYcxakHXhjPSwzsZMmScySCpjYSyqxXKR8GCfw8ZMmQMYpCCs3boz8td0lKVIUPGmQzegEwbnP2r+JZRhgwZUxmkTcgLTt5I4IGiTacMGTIOYNQO+tMQOYNHKEOGjBMY6XhEZ5yC/1ob8pAhQ8Y8xjtcaZm66wDu5s4yZMgYzeCLNzg7LcnOC5IhQ8ZsRq1xWEuytSIZjWXIkCHjAEYn8XUGvGpFrAwZMmTwEHnTcVf74WauTYYMGcczyKZw17WtOluGDBlDGf3kSFJzev+bJCtDhoxjGJ2knI5tobkP3H7Y9t8iQ4aM72X8AINwf61WXv5rAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/hexo-blog/js/main.min.js?v=1.6.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/hexo-blog/js/search.min.js?v=1.6.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
