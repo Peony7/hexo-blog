@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>viewports | Peony7的博客乐园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="viewports">
+    <meta name="description" content="原文: http://www.w3cplus.com/css/viewports.html 桌面浏览器的特性screen.width/height(屏幕尺寸) 含义：用户的屏幕的完整大小。 度量：设备的pixels。 兼容性问题：IE8里，不管使用IE7模式还是IE8模式，都以CSS的pixels来度量  window.innerWidth/Height(浏览器尺寸) 含义：包含滚动条尺寸的浏览器">
+<meta name="keywords" content="viewports">
+<meta property="og:type" content="article">
+<meta property="og:title" content="viewports">
+<meta property="og:url" content="http://yoursite.com/2017/08/11/viewports/index.html">
+<meta property="og:site_name" content="Peony7的博客乐园">
+<meta property="og:description" content="原文: http://www.w3cplus.com/css/viewports.html 桌面浏览器的特性screen.width/height(屏幕尺寸) 含义：用户的屏幕的完整大小。 度量：设备的pixels。 兼容性问题：IE8里，不管使用IE7模式还是IE8模式，都以CSS的pixels来度量  window.innerWidth/Height(浏览器尺寸) 含义：包含滚动条尺寸的浏览器">
+<meta property="og:updated_time" content="2017-08-11T06:39:16.699Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="viewports">
+<meta name="twitter:description" content="原文: http://www.w3cplus.com/css/viewports.html 桌面浏览器的特性screen.width/height(屏幕尺寸) 含义：用户的屏幕的完整大小。 度量：设备的pixels。 兼容性问题：IE8里，不管使用IE7模式还是IE8模式，都以CSS的pixels来度量  window.innerWidth/Height(浏览器尺寸) 含义：包含滚动条尺寸的浏览器">
+    
+        <link rel="alternate" type="application/atom+xml" title="Peony7的博客乐园" href="/hexo-blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/hexo-blog/favicon.ico">
+    <link rel="stylesheet" href="/hexo-blog/css/style.css?v=1.6.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/hexo-blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/hexo-blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/hexo-blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Peony7</h5>
+          <a href="mailto:990313204@qq.com" title="990313204@qq.com" class="mail">990313204@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/hexo-blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Peony7" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">viewports</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">viewports</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-08-10T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-08-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#桌面浏览器的特性"><span class="post-toc-number">1.</span> <span class="post-toc-text">桌面浏览器的特性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#screen-width-height-屏幕尺寸"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">screen.width/height(屏幕尺寸)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#window-innerWidth-Height-浏览器尺寸"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">window.innerWidth/Height(浏览器尺寸)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#window-pageX-YOffset-滚动位移"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">window.pageX/YOffset(滚动位移)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#document-documentElement-clientWidth-Height-viewport的尺寸"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">document. documentElement. clientWidth/Height(viewport的尺寸)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#document-documentElement-offsetWidth-Height-lt-html-gt-的尺寸"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">document. documentElement. offsetWidth/Height(<html>的尺寸)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#pageX-Y-clientX-Y-screenX-Y-事件坐标"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">pageX/Y, clientX/Y, screenX/Y(事件坐标)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#mediaqueries-Media查询"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">mediaqueries(Media查询)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#移动设备浏览器的问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">移动设备浏览器的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#两种viewport"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">两种viewport</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#document-documentElement-clientWidth-Height-度量layout-viewviewport"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">document. documentElement. clientWidth/Height(度量layout viewviewport)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#window-innerWidth-Height-度量visual-viewport"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">window.innerWidth/Height(度量visual viewport)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#screen-width-and-screen-height-屏幕尺寸"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">screen.width and screen.height(屏幕尺寸)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#window-pageX-YOffset-滚动位移-1"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">window.pageX/YOffset(滚动位移)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#document-documentElement-offsetWidth-Height"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">document. documentElement. offsetWidth / Height</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mediaqueries-Media查询"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">Mediaqueries(Media查询)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Eventcoordinates-事件坐标"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">Eventcoordinates(事件坐标)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Metaviewport-meta-viewport"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">Metaviewport(meta viewport)</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-viewports"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">viewports</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-08-11 00:00:00" datetime="2017-08-10T16:00:00.000Z"  itemprop="datePublished">2017-08-11</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>原文: <a href="http://www.w3cplus.com/css/viewports.html" target="_blank" rel="external">http://www.w3cplus.com/css/viewports.html</a></p>
+<h3 id="桌面浏览器的特性"><a href="#桌面浏览器的特性" class="headerlink" title="桌面浏览器的特性"></a>桌面浏览器的特性</h3><h4 id="screen-width-height-屏幕尺寸"><a href="#screen-width-height-屏幕尺寸" class="headerlink" title="screen.width/height(屏幕尺寸)"></a>screen.width/height(屏幕尺寸)</h4><ul>
+<li>含义：用户的屏幕的完整大小。</li>
+<li>度量：设备的pixels。</li>
+<li>兼容性问题：IE8里，不管使用IE7模式还是IE8模式，都以CSS的pixels来度量</li>
+</ul>
+<h4 id="window-innerWidth-Height-浏览器尺寸"><a href="#window-innerWidth-Height-浏览器尺寸" class="headerlink" title="window.innerWidth/Height(浏览器尺寸)"></a>window.innerWidth/Height(浏览器尺寸)</h4><ul>
+<li>含义：包含滚动条尺寸的浏览器完整尺寸</li>
+<li>度量：CSS的pixels</li>
+<li>兼容性问题：IE不支持，Opera用设备pixels来度量</li>
+</ul>
+<h4 id="window-pageX-YOffset-滚动位移"><a href="#window-pageX-YOffset-滚动位移" class="headerlink" title="window.pageX/YOffset(滚动位移)"></a>window.pageX/YOffset(滚动位移)</h4><ul>
+<li>含义：页面的移位</li>
+<li>度量：CSS的pixels</li>
+<li>兼容性问题：pageXOffset 和 pageYOffset 在 IE 8 及之前版本的IE不支持, 使用”document.body.scrollLeft” and “document.body.scrollTop” 来取代</li>
+</ul>
+<h4 id="document-documentElement-clientWidth-Height-viewport的尺寸"><a href="#document-documentElement-clientWidth-Height-viewport的尺寸" class="headerlink" title="document. documentElement. clientWidth/Height(viewport的尺寸)"></a>document. documentElement. clientWidth/Height(viewport的尺寸)</h4><ul>
+<li>含义：viewport的尺寸</li>
+<li>度量：CSS的pixels</li>
+<li>兼容性问题：无</li>
+</ul>
+<p>为<code>&lt;html&gt;</code>元素赋值25%。但document. documentElement. clientWidth/Height的值不变。它虽然貌似从<code>&lt;html&gt;</code>元素取值，但实际描述的确是viewport的尺寸。</p>
+<h4 id="document-documentElement-offsetWidth-Height-lt-html-gt-的尺寸"><a href="#document-documentElement-offsetWidth-Height-lt-html-gt-的尺寸" class="headerlink" title="document. documentElement. offsetWidth/Height(&lt;html&gt;的尺寸)"></a>document. documentElement. offsetWidth/Height(<code>&lt;html&gt;</code>的尺寸)</h4><ul>
+<li>含义：<code>&lt;html&gt;</code>的尺寸</li>
+<li>度量：CSS的pixels</li>
+<li>兼容性问题：IE用这个值标示viewport的尺寸而非<code>&lt;html&gt;</code></li>
+</ul>
+<p>如果你为<code>&lt;html&gt;</code>元素赋值了宽度，offsetWidth会真实的反应出来。</p>
+<h4 id="pageX-Y-clientX-Y-screenX-Y-事件坐标"><a href="#pageX-Y-clientX-Y-screenX-Y-事件坐标" class="headerlink" title="pageX/Y, clientX/Y, screenX/Y(事件坐标)"></a>pageX/Y, clientX/Y, screenX/Y(事件坐标)</h4><ul>
+<li>含义：见下文</li>
+<li>度量：见下文</li>
+<li>兼容性问题：IE不支持pageX/Y,IE使用CSSpixels来度量screanX/Y</li>
+<li>详细描述:<ul>
+<li>pageX/Y：从<code>&lt;html&gt;</code>原点到事件触发点的CSS的 pixels</li>
+<li>clientX/Y：从viewport原点（浏览器窗口）到事件触发点的CSS的 pixels</li>
+<li>screenX/Y：从用户显示器窗口原点到事件触发点的设备 的 pixels。</li>
+</ul>
+</li>
+</ul>
+<h4 id="mediaqueries-Media查询"><a href="#mediaqueries-Media查询" class="headerlink" title="mediaqueries(Media查询)"></a>mediaqueries(Media查询)</h4><ul>
+<li>含义：见下文</li>
+<li>度量：见下文</li>
+<li>兼容性问题：IE不支持.</li>
+<li>详情描述:<ul>
+<li>device-width/height使用screen.width/height来做为的判定值。该值以设备的pixels来度量</li>
+<li>width/height使用documentElement.clientWidth/Height即viewport的值。该值以CSS的pixels来度量</li>
+</ul>
+</li>
+</ul>
+<p>在桌面浏览器中使用width而忘记device-width</p>
+<h3 id="移动设备浏览器的问题"><a href="#移动设备浏览器的问题" class="headerlink" title="移动设备浏览器的问题"></a>移动设备浏览器的问题</h3><h4 id="两种viewport"><a href="#两种viewport" class="headerlink" title="两种viewport"></a>两种viewport</h4><p>因此viewport太窄，不能很好为你的基本CSS布局服务了。最显然的解决方式是让viewport更宽。因此这个需求分为了2个方面：虚拟的visualviewport和布局的layoutviewport。</p>
+<h4 id="document-documentElement-clientWidth-Height-度量layout-viewviewport"><a href="#document-documentElement-clientWidth-Height-度量layout-viewviewport" class="headerlink" title="document. documentElement. clientWidth/Height(度量layout viewviewport)"></a>document. documentElement. clientWidth/Height(度量layout viewviewport)</h4><p>的尺寸</p>
+<ul>
+<li>含义：layoutviewport尺寸</li>
+<li>度量：CSS的pixels</li>
+<li>完整支持：Opera, iPhone, Android, Symbian, Bolt, MicroB, Skyfire, Obigo</li>
+<li>问题：在Iris上它标示visualvieport<ul>
+<li>三星的Webkit核心浏览器，仅当在页面上写入<code>&lt;meta viewport&gt;</code>标签，才正确表示。否则就代表着</li>
+<li>FireFox以设备的pixels来度量</li>
+<li>IE返回1024 x 768 px，而准确的尺寸保存在document.body.clientWidth/Height</li>
+<li>NetFront仅当100%缩放时候才正确</li>
+<li>塞班的Webkit1(在S60v3设备)不支持这些属性</li>
+</ul>
+</li>
+<li>不支持：黑莓</li>
+</ul>
+<p>很幸运浏览器由于浏览器大战而遗留给我们2个特性对来度量这两种viewport。</p>
+<p>旋转只关系到高度，而不是宽度。</p>
+<h4 id="window-innerWidth-Height-度量visual-viewport"><a href="#window-innerWidth-Height-度量visual-viewport" class="headerlink" title="window.innerWidth/Height(度量visual viewport)"></a>window.innerWidth/Height(度量visual viewport)</h4><ul>
+<li>含义：visualviewport尺寸</li>
+<li>度量：CSS的pixels</li>
+<li>完整支持：iPhone, Symbian, BlackBerry</li>
+<li>问题：<ul>
+<li>FireFox和Opera以设备的pixels返回该数值</li>
+<li>Android, Bolt, MicroB, 和 NetFront 以CSS的pixels返回该数值，且为layoutviewport的值</li>
+</ul>
+</li>
+<li>不支持：<ul>
+<li>IE，它使用document. documentElement. offsetWidh/Height来表示</li>
+<li>三星的Webkit核心浏览器，仅当在页面上写入<code>&lt;meta viewport&gt;</code>标签，才正确表示。否则就代表着<code>&lt;html&gt;</code>的尺寸</li>
+</ul>
+</li>
+<li>混乱：Iris, Skyfire, Obigo返回的值不知所云</li>
+</ul>
+<p>我们使用window.innerWidth/Height来度量visualviewport。显然，随着用户缩放浏览器，这值会改变，更多、更少的CSS pixels放进了屏幕。<br>很不幸这是一个待完善的部分，许多浏览器依然没有支持对visualviewport的度量。到现在为止，没有浏览器将该度量存储在其他地方，我猜测window.innerWidth/Height会成为标准，albeit是最强力的支持者。</p>
+<h4 id="screen-width-and-screen-height-屏幕尺寸"><a href="#screen-width-and-screen-height-屏幕尺寸" class="headerlink" title="screen.width and screen.height(屏幕尺寸)"></a>screen.width and screen.height(屏幕尺寸)</h4><ul>
+<li>含义：屏幕尺寸</li>
+<li>度量：设备的pixels</li>
+<li>完整支持：Opera Mini, Android, Symbian, Iris, Firefox, MicroB, IE, BlackBerry</li>
+<li>问题：<ul>
+<li>Opera在Windows Mobile下只给出横向尺寸(landscape size)。在S60上工作正确。</li>
+<li>三星的Webkit核心浏览器，仅当在页面上写入<code>&lt;meta viewport&gt;</code>标签，才正确表示。否则就代表着<code>&lt;html&gt;</code>的尺寸</li>
+<li>iPhone和Obigo仅给出竖直尺寸(portrait sizes)</li>
+<li>Android, Bolt, MicroB, 和 NetFront 以CSS的pixels返回该数值，且为layoutviewport的值</li>
+</ul>
+</li>
+<li>不支持：<ul>
+<li>IE，它使用document. documentElement. offsetWidh/Height来表示 - 三星的Webkit核心浏览器，仅当在页面上写入<code>&lt;meta viewport&gt;</code>标签，才正确表示。否则就代表着<code>&lt;html&gt;</code>的尺寸</li>
+</ul>
+</li>
+<li>混乱：Iris, Skyfire, Obigo返回的值不知所云</li>
+</ul>
+<p>和pc浏览器一样，screen.width/height标示了设备屏幕的尺寸，以设备的pixels度量。和pc浏览器一样，作为web开发人员你永远不需要这些信息。你不关心屏幕的物理宽度，而关心当前有多少CSS的pixels能供你使用。</p>
+<h4 id="window-pageX-YOffset-滚动位移-1"><a href="#window-pageX-YOffset-滚动位移-1" class="headerlink" title="window.pageX/YOffset(滚动位移)"></a>window.pageX/YOffset(滚动位移)</h4><ul>
+<li>含义：见描述</li>
+<li>度量：CSS的pixels</li>
+<li>完整支持：iPhone, Android, Symbian, Iris, MicroB, Skyfire, Obigo</li>
+<li>问题：<ul>
+<li>Opera, Bolt, Firefox, and NetFront 总是返回 0.</li>
+<li>三星的Webkit核心浏览器，仅当在页面上写入标签，才正确表示。</li>
+</ul>
+</li>
+<li>不支持： IE，它使用document. scrollLeft/Top来表示</li>
+</ul>
+<p>你同意需要知道当前visualviewport相对于layoutviewport的距离。这就是滚动位移，如同在桌面浏览器一样，使用window.pageX/YOffset存储。</p>
+<h4 id="document-documentElement-offsetWidth-Height"><a href="#document-documentElement-offsetWidth-Height" class="headerlink" title="document. documentElement. offsetWidth / Height"></a>document. documentElement. offsetWidth / Height</h4><ul>
+<li>含义：html元素的整体尺寸</li>
+<li>度量：CSS的pixels</li>
+<li>完整支持：Opera, iPhone, Android, Symbian, Samsung, Iris, Bolt, Firefox, MicroB, Skyfire, BlackBerry, Obigo</li>
+<li>问题：<ul>
+<li>NetFront只在100%缩放时返回正确的值.</li>
+<li>IE，使用这个特性对来表示visualviewport的尺寸。它使用document. body. clientWidth/Height来表示</li>
+</ul>
+</li>
+</ul>
+<p>和在桌面系统一样,document.documentElement.offsetWidth/Height给出了</p>
+<p>元素以CSS的pixels度量的尺寸。</p>
+<h4 id="Mediaqueries-Media查询"><a href="#Mediaqueries-Media查询" class="headerlink" title="Mediaqueries(Media查询)"></a>Mediaqueries(Media查询)</h4><ul>
+<li>含义：以CSS的pixels度量<code>&lt;html&gt;</code>元素或以设备 的pixels度量设备</li>
+<li>完整支持：Opera, iPhone, Android, Symbian, Samsung, Iris, Bolt, Firefox, MicroB.</li>
+<li>不支持：Skyfire, IE, BlackBerry, NetFront, Obigo</li>
+<li>备注： 我只测试了浏览器是否从正确的特性对里提取这些值。而特性对里的值是否正确并不在这里进行详细测试。</li>
+</ul>
+<p>media查询如同桌面系统一样。width/height使用以CSS的pixels度量的layoutviewport，device-width/height使用以设备的pixels度量的设备屏幕（device screen）。</p>
+<p>换句话说，width/height 反映document. documentElement. clientWidth/Height的值, device-width/height 反映screen.width/height. (所有浏览器遵循同样原理，即使取值是错误的)。</p>
+<p>media查询在标识网站处于桌面浏览器、pad浏览器或手机浏览器方面很重要，而在区别不同pad和手机设备方面并不有用。</p>
+<h4 id="Eventcoordinates-事件坐标"><a href="#Eventcoordinates-事件坐标" class="headerlink" title="Eventcoordinates(事件坐标)"></a>Eventcoordinates(事件坐标)</h4><ul>
+<li>含义：见下文</li>
+<li>度量：见下文</li>
+<li>完整支持：Symbian, Iris</li>
+<li>问题：<ul>
+<li>Opera 只有pageX/Y，但滚动页面过远时这个值会出错。</li>
+<li>在iPhone, Firefox, 和 BlackBerry 上clientX/Y 和pageX/Y相等</li>
+<li>在 Android 和 MicroB screenX/Y和clientX/Y相等，也就是它们以CSS的pixels度量屏幕尺寸</li>
+<li>在FireFox里screenX/Y值不正确</li>
+<li>IE, BlackBerry, 和 Obigo 不支持 pageX/Y.</li>
+<li>NetFront 所以三个值都是screenX/Y.</li>
+<li>Obigo clientX/Y是screenX/Y.</li>
+<li>Samsung WebKit 总是返回pageX/Y.</li>
+</ul>
+</li>
+<li>未测试：Opera Mini,Bolt,Skyfire</li>
+</ul>
+<p>事件坐标在桌面浏览器上多多少少是支持的。不幸的是，移动设备上在所测试的12个主流浏览器中只有Symbian WebKit 和 Iris完全正确的支持这3个坐标特性。其余浏览器多多少少都存在问题。</p>
+<p>pageX/Y,该特性依然是基于页面的CSSpixels度量的值，如图在桌面浏览器一样，它是三个特性里面最有用的。</p>
+<p>clientX/Y是基于visualviewport的，以CSSpixels度量的值. 这样做比较靠谱，虽然我不是很确信这样计算的好处。</p>
+<p>screenX/Y基于设备屏幕以设备的pixels度量的值。显然，它使用和clientX/Y同样的参考，而设备的pixels没什么用。所以我们不需要在意screenX/Y,同在桌面浏览器一样，每个bit都是没用的。</p>
+<h4 id="Metaviewport-meta-viewport"><a href="#Metaviewport-meta-viewport" class="headerlink" title="Metaviewport(meta viewport)"></a>Metaviewport(meta viewport)</h4><ul>
+<li>含义：设置layoutviewport的宽度</li>
+<li>度量：CSS的pixels</li>
+<li>完整支持：Opera Mobile, iPhone, Android, Iris, IE, BlackBerry, Obigo</li>
+<li>不支持：Opera Mini, Symbian, Bolt, Firefox, MicroB, NetFront</li>
+<li>问题：<ul>
+<li>Skyfire 不能处理我的测试页面。</li>
+<li>在三星的wibkit浏览器下，出现会改变一些特性对的值。</li>
+<li>Opera Mobile, iPhone, Samsung, and BlackBerry 不允许用户在设置viewport后再进行缩小操作（do not allow the user to zoom out.）</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-08-11T06:39:16.699Z" itemprop="dateUpdated">2017-08-11 14:39:16</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/hexo-blog/2017/08/11/viewports/" target="_blank" rel="external">http://yoursite.com/2017/08/11/viewports/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/hexo-blog/img/avatar.jpg" alt="Peony7">
+            Peony7
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/hexo-blog/tags/viewports/">viewports</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/08/11/viewports/&title=《viewports》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/08/11/viewports/&title=《viewports》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/08/11/viewports/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《viewports》 — Peony7的博客乐园&url=http://yoursite.com/2017/08/11/viewports/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/08/11/viewports/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/hexo-blog/2017/08/25/css-scrollbar/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CSS 实现隐藏滚动条同时又可以滚动</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/hexo-blog/2017/07/05/linux-base/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Linux入门教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script src="http://v2.uyan.cc/code/uyan.js?uid=2132789"></script>
+    <!-- UY END -->
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/hexo-blog/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/hexo-blog/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/hexo-blog/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Peony7 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/08/11/viewports/&title=《viewports》 — Peony7的博客乐园&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/08/11/viewports/&title=《viewports》 — Peony7的博客乐园&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/08/11/viewports/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《viewports》 — Peony7的博客乐园&url=http://yoursite.com/2017/08/11/viewports/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/08/11/viewports/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByklEQVR42u3ay44CIRAFUP//p51kViaO5F6gsSc5vTJK42FToR6PR/w8f5/Xz6/fvK8crx/vsOHBxcVd5j6Hzzv30zE+7TZG5wZcXNzz3PXgNX43CXbJzri4uHfjRtuVVyVcXNz/zh3j2pQGFxf3/twk+RmnJVHqEhRKtuVquLi4C9xdV5OVz5fXd3FxcTd1JdqAMpcIFf+Oi4t7hJuUO/N0KP91bj0uLu5J7kpZs23K5r8WyQ8uLu4F3HF5IlmTj27kaz4eDxcX9wj3iiA1N+BVNG9wcXEv4+YvzzU8kv2LES5cXNzj3HY8a29btOgG4+LiXszNrxcrIxr5UFd9Mlxc3Au49SVjoZzarvnjLVxc3CPcJNVZKZTkCRIuLu59uO1G+WFWRi4+voWLi3uE2+ZJuxokUW+nbajg4uJu4iaBox3M2lV4xcXF/S43v46015Q2bEWBDBcX9wg3f9rRiiScFcfAxcU9wm0DSju8NTfYkY+G4OLiXsfNRyuWUpc4kBWDWbi4uBdzV64jk02RXdcXXFzcr3Lnyql56IySIlxc3FtyV4os+eUGFxf3Dtz2D5KwlSdURYjExcU9wm0zjrkySovDxcX9EvcHoJ++VXnLStkAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/hexo-blog/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/hexo-blog/js/main.min.js?v=1.6.5"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/hexo-blog/js/search.min.js?v=1.6.5" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Peony7的博客乐园';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Peony7的博客乐园';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
